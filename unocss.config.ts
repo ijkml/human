@@ -1,6 +1,5 @@
 import {
   defineConfig,
-  presetAttributify,
   presetIcons,
   presetTypography,
   presetUno,
@@ -9,19 +8,45 @@ import {
 } from 'unocss';
 
 export default defineConfig({
-  shortcuts: [
-    [
-      'btn',
-      'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50',
-    ],
-    [
-      'icon-btn',
-      'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600',
-    ],
-  ],
+  theme: {
+    colors: {
+      ml: {
+        0: 'hsl(0, 100%, 59%)',
+        1: 'hsl(0, 0%, 94%)',
+        2: 'hsl(0, 0%, 90%)',
+        3: 'hsl(240, 1%, 58%)',
+        4: 'hsl(240, 1%, 43%)',
+        5: 'hsl(240, 3%, 24%)',
+        6: 'hsl(240, 3%, 14%)',
+        7: 'hsl(240, 4%, 11%)',
+        8: 'hsl(240, 4%, 9%)',
+      },
+    },
+    fontFamily: {
+      sans: [
+        'Alliance',
+        'Source Sans Pro',
+        'Helvetica Neue',
+        'Helvetica',
+        'ui-sans-serif',
+        'system-ui',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'sans-serif',
+      ],
+    },
+    breakpoints: {
+      ss: '360px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
+  },
   presets: [
     presetUno(),
-    presetAttributify(),
     presetIcons({
       scale: 1.2,
     }),
