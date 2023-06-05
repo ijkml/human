@@ -1,5 +1,6 @@
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'node:url';
 import svgLoader from 'vite-svg-loader';
+import { redirects } from './assets/data/redirects';
 
 export default defineNuxtConfig({
   devServer: {
@@ -15,19 +16,24 @@ export default defineNuxtConfig({
         lang: 'en-US',
       },
       meta: [{ name: 'description', content: 'Vitesse Nuxt Starter (mod)' }],
+      // style: [
+      //   {
+      //     textContent:
+      //       'html{color:hsl(240, 1%, 43%);background-color:hsl(240, 4%, 11%)}',
+      //   },
+      // ],
     },
+  },
+  routeRules: {
+    // Add link shortcuts/redirects
+    ...redirects,
   },
   alias: {
     '@img': fileURLToPath(new URL('./assets/images', import.meta.url)),
     // '@icons': fileURLToPath(new URL('./assets/icons', import.meta.url)),
-    // '@data': fileURLToPath(new URL('./assets/data', import.meta.url)),
+    '@data': fileURLToPath(new URL('./assets/data', import.meta.url)),
   },
-  modules: [
-    '@vueuse/nuxt',
-    '@unocss/nuxt',
-    '@nuxtjs/color-mode',
-    'nuxt-beastcss',
-  ],
+  modules: ['@vueuse/nuxt', '@unocss/nuxt', 'nuxt-beastcss'],
   experimental: {
     // inlineSSRStyles: false,
     typedPages: true,
@@ -47,9 +53,6 @@ export default defineNuxtConfig({
     ],
   },
   css: ['@unocss/reset/tailwind.css', '@/assets/styles/root.scss'],
-  colorMode: {
-    classSuffix: '',
-  },
   typescript: {
     tsConfig: {
       compilerOptions: {
@@ -58,6 +61,6 @@ export default defineNuxtConfig({
     },
   },
   devtools: {
-    enabled: false
+    enabled: false,
   },
 });
