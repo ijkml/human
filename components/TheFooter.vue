@@ -1,0 +1,168 @@
+<script setup lang="ts">
+import { contactEmail, footerLinks } from '@data/links';
+</script>
+
+
+<template>
+  <footer class="ze-footer">
+    <div class="ze-footer-inner">
+      <div class="ze-contact">
+        <p class="ze-contact-head">
+          Let's work together,
+          <NuxtLink class="link-xi" to="/contact">get in touch &rarr;</NuxtLink>
+        </p>
+        <a :href="contactEmail.link" class="email-link link-xi">
+          <UnoIcon class="i-carbon-email" /> {{ contactEmail.title }}
+        </a>
+      </div>
+      <nav class="ze-links-outer">
+        <div v-for="(col, i) of footerLinks" :key="i" class="ze-links-inner">
+          <NuxtLink
+            v-for="ln of col"
+            :key="ln.title"
+            :to="ln.link"
+            :target="ln.external ? '_blank' : '_self'"
+            class="ze-links"
+          >
+            <div>
+              {{ ln.title }}
+              <span v-if="ln.external" aria-hidden="true" class="arrow"
+                >↗︎</span
+              >
+            </div>
+          </NuxtLink>
+        </div>
+      </nav>
+    </div>
+    <div class="ze-copyright">
+      <a
+        rel="license"
+        target="_blank"
+        class="link-xi"
+        tabindex="-1"
+        href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+        >CC BY-NC-SA 4.0</a
+      >
+      &copy;{{ new Date().getFullYear() }} ML
+    </div>
+  </footer>
+</template>
+
+
+<style lang="scss" scoped>
+.ze-footer {
+  @apply border-(b-5 ml-0/25);
+
+  @apply bg-ml-8/100 text-ml-3/100;
+}
+
+.ze-footer-inner {
+  // @apply outline outline-(1 white);
+
+  @apply max-w-screen-lg mx-auto pt-12 px-8 grid gap-8;
+}
+
+.ze-contact-head {
+  @apply text-6.6/1.35em font-light tracking-tight;
+
+  a {
+    @apply inline-block text-ml-1;
+  }
+}
+
+.email-link {
+  @apply inline-flex justify-self-start items-center
+    gap-1.5 mt-4 text-current;
+}
+
+.ze-contact {
+  @apply grid items-start max-w-380px mb-4;
+
+  a:where(:hover, :focus-visible) {
+    @apply text-ml-0;
+  }
+}
+
+.ze-links-outer {
+  // @apply outline outline-(1 yellow);
+
+  @apply inline-grid grid-cols-2 gap-8 items-start;
+}
+
+.ze-links-inner {
+  @apply grid gap-3 justify-items-start;
+}
+
+@screen sm {
+  .ze-footer-inner {
+    @apply grid-cols-2;
+  }
+  .ze-links-inner {
+    @apply justify-items-end;
+  }
+  .ze-contact {
+    @apply mb-0;
+  }
+  .ze-contact-head {
+    @apply text-7;
+  }
+}
+
+@screen md {
+  .ze-footer-inner {
+    @apply grid grid-cols-5;
+  }
+  .ze-contact {
+    @apply col-span-3;
+  }
+  .ze-contact-head {
+    @apply text-8;
+  }
+  .ze-links-outer {
+    @apply col-span-2;
+  }
+}
+
+.ze-links {
+  @apply block transition-300 relative leading-none select-none
+    outline-none whitespace-nowrap p-(1.5 r-1rem);
+
+  > div {
+    @apply block transition-inherit;
+  }
+
+  .arrow {
+    @apply text-amber-1 op-60;
+  }
+
+  &:hover,
+  &:focus-visible {
+    @apply outline-none text-ml-0/100;
+
+    div {
+      transform: translate3d(0.8em, 0, 0);
+    }
+
+    &::before {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  &::before {
+    transform: scale3d(0, 1, 1);
+    transform-origin: 0% 50%;
+    top: calc(50% - (0.1em / 2));
+
+    @apply transition-inherit absolute left-0
+      content-[''] h-0.088em w-0.88em bg-current;
+  }
+}
+
+.ze-copyright {
+  @apply text-(3.2/normal center) p-2 mt-8;
+
+  a {
+    @apply p-0 mx-2px;
+  }
+}
+</style>
