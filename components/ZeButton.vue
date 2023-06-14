@@ -55,7 +55,7 @@ const linkProps = computed(() => {
 const chunks = computed(() => {
   return text.value.split('').map((char, id) => ({
     char,
-    delay: `${(id * 45e-2).toFixed(3)}s`,
+    delay: `${(id * 45e-3).toFixed(3)}s`,
   }));
 });
 
