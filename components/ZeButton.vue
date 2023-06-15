@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import { NuxtLink } from '#components';
 import type { RouteLocationRaw } from '@/.nuxt/vue-router';
 
 const props = withDefaults(
   defineProps<{
     text: string;
     dark?: boolean;
+    small?: boolean;
     link?: RouteLocationRaw;
     external?: boolean;
     regular?: boolean;
   }>(),
   {
     dark: false,
+    small: false,
     link: undefined,
     external: false,
     regular: false,
@@ -22,19 +23,20 @@ const emit = defineEmits<{
   click: [event: any];
 }>();
 
+const [DefineTemplate, ReuseTemplate] = createReusableTemplate();
+
 function bubble(event: any) {
   emit('click', event);
 }
 
-const { text, dark, external, link, regular } = toRefs(props);
+const { text, dark, small, external, link, regular } = toRefs(props);
 
 const isLink = computed(() => {
   return !!link.value;
 });
 
-const button = computed(() => {
-  return isLink.value ? (regular.value ? 'a' : NuxtLink) : 'button';
-  // return isLink.value ? NuxtLink : 'button';
+const element = computed(() => {
+  return isLink.value ? (regular.value ? 'a' : 'nuxt') : 'button';
 });
 
 const linkProps = computed(() => {
@@ -53,9 +55,12 @@ const linkProps = computed(() => {
 });
 
 const chunks = computed(() => {
-  return text.value.split('').map((char, id) => ({
+  const textArr = text.value.split('');
+  const baseDelay = textArr.length > 11 ? 30e-3 : 45e-3;
+
+  return textArr.map((char, id) => ({
     char,
-    delay: `${(id * 45e-3).toFixed(3)}s`,
+    delay: `${(id * baseDelay).toFixed(3)}s`,
   }));
 });
 
@@ -65,22 +70,52 @@ const content = computed(() => {
 </script>
 
 <template>
-  <component
-    :is="button"
-    class="ze-button"
-    :class="{ dark }"
-    v-bind="linkProps"
-    tabindex="0"
-    :aria-label="text"
-    @click="bubble"
-  >
+  <DefineTemplate>
     <span
       v-for="c in chunks"
       :key="c.delay"
       :style="{ '--delay': c.delay }"
       v-text="c.char"
     />
-  </component>
+  </DefineTemplate>
+
+  <template v-if="element === 'nuxt'">
+    <NuxtLink
+      class="ze-button"
+      :class="{ dark, small }"
+      v-bind="linkProps"
+      tabindex="0"
+      :aria-label="text"
+      @click="bubble"
+    >
+      <ReuseTemplate />
+    </NuxtLink>
+  </template>
+
+  <template v-else-if="element === 'a'">
+    <a
+      class="ze-button"
+      :class="{ dark, small }"
+      v-bind="linkProps"
+      tabindex="0"
+      :aria-label="text"
+      @click="bubble"
+    >
+      <ReuseTemplate />
+    </a>
+  </template>
+
+  <template v-else>
+    <button
+      class="ze-button"
+      :class="{ dark, small }"
+      tabindex="0"
+      :aria-label="text"
+      @click="bubble"
+    >
+      <ReuseTemplate />
+    </button>
+  </template>
 </template>
 
 <style scoped lang="scss">
@@ -94,7 +129,7 @@ const content = computed(() => {
   > span {
     @apply align-middle transition-300 transform-gpu
       translate-y--10px inline-block whitespace-pre
-        op-0 select-none pointer-events-none mt-2px
+        op-0 select-none pointer-events-none mt-1px
           text-size-inherit leading-0;
   }
 
@@ -104,11 +139,15 @@ const content = computed(() => {
     @apply absolute inset-0 w-full h-full inline-flex
       items-center justify-center rd-inherit p-inherit
         transition-inherit transform-gpu
-          text-size-inherit leading-0 mt-2px;
+          text-size-inherit leading-0 mt-1px;
   }
 
   &:where(.dark) {
     @apply border-ml-5/100 text-ml-3/100;
+  }
+
+  &:is(.small) {
+    @apply min-w-auto max-w-full text-3.1 h-8.5;
   }
 
   &:where(:hover, :focus-visible) {
