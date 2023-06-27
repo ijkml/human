@@ -4,15 +4,20 @@ import type { RouteLocationRaw } from '@/.nuxt/vue-router';
 const props = withDefaults(
   defineProps<{
     text: string;
-    dark?: boolean;
+    light?: boolean;
     small?: boolean;
+    /**
+     * base animation delay (keep between 1 and 100)
+     */
+    delay?: number;
     link?: RouteLocationRaw;
     external?: boolean;
     regular?: boolean;
   }>(),
   {
-    dark: false,
+    light: false,
     small: false,
+    delay: 45,
     link: undefined,
     external: false,
     regular: false,
@@ -29,43 +34,42 @@ function bubble(event: any) {
   emit('click', event);
 }
 
-const { text, dark, small, external, link, regular } = toRefs(props);
+const { text, light, small, delay, external, link, regular } = toRefs(props);
 
-const isLink = computed(() => {
-  return !!link.value;
+const content = computed(() => {
+  return `'${text.value}'`;
 });
 
 const element = computed(() => {
-  return isLink.value ? (regular.value ? 'a' : 'nuxt') : 'button';
+  return link.value ? (regular.value ? 'a' : 'nuxt') : 'button';
 });
 
-const linkProps = computed(() => {
-  if (!isLink.value) {
-    return {};
-  }
+const chunks = computed(() => {
+  return text.value.split('').map((char, pos) => ({
+    char,
+    delay: `${(pos * delay.value * 1e-3).toFixed(3)}s`,
+  }));
+});
 
-  return {
+const bindProps = computed<{}>(() => {
+  const linkProps = {
     ...(regular.value ? { href: link.value } : { to: link.value }),
     ...(external.value && {
-      external: true,
+      ...(!regular.value && { external: true }),
       target: '_blank',
       rel: 'noopener',
     }),
   };
-});
 
-const chunks = computed(() => {
-  const textArr = text.value.split('');
-  const baseDelay = textArr.length > 11 ? 30e-3 : 45e-3;
-
-  return textArr.map((char, id) => ({
-    char,
-    delay: `${(id * baseDelay).toFixed(3)}s`,
-  }));
-});
-
-const content = computed(() => {
-  return `'${text.value}'`;
+  return {
+    class: {
+      'ze-button': true,
+      light: light.value,
+      small: small.value,
+    },
+    tabindex: 0,
+    ...(element.value !== 'button' && linkProps),
+  };
 });
 </script>
 
@@ -74,59 +78,35 @@ const content = computed(() => {
     <span
       v-for="c in chunks"
       :key="c.delay"
+      class="char"
       :style="{ '--delay': c.delay }"
       v-text="c.char"
     />
+    <span class="sr-only" v-text="text" />
   </DefineTemplate>
 
-  <template v-if="element === 'nuxt'">
-    <NuxtLink
-      class="ze-button"
-      :class="{ dark, small }"
-      v-bind="linkProps"
-      tabindex="0"
-      :aria-label="text"
-      @click="bubble"
-    >
-      <ReuseTemplate />
-    </NuxtLink>
-  </template>
+  <NuxtLink v-if="element === 'nuxt'" v-bind="bindProps" @click="bubble">
+    <ReuseTemplate />
+  </NuxtLink>
 
-  <template v-else-if="element === 'a'">
-    <a
-      class="ze-button"
-      :class="{ dark, small }"
-      v-bind="linkProps"
-      tabindex="0"
-      :aria-label="text"
-      @click="bubble"
-    >
-      <ReuseTemplate />
-    </a>
-  </template>
+  <a v-else-if="element === 'a'" v-bind="bindProps" @click="bubble">
+    <ReuseTemplate />
+  </a>
 
-  <template v-else>
-    <button
-      class="ze-button"
-      :class="{ dark, small }"
-      tabindex="0"
-      :aria-label="text"
-      @click="bubble"
-    >
-      <ReuseTemplate />
-    </button>
-  </template>
+  <button v-else v-bind="bindProps" @click="bubble">
+    <ReuseTemplate />
+  </button>
 </template>
 
 <style scoped lang="scss">
 .ze-button {
   @apply inline-flex font-(normal mono) px-4 tracking-wider
-    relative uppercase text-(3.5 ml-5/100 center) min-w-30
+    relative uppercase text-(3.5 ml-3/100 center) min-w-30
       transition-300 bg-none select-none cursor-pointer z-1
         outline-none h-9.5 items-center justify-center rd
-          of-hidden border-(1 solid ml-3/100);
+          of-hidden border-(1 solid ml-5/100);
 
-  > span {
+  .char {
     @apply align-middle transition-300 transform-gpu
       translate-y--10px inline-block whitespace-pre
         op-0 select-none pointer-events-none mt-1px
@@ -142,8 +122,8 @@ const content = computed(() => {
           text-size-inherit leading-0 mt-1px;
   }
 
-  &:where(.dark) {
-    @apply border-ml-5/100 text-ml-3/100;
+  &:where(.light) {
+    @apply border-ml-3/100 text-ml-5/100;
   }
 
   &:is(.small) {
@@ -157,7 +137,7 @@ const content = computed(() => {
       @apply translate-y-100% op-0;
     }
 
-    > span {
+    .char {
       @apply op-100 translate-y--0 delay-[var(--delay)];
     }
   }
