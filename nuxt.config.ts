@@ -10,8 +10,8 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      // link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
-      link: [{ rel: 'icon', type: 'image/png', href: '/nuxt.png' }],
+      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
+      // link: [{ rel: 'icon', type: 'image/png', href: '/nuxt.png' }],
       htmlAttrs: {
         lang: 'en-US',
       },
@@ -22,6 +22,11 @@ export default defineNuxtConfig({
       //       'html{color:hsl(240, 1%, 43%);background-color:hsl(240, 4%, 11%)}',
       //   },
       // ],
+      noscript: [
+        {
+          innerHTML: `<link rel='stylesheet' type='text/css' href='/no-script.css'>`,
+        },
+      ],
     },
   },
   routeRules: {
