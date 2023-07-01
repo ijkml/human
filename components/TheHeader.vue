@@ -1,21 +1,43 @@
 <script setup lang="ts">
-import { headerLinks } from '@data/links';
+import { headerLinks, linkIcons } from '@data/links';
+
+const { y: scrolledHeight } = useWindowScroll();
+const { height: screenHeight } = useWindowSize();
+
+const classe = reactive({
+  scrolled: false,
+  contrast: false,
+});
+
+watchThrottled(
+  scrolledHeight,
+  (nv, ov) => {
+    classe.contrast = nv > 300;
+    classe.scrolled = nv > ov && nv > screenHeight.value;
+  },
+  { throttle: 150 }
+);
 </script>
 
 <template>
-  <header class="ze-header">
+  <header class="ze-header" :class="classe">
     <div class="ze-inner-header">
-      <div class="ze-name">ML</div>
+      <NuxtLink to="/" class="ze-logo">
+        <TheLogo height="32" />
+      </NuxtLink>
       <nav class="ze-nav">
         <NuxtLink
           v-for="ln in headerLinks"
           :key="ln.title"
-          class="link-xi"
+          class="link-wrap link-xi"
           tabindex="0"
           exact-active-class="link-active"
           :to="ln.link"
         >
-          {{ ln.title }}
+          <div class="link-icon" aria-hidden="true">
+            <component :is="linkIcons[ln.icon]" />
+          </div>
+          <span class="link-text" v-text="ln.title" />
         </NuxtLink>
       </nav>
     </div>
@@ -24,27 +46,80 @@ import { headerLinks } from '@data/links';
 
 <style scoped lang="scss">
 .ze-header {
-  @apply bg-ml-1 px-4 sticky top-0;
+  @apply sticky top-0 z-16 transform-gpu w-full
+    will-change-transform transition-all-350;
+
+  &.scrolled {
+    @apply translate-y--101%;
+  }
 }
 
 .ze-inner-header {
-  @apply max-w-screen-xl mx-auto flex items-center
-    justify-between select-none;
+  @apply max-w-screen-xl flex items-center select-none
+    justify-between mx-auto px-4 transition-inherit;
 
   height: $nav-height;
   max-height: $nav-height;
+
+  @apply backdrop-blur-4 w-92% rd-md mt-1
+    bg-(ml-8 op-0) sm:(mt-2 w-90%);
+
+  .contrast & {
+    @apply bg-op-80;
+  }
 }
 
-.ze-name {
-  @apply text-2xl;
+.ze-logo {
+  @apply transition-all-250 outline-none
+    decoration-none text-ml-3/100;
+
+  > svg {
+    // alt logo color: #6f1f27
+    @apply h-8 transition-inherit pointer-events-none;
+  }
+
+  &:where(:hover, :focus-visible) {
+    @apply text-ml-0;
+  }
 }
 
 .ze-nav {
-  @apply text-(3.35/normal ml-4/100) mb--1 uppercase
-    flex items-center gap-2 tracking-wide ss:gap-4;
+  @apply text-3.5/normal mb--1 flex
+    items-center gap-4 tracking-wide sm:gap-6;
 }
 
 .link-active {
   @apply text-ml-0;
+}
+
+.link-wrap {
+  @apply text-ml-2/100 lt-sm:bg-none;
+
+  &:where(:hover, :focus-visible) {
+    @apply text-ml-0/100;
+  }
+
+  .link-icon {
+    @apply mx-1;
+
+    &,
+    & > svg {
+      @apply h-auto w-5.5;
+    }
+  }
+
+  .link-text {
+    @apply sr-only;
+  }
+
+  @screen sm {
+    .link-icon {
+      @apply hidden;
+    }
+
+    .link-text {
+      @apply not-sr-only;
+    }
+  }
 }
 </style>
