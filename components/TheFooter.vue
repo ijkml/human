@@ -4,11 +4,13 @@ import { contactEmail, footerLinks } from '@data/links';
 
 
 <template>
+  <BottomAction />
+
   <footer class="ze-footer">
     <div class="ze-footer-inner">
       <div class="ze-contact">
         <p class="ze-contact-head">
-          Let's work together,
+          I'm always up for a chat,
           <NuxtLink class="link-xi" to="/contact">get in touch &rarr;</NuxtLink>
         </p>
         <a :href="contactEmail.link" class="email-link link-xi">
@@ -63,7 +65,7 @@ import { contactEmail, footerLinks } from '@data/links';
 }
 
 .ze-contact-head {
-  @apply text-6.6/1.35em font-light tracking-tight;
+  @apply text-6.6/1.35em tracking--0.01em font-light;
 
   a {
     @apply inline-block text-ml-1;
@@ -140,7 +142,7 @@ import { contactEmail, footerLinks } from '@data/links';
     @apply outline-none text-ml-0/100;
 
     div {
-      transform: translate3d(0.8em, 0, 0);
+      transform: translate3d(1em, 0, 0);
     }
 
     &::before {
@@ -154,7 +156,7 @@ import { contactEmail, footerLinks } from '@data/links';
     top: calc(50% - (0.1em / 2));
 
     @apply transition-inherit absolute left-0
-      content-[''] h-0.088em w-0.88em bg-current;
+      content-[''] h-0.088em w-1em bg-current;
   }
 }
 
@@ -162,7 +164,7 @@ import { contactEmail, footerLinks } from '@data/links';
   @apply text-(3.2/normal center) p-2 mt-8;
 
   a {
-    @apply p-0 mx-2px;
+    @apply p-2px mx-2px text-ml-4/100;
   }
 }
 </style>
