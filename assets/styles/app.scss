@@ -12,3 +12,23 @@
     color: $theme-0;
   }
 }
+
+[contenteditable] {
+  @apply outline-none break-words;
+
+  * {
+    @apply inline;
+  }
+
+  br {
+    @apply hidden;
+  }
+}
+
+[data-fallback] {
+  @apply invisible;
+}
+
+s {
+  @apply op-70 select-none;
+}

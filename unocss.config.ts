@@ -26,6 +26,7 @@ export default defineConfig({
       sans: [
         'Alliance',
         'Source Sans Pro',
+        'DejaVu Sans',
         'Helvetica Neue',
         'Helvetica',
         'ui-sans-serif',
