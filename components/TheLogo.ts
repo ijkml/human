@@ -1,1 +1,1 @@
-export { default } from '@/assets/logo.svg?component';
+export { default } from '@/assets/svg/logo.svg?component';
