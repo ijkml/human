@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Avatar from '@/assets/svg/avatar.svg?component';
+import Avatar from '@img/svg/avatar.svg?component';
 </script>
 
 <template>
