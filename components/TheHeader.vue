@@ -22,7 +22,7 @@ watchThrottled(
 <template>
   <header class="ze-header" :class="classe">
     <div class="ze-inner-header">
-      <NuxtLink to="/" class="ze-logo">
+      <NuxtLink to="/" class="ze-logo" aria-label="ML">
         <TheLogo height="32" />
       </NuxtLink>
       <nav class="ze-nav">

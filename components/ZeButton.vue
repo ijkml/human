@@ -106,11 +106,16 @@ const bindProps = computed<{}>(() => {
         outline-none h-9.5 items-center justify-center rd
           of-hidden border-(1 solid ml-5/100);
 
+  .char,
+  &::before {
+    @apply will-change-transform transform-gpu
+      leading-0 text-size-inherit;
+  }
+
   .char {
-    @apply align-middle transition-300 transform-gpu
-      translate-y--10px inline-block whitespace-pre
-        op-0 select-none pointer-events-none mt-1px
-          text-size-inherit leading-0;
+    @apply align-middle inline-block transition-300
+      translate-y--10px whitespace-pre mt-1px
+        pointer-events-none op-0 select-none;
   }
 
   &::before {
@@ -118,8 +123,7 @@ const bindProps = computed<{}>(() => {
 
     @apply absolute inset-0 w-full h-full inline-flex
       items-center justify-center rd-inherit p-inherit
-        transition-inherit transform-gpu
-          text-size-inherit leading-0 mt-1px;
+        transition-inherit mt-1px;
   }
 
   &:where(.light) {

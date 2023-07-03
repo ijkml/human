@@ -31,7 +31,14 @@
       </div>
 
       <div class="pc-img">
-        <img src="@img/og2.png" alt="ALT" />
+        <img
+          src="@img/og2.webp"
+          width="600"
+          height="375"
+          loading="lazy"
+          decoding="async"
+          alt="ALT"
+        />
       </div>
     </div>
   </div>
