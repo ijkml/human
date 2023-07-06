@@ -15,7 +15,7 @@ $scrollbar-track: $theme-7;
 
 html {
   // also set inline in nuxt.config
-  @apply of-y-scroll text-ml-4/100 bg-ml-7/100 scroll-py-16;
+  @apply text-ml-3/100 bg-ml-7/100 scroll-py-16 of-y-scroll;
 }
 
 * {
