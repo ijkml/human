@@ -1,6 +1,7 @@
 {
   "private": true,
   "packageManager": "pnpm@8.6.0",
+  "license": "CC-BY-NC-SA-4.0",
   "scripts": {
     "build": "nuxi build",
     "dev": "nuxi dev",

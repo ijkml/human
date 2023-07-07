@@ -42,10 +42,9 @@ import { contactEmail, footerLinks } from '@data/links';
         target="_blank"
         class="link-xi"
         tabindex="-1"
-        href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-        >CC BY-NC-SA 4.0</a
+        href="https://github.com/ijkml/human/blob/main/LICENSE"
+        >&copy;{{ new Date().getFullYear() }} ML</a
       >
-      &copy;{{ new Date().getFullYear() }} ML
     </div>
   </footer>
 </template>
