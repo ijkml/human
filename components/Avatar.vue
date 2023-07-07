@@ -8,18 +8,28 @@ import Avatar from '@img/svg/avatar.svg?component';
 
 <style scoped lang="scss">
 :where(.avatar) {
-  @apply fill-ml-6/100 transition-all-350;
+  @apply transition-all-350;
+
+  --eyes: #ff0;
+  --stare: theme('colors.ml.0');
+  --body: theme('colors.ml.6');
+
+  fill: var(--body);
 
   :deep() {
     path {
       @apply transition-inherit;
+    }
+
+    .eyes {
+      fill: var(--eyes);
     }
   }
 
   :deep() {
     path:hover + .eyes,
     .eyes:hover {
-      @apply fill-ml-0/100;
+      fill: var(--stare);
     }
   }
 }
