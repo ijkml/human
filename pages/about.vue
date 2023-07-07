@@ -4,7 +4,7 @@
 <template>
   <section class="section-about">
     <div class="heading-wrap">
-      <h1 class="tl-screamer">About Me</h1>
+      <h1 class="tl-screamer">About</h1>
       <p class="echo" aria-hidden="true">
         The man, the myth, the clumsy calamity...
       </p>
