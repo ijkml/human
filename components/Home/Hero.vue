@@ -16,7 +16,7 @@ function showNext() {
   <section class="home-hero">
     <div>
       <div v-auto-animate="{ duration: 500 }" class="text-cont">
-        <h1 class="screamer">
+        <h1 class="tl-screamer">
           <ClientOnly>
             <TypeWriter
               :loop="1"
@@ -57,7 +57,7 @@ function showNext() {
 
 <style scoped lang="scss">
 .home-hero {
-  @apply flex py-30 px-4;
+  @apply flex py-30 px-4 ss:(px-6) sm:(px-12) md:(px-16);
 
   min-height: calc(100vh - ($nav-height * 1.2));
 
@@ -81,64 +81,13 @@ function showNext() {
   @apply w-full max-w-184 mx-auto md:(mx-0);
 }
 
-.screamer {
-  // Manual max-widths because Balancer makes the animation janky
-
-  @apply tracking-tighter font-light
-    text-(9/1.1em ml-1/100) max-w-72;
-}
-
 .reverb {
-  @apply my-6 text-(lg ml-2/80) max-w-50ch;
+  @apply my-6 text-(lg ml-2/80) max-w-50ch lg:(max-w-120);
 
   :deep() {
     b {
       @apply font-normal text-ml-0/100;
     }
-  }
-}
-
-@screen ss {
-  .home-hero {
-    @apply px-6;
-  }
-
-  .screamer {
-    @apply text-10 max-w-80;
-  }
-}
-
-@screen sm {
-  .home-hero {
-    @apply px-12;
-  }
-
-  .screamer {
-    @apply text-12 max-w-95;
-  }
-}
-
-@screen md {
-  .home-hero {
-    @apply px-16;
-  }
-
-  .screamer {
-    @apply text-15 max-w-120;
-  }
-}
-
-@screen lg {
-  .home-hero {
-    // @apply text-center;
-  }
-
-  .screamer {
-    @apply text-16 max-w-125;
-  }
-
-  .reverb {
-    @apply max-w-120;
   }
 }
 </style>

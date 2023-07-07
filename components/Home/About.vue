@@ -61,5 +61,9 @@
 .avatar {
   @apply ml-auto w-auto h-full transition-all-350 max-h-30
     sm:(mx-auto max-h-40) md:(max-h-50) lg:(max-h-250px);
+
+  --eyes: theme('colors.ml.4');
+  --stare: #fff;
+  --body: theme('colors.ml.8');
 }
 </style>
