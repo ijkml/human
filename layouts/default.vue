@@ -1,5 +1,5 @@
 <template>
-  <div data-default-layout>
+  <div data-default-layout data-scroll>
     <TheHeader />
 
     <main>
