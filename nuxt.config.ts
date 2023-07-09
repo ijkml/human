@@ -15,7 +15,10 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en-US',
       },
-      meta: [{ name: 'description', content: 'Vitesse Nuxt Starter (mod)' }],
+      meta: [
+        { name: 'description', content: 'Moses Laurence' },
+        { name: 'referrer', content: 'strict-origin-when-cross-origin' },
+      ],
       // style: [
       //   {
       //     textContent:
