@@ -42,7 +42,7 @@ import { contactEmail, footerLinks } from '@data/links';
         target="_blank"
         class="link-xi"
         tabindex="-1"
-        href="https://github.com/ijkml/human/blob/main/LICENSE"
+        href="https://github.com/ijkml/human/"
         >&copy;{{ new Date().getFullYear() }} ML</a
       >
     </div>
