@@ -38,3 +38,72 @@ s {
     max-w-72 ss:(text-10 max-w-80) sm:(text-12 max-w-95)
       md:(text-15 max-w-120) lg:(text-16 max-w-125);
 }
+
+.sect-space-top {
+  @apply max-w-screen-xl mx-auto pb-4;
+
+  padding-top: clamp(150px, 300px, 45vh);
+
+  .heading-wrap {
+    @apply text-center max-w-130 mx-auto;
+  }
+
+  .tl-screamer {
+    @apply mx-auto mb-8;
+  }
+}
+
+.block-code {
+  @apply text-85% block op-80;
+}
+
+.black-red {
+  @apply bg-(ml-8/100 gradient-to-br no-repeat)
+    from-(ml-0/0 25%) to-(ml-0/15 200%);
+}
+
+.link-xiii {
+  @apply block transition-300 relative leading-none select-none
+    outline-none align-mid whitespace-nowrap p-(1.5 r-1rem);
+
+  --len: 1em;
+
+  > div {
+    @apply block transition-inherit;
+  }
+
+  &::before {
+    transform: scale3d(0, 1, 1);
+    transform-origin: left center;
+    top: calc(50% - (0.1em / 2));
+    width: var(--len);
+
+    @apply transition-inherit absolute left-0
+      content-[''] h-0.3 bg-current;
+  }
+
+  .arrow {
+    @apply op-60 text-yellow-1/100;
+  }
+
+  &:is(:hover, :focus-visible) {
+    @apply outline-none text-ml-0/100;
+
+    div {
+      transform: translate3d(var(--len), 0, 0);
+    }
+
+    &::before {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}
+
+.heading-lv-3 {
+  @apply text-(5.5/[1.1] ml-2/90) ss:(text-6) sm:(text-6.25)
+      md:(text-6.75) lg:(text-7.25);
+
+  + p {
+    @apply max-w-110;
+  }
+}
