@@ -1,9 +1,17 @@
 <script setup lang="ts">
+import { contactEmail } from '@data/links';
+
+const contact = '/contact';
+const email = contactEmail.link;
 </script>
 
 <template>
   <section class="bottom-action">
-    <NuxtLink to="/contact" class="cta-head" tabindex="0">
+    <NuxtLink
+      :to="$route.path === '/contact' ? email : contact"
+      class="cta-head"
+      tabindex="0"
+    >
       <h2>Let's work together</h2>
     </NuxtLink>
   </section>

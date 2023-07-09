@@ -24,7 +24,7 @@ import { contactEmail, footerLinks } from '@data/links';
             :key="ln.title"
             :to="ln.link"
             :target="ln.external ? '_blank' : '_self'"
-            class="ze-links"
+            class="link-xiii"
           >
             <div>
               {{ ln.title }}
@@ -121,41 +121,6 @@ import { contactEmail, footerLinks } from '@data/links';
   }
   .ze-links-outer {
     @apply col-span-2;
-  }
-}
-
-.ze-links {
-  @apply block transition-300 relative leading-none select-none
-    outline-none whitespace-nowrap p-(1.5 r-1rem);
-
-  > div {
-    @apply block transition-inherit;
-  }
-
-  .arrow {
-    @apply text-amber-1 op-60;
-  }
-
-  &:hover,
-  &:focus-visible {
-    @apply outline-none text-ml-0/100;
-
-    div {
-      transform: translate3d(1em, 0, 0);
-    }
-
-    &::before {
-      transform: scale3d(1, 1, 1);
-    }
-  }
-
-  &::before {
-    transform: scale3d(0, 1, 1);
-    transform-origin: 0% 50%;
-    top: calc(50% - (0.1em / 2));
-
-    @apply transition-inherit absolute left-0
-      content-[''] h-0.088em w-1em bg-current;
   }
 }
 
