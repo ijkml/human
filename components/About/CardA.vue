@@ -23,7 +23,9 @@
     <SubSect title="Age">
       <p>
         65.<br />
-        <small>(Technically, 20, but age is just a social construct)</small>
+        <small class="block-code">
+          (Technically, 20, but age is just a social construct)
+        </small>
       </p>
     </SubSect>
 

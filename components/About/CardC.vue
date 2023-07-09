@@ -1,6 +1,6 @@
 <template>
   <div class="black-red bc-card services-card">
-    <h3 class="heading-h3">My Services</h3>
+    <h3 class="heading-lv-3">My Services</h3>
 
     <SubSect title="Hireable">
       <ul>
@@ -14,7 +14,7 @@
         <dd>
           My 'computer journey' started in 2012 with Corel Draw. That's more
           than a decade of experience!
-          <small class="block">
+          <small class="block-code">
             (This website does not represent my design skills)
           </small>
         </dd>

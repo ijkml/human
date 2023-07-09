@@ -1,6 +1,6 @@
 <template>
   <div class="black-red bc-card skills-card">
-    <h3 class="heading-h3">Skills & Tools</h3>
+    <h3 class="heading-lv-3">Skills & Tools</h3>
     <p>
       I am dedicated to expanding my skill set and adopting new technologies to
       effectively tackle any task. Here are some of my skills and fav tools:

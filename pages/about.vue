@@ -2,12 +2,10 @@
 </script>
 
 <template>
-  <section class="section-about">
+  <section class="sect-space-top section-about">
     <div class="heading-wrap">
       <h1 class="tl-screamer">About</h1>
-      <p class="echo" aria-hidden="true">
-        The man, the myth, the clumsy calamity...
-      </p>
+      <p class="echo">The man, the myth, the clumsy calamity...</p>
     </div>
 
     <div class="details-deck">
@@ -28,22 +26,8 @@
 
 <style scoped lang="scss">
 .section-about {
-  @apply max-w-screen-xl mx-auto py-4 px-2 ss:(px-3)
-    ss500:(px-4) sm:(px-6) md:(px-10) xl:(px-13);
-
-  padding-top: clamp(100px, 30vh, 200px);
-}
-
-.heading-wrap {
-  @apply text-center;
-}
-
-.tl-screamer {
-  @apply mx-auto mb-8;
-}
-
-.echo {
-  @apply text-ml-4/100;
+  @apply px-2 ss:(px-3) ss500:(px-4) sm:(px-6)
+    md:(px-10) xl:(px-13);
 }
 
 .details-deck {
@@ -81,6 +65,10 @@
       sm:(text-8) md:(text-9) lg:(text-10);
   }
 
+  .heading-lv-3 {
+    @apply mb-2;
+  }
+
   ul > li:not(:only-child)::before {
     @apply content-['▹'] text-(size-inherit ml-0/100) mr-2;
   }
@@ -106,24 +94,6 @@
       border-(b-1 ml-3/35) inline-block w-30 tracking-wider;
   }
 
-  :where(small, .block-code) {
-    @apply text-85% block op-80;
-  }
-
-  .black-red {
-    @apply bg-(ml-8/100 gradient-to-br no-repeat)
-      from-(ml-0/0 25%) to-(ml-0/10 200%);
-  }
-
-  .heading-h3 {
-    @apply mb-2 text-(5/[1.1] ml-2/90) sm:(text-6)
-      md:(text-7) lg:(text-8);
-
-    + p {
-      @apply max-w-110;
-    }
-  }
-
   .bc-card {
     @apply rd-2 p-(x-4 b-8 t-20) ss:(px-6) grid gap-4 content-end
       md:(px-8 min-h-100) lg:(col-span-4) at-lg:(px-6);
@@ -142,7 +112,7 @@
   }
 
   .skills-card {
-    @apply gap-0 text-3.8/[1.5] bg-gradient-to-tl;
+    @apply gap-0 text-3.8/[1.5] bg-gradient-shape-tl;
 
     ul {
       @apply mt-4 px-1 grid grid-cols-2 space-y-0 gap-2;
