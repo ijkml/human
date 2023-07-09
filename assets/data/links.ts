@@ -51,11 +51,22 @@ const socials: SocialLinkFormat[] = [
   },
 ];
 
+const bmcLink = 'https://bmc.link/ijkml';
+const bioLink = 'https://bio.link/ijkml';
+
 const contactEmail = {
   title: 'me.mlaure@gmail.com',
   link: 'mailto:me.mlaure@gmail.com',
-};
+} as const;
 
 const footerLinks: LinkFormat[][] = [headerLinks, socials];
 
-export { headerLinks, footerLinks, contactEmail, linkIcons };
+export {
+  headerLinks,
+  footerLinks,
+  contactEmail,
+  linkIcons,
+  socials,
+  bmcLink,
+  bioLink,
+};
