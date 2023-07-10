@@ -3,7 +3,9 @@ import { VTypical as TypeWriter } from 'vue-typical';
 import HeroVector from '@img/svg/08.svg?component';
 
 const screamer = 'Crafting engaging and accessible web experiences.';
-const reverb = `Hey, I'm <b>ML</b>, a web developer with a strong commitment to delivering web experiences that not only captivate audiences but also perform seamlessly across devices.`;
+const reverb = `Hey, I'm <b>ML</b>, a web developer with a strong
+  commitment to delivering web experiences that not only captivate
+  audiences but also perform seamlessly across devices.`;
 
 const showSub = ref(false);
 
@@ -62,8 +64,6 @@ function showNext() {
   min-height: calc(100vh - ($nav-height * 1.2));
 
   > div {
-    // @apply outline-(1 dashed yellow-3);
-
     @apply m-auto w-full max-w-screen-xl
       lg:(flex justify-around items-center);
   }
