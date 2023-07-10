@@ -49,23 +49,27 @@ watchThrottled(
   @apply sticky top-0 z-16 transform-gpu w-full
     will-change-transform transition-all-350;
 
-  &.scrolled {
+  &.scrolledx {
     @apply translate-y--101%;
   }
 }
 
 .ze-inner-header {
   @apply max-w-screen-xl flex items-center select-none
-    justify-between mx-auto px-4 transition-inherit;
+    justify-between transition-inherit mx-auto mt-1 px-4
+      w-92% rd-md relative backdrop-blur-4 sm:(mt-2 w-90%);
 
   height: $nav-height;
   max-height: $nav-height;
 
-  @apply backdrop-blur-4 w-92% rd-md mt-1
-    bg-(ml-8 op-0) sm:(mt-2 w-90%);
+  &::before {
+    @apply content-[''] inset-0 w-full h-full rd-inherit op-0
+      z--2 bg-(gradient-to-r ml-8/100) from-(ml-8/100 75%)
+        to-(ml-0/25 150%) transition-inherit absolute;
+  }
 
-  .contrast & {
-    @apply bg-op-80;
+  .contrast &::before {
+    @apply op-100;
   }
 }
 
