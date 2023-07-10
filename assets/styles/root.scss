@@ -1,7 +1,7 @@
 @use "./fonts";
 
 $scrollbar-thumb: #888;
-$scrollbar-track: $theme-7;
+$scrollbar-track: theme('colors.ml.7');
 
 :root {
   -ms-text-size-adjust: 100%;
