@@ -28,6 +28,7 @@ export default defineNuxtConfig({
       noscript: [
         {
           innerHTML: `<link rel='stylesheet' type='text/css' href='/no-script.css'>`,
+          tagPosition: 'bodyOpen',
         },
       ],
     },
