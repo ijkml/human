@@ -6,11 +6,13 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
+  <div class="home-container">
     <HomeHero />
+
+    <HomeLinks />
   </div>
 </template>
 
 <style lang="scss" scoped>
-// linksx
+// ...
 </style>
