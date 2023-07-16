@@ -49,7 +49,7 @@ watchThrottled(
   @apply sticky top-0 z-16 transform-gpu w-full
     will-change-transform transition-all-350;
 
-  &.scrolledx {
+  &.scrolled {
     @apply translate-y--101%;
   }
 }
