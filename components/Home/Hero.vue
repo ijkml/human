@@ -1,24 +1,31 @@
 <script setup lang="ts">
 import { VTypical as TypeWriter } from 'vue-typical';
 import HeroVector from '@img/svg/08.svg?component';
+import { hasPlayedHeroAnim, splashLock } from '@/helpers/splash';
 
-const screamer = 'Crafting engaging and accessible web experiences.';
-const reverb = `Hey, I'm <b>ML</b>, a web developer with a strong
-  commitment to delivering web experiences that not only captivate
-  audiences but also perform seamlessly across devices.`;
+splashLock(true);
+
+const screamer = 'I craft accessible and performant web experiences.';
+const reverb = `Hey, I'm <b>ML</b>, a dedicated web developer and
+  open-source enthusiast. I love building performant websites, and solving
+  problems.`;
 
 const showSub = ref(false);
 
 function showNext() {
   showSub.value = true;
+  splashLock(false);
 }
 </script>
 
 <template>
-  <section class="home-hero">
+  <section
+    class="home-hero"
+    :class="{ 'hero-splash': !showSub && !hasPlayedHeroAnim }"
+  >
     <div>
       <div v-auto-animate="{ duration: 500 }" class="text-cont">
-        <h1 class="tl-screamer">
+        <p class="tl-screamer">
           <ClientOnly>
             <TypeWriter
               :loop="1"
@@ -29,7 +36,7 @@ function showNext() {
               <span data-fallback v-text="screamer" />
             </template>
           </ClientOnly>
-        </h1>
+        </p>
 
         <ClientOnly>
           <div v-if="showSub">
@@ -51,7 +58,13 @@ function showNext() {
         class="vector-cont"
         aria-hidden="true"
       >
-        <HeroVector v-if="showSub" class="vector-img" />
+        <ClientOnly>
+          <HeroVector v-if="showSub" class="vector-img" />
+
+          <template #fallback>
+            <HeroVector class="vector-img data-fallback" />
+          </template>
+        </ClientOnly>
       </div>
     </div>
   </section>
@@ -59,18 +72,19 @@ function showNext() {
 
 <style scoped lang="scss">
 .home-hero {
-  @apply flex py-30 px-4 ss:(px-6) sm:(px-12) md:(px-16);
+  @apply flex py-30 px-4 transition-colors-250
+    ss:(px-6) sm:(px-12) md:(px-16);
 
   min-height: calc(100vh - ($nav-height * 1.2));
 
   > div {
-    @apply m-auto w-full max-w-screen-xl
+    @apply m-auto w-full max-w-screen-lg
       lg:(flex justify-around items-center);
   }
 }
 
 .vector-cont {
-  @apply hidden lg:(block shrink-0 w-230px) xl:(w-300px);
+  @apply hidden lg:(block shrink-0 w-230px);
 }
 
 .vector-img {
@@ -82,7 +96,8 @@ function showNext() {
 }
 
 .reverb {
-  @apply my-6 text-(lg ml-2/80) max-w-50ch lg:(max-w-120);
+  @apply my-6 text-(4/[1.6] ml-2/80) max-w-50ch
+    lg:(text-4.5 max-w-120);
 
   :deep() {
     b {
