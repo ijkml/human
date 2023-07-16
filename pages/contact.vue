@@ -148,9 +148,9 @@ function sayThanks() {
 }
 
 .bc-card {
-  @apply rd-2 p-(x-4 b-8 t-20) ss:(px-6) grid gap-4
+  @apply rd-2 p-(x-4 b-8 t-20) grid gap-4
     justify-items-start content-end text-3.8/[1.5]
-      sm:(min-h-80) md:(px-8) at-lg:(px-6);
+      ss:(px-6) sm:(min-h-80) md:(px-8) at-lg:(px-6);
 }
 
 .socials-list {
