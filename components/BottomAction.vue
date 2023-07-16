@@ -6,7 +6,7 @@ const email = contactEmail.link;
 </script>
 
 <template>
-  <section class="bottom-action">
+  <section v-if="$route.path !== '/'" class="bottom-action">
     <NuxtLink
       :to="$route.path === '/contact' ? email : contact"
       class="cta-head"
