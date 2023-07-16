@@ -41,7 +41,7 @@
     --body: #000;
 
     @apply h-auto w-full mx-auto mt-40 max-h-50
-      sm:(max-h-60) md:(max-h-100);
+      sm:(max-h-60) md:(max-h-80);
   }
 }
 
