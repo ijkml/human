@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // import { contactEmail, footerLinks } from '@data/links';
-import { bmcLink, socials } from '@data/links';
+import { bmcLink, contactEmail, socials } from '@data/links';
 
 const coaxTexts = [
   'Thank you!',
@@ -62,17 +62,37 @@ function sayThanks() {
         <h3 class="heading-lv-3">Let's chat</h3>
 
         <p>
-          Discover my featured projects, work experiences, OSS contributions,
-          and side projects.
+          <NuxtLink
+            href="/telegram"
+            class="link-xi"
+            external
+            no-rel
+            target="_blank"
+            >Telegram</NuxtLink
+          >
+          is the fastest way to reach me. If it's official
+          <small>(or you might want to sue me about it later)</small>,
+          <a class="link-xi" :href="contactEmail.link">here's my email</a>. I
+          also do
+          <NuxtLink
+            href="/twitter"
+            class="link-xi"
+            external
+            no-rel
+            target="_blank"
+            >Twitter</NuxtLink
+          >
+          but almost never check, so please tweet @me if I don't reply within 6
+          months.
         </p>
 
         <div>
           <ZeButton
             text="Send me an email"
-            link="/work"
+            :link="contactEmail.link"
+            external
             suffix
             :delay="30"
-            icon="i-carbon-send-alt-filled ml-1"
           />
         </div>
       </div>
@@ -101,8 +121,8 @@ function sayThanks() {
         <h3 class="heading-lv-3">Coffee?</h3>
 
         <p>
-          If you find value in my work and want to support me, please consider
-          buying me a coffee.
+          If you find value in my work and/or want to support me, please
+          consider buying me a coffee.
         </p>
 
         <div class="coffee-action">
@@ -148,13 +168,13 @@ function sayThanks() {
 }
 
 .bc-card {
-  @apply rd-2 p-(x-4 b-8 t-20) grid gap-4
-    justify-items-start content-end text-3.8/[1.5]
-      ss:(px-6) sm:(min-h-80) md:(px-8) at-lg:(px-6);
+  @apply rd-2 p-(x-4 b-8 t-24) text-(3.8/[1.5] ml-2/75)
+    justify-items-start content-end grid gap-4 ss:(px-6)
+      sm:(min-h-80) md:(px-8) at-lg:(px-6);
 }
 
 .socials-list {
-  @apply inline-grid px-1 gap-2.5 text-ml-2/80;
+  @apply inline-grid px-1 gap-2.5;
 }
 
 .link-xiii {
@@ -183,7 +203,19 @@ function sayThanks() {
 }
 
 .email-card {
-  @apply text-ml-2/80 to-ml-0/25
+  @apply to-ml-8/25 leading-[1.65]
     sm:(col-span-2) lg:(col-span-1);
+
+  small {
+    @apply text-85% op-90;
+  }
+
+  a {
+    @apply text-ml-1/100 px-1px;
+
+    &:where(:hover, :focus-visible) {
+      @apply text-ml-0/100;
+    }
+  }
 }
 </style>
