@@ -38,14 +38,14 @@ const socials: SocialLinkFormat[] = [
     icon: 'none',
   },
   {
-    title: 'Twitter',
-    link: '/twitter',
+    title: 'Telegram',
+    link: '/telegram',
     external: true,
     icon: 'none',
   },
   {
-    title: 'Telegram',
-    link: '/telegram',
+    title: 'Twitter',
+    link: '/twitter',
     external: true,
     icon: 'none',
   },
