@@ -57,10 +57,10 @@ watchThrottled(
 .ze-inner-header {
   @apply max-w-screen-xl flex items-center select-none
     justify-between transition-inherit mx-auto mt-1 px-4
-      w-92% rd-md relative backdrop-blur-4 sm:(mt-2 w-90%);
+      w-92% rd-md relative backdrop-blur-4 sm:(mt-8px w-90%);
 
-  height: $nav-height;
-  max-height: $nav-height;
+  height: $nav-height-inner;
+  max-height: $nav-height-inner;
 
   &::before {
     @apply content-[''] inset-0 w-full h-full rd-inherit op-0
