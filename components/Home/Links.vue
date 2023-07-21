@@ -3,7 +3,7 @@ const links = [
   {
     title: '/about',
     link: '/about',
-    text: 'I am groot.',
+    text: 'I am Groot.',
   },
   {
     title: '/work',
@@ -27,7 +27,7 @@ const links = [
         class="bc-card"
         :to="ln.link"
       >
-        <h3 class="heading-lv-3" v-text="ln.title" />
+        <h3 class="heading-lv-3 card-head" v-text="ln.title" />
         <p class="sub-p" v-text="ln.text" />
       </NuxtLink>
 
@@ -41,7 +41,7 @@ const links = [
 
 <style scoped lang="scss">
 section {
-  @apply p-2 m-(t-16 b-20) ss:(px-3) ss500:(px-4)
+  @apply p-2 my-20 ss:(px-3) ss500:(px-4)
     sm:(px-6) md:(px-10) xl:(px-13);
 }
 
@@ -53,24 +53,34 @@ section {
 }
 
 .bc-card {
-  @apply p-(x-4 b-8 t-20) grid gap-4 transition-all-350
+  @apply p-(x-4 b-8 t-20) grid gap-4 transition-all-300
     justify-items-start text-(3.8/[1.5] ml-2/90) rd-2
       outline-none relative isolate col-span-1 min-h-50
-        select-none saturate-25 content-end bg-ml-8/100
-          brightness-75 bg-gradient-to-br from-(ml-0/0)
-            to-(ml-0/50) ss:(px-6) sm:(min-h-65)
-              md:(px-8) at-lg:(px-6);
+        select-none brightness-75 saturate-25 content-end
+          bg-(gradient-to-br ml-8/100) from-(ml-0/0)
+            to-(ml-0/50) ss:(px-6) sm:(min-h-65) at-md:(px-8);
+
+  --max-h: 1.40625rem;
+  // --maxh-neg: calc(-1 * var(--maxh-pos));
+
+  .card-head,
+  .sub-p {
+    @apply translate-y-[var(--max-h)] transition-inherit transform-gpu;
+  }
 
   .sub-p {
-    @apply max-h-0 of-hidden transition-inherit;
+    @apply op-0;
   }
 
   &:where(:hover, :focus-visible) {
     @apply filter-none;
 
+    .card-head {
+      @apply translate-y-0;
+    }
+
     .sub-p {
-      // max-height: var(--maxh, 1.40625rem);
-      max-height: 1.41rem;
+      @apply op-100 translate-y-0;
     }
   }
 }
@@ -88,16 +98,16 @@ section {
 }
 
 .contact-card {
-  @apply text-center justify-items-center filter-none
-    min-h-80 transition-all-350 content-center
-      decoration-none sm:(col-span-2 min-h-70);
+  @apply text-center justify-items-center
+    min-h-80 content-center filter-none
+      decoration-none duration-350 sm:(col-span-2 min-h-70);
 
   .card-head {
     background: linear-gradient(to right, currentColor, currentColor) no-repeat
       center bottom / 0% 1px;
 
-    @apply font-light text-7/[1.1] p-1 transition-inherit
-      ss:(text-8) sm:(text-10) lg:(text-12 tracking-tighter);
+    @apply font-light text-7/[1.1] p-1 ss:(text-8)
+      sm:(text-10) lg:(text-12 tracking-tighter);
   }
 
   &:where(:hover, :focus-visible) {
