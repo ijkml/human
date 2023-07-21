@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -54,8 +54,8 @@ devDependencies:
     specifier: ^1.0.3
     version: 1.0.3
   nuxt-umami:
-    specifier: 2.5.1
-    version: 2.5.1(vue@3.3.4)
+    specifier: 2.5.2-beta.1
+    version: 2.5.2-beta.1(vue@3.3.4)
   prettier:
     specifier: ^2.8.8
     version: 2.8.8
@@ -6472,8 +6472,8 @@ packages:
       - supports-color
     dev: true
 
-  /nuxt-umami@2.5.1(vue@3.3.4):
-    resolution: {integrity: sha512-NSwlfKwEhraAywPYGBx8jGgY5qEHYRWjzroTAHnofhxogKW42LfgM1KbSYNiEgyogFN6SdvrIyrbduGztnC6Og==}
+  /nuxt-umami@2.5.2-beta.1(vue@3.3.4):
+    resolution: {integrity: sha512-Wsbx4kpkzhDtSmHqx0HsMSpSbY3tNFt8WHraIwDrIT49Jj6XD1aIkE00pKOYUWc5Kj3xO/Y4JxfvCBSMnHu+Gg==}
     dependencies:
       '@vueuse/core': 10.2.1(vue@3.3.4)
     transitivePeerDependencies:

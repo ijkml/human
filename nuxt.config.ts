@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     host: '',
     port: 3221,
   },
+  extends: ['nuxt-umami'],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
