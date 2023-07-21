@@ -78,8 +78,7 @@ watchThrottled(
     decoration-none text-ml-3/100;
 
   > svg {
-    // alt logo color: #6f1f27
-    @apply h-8 transition-inherit pointer-events-none;
+    @apply h-6 ss500:h-8 transition-inherit pointer-events-none;
   }
 
   &:where(:hover, :focus-visible) {

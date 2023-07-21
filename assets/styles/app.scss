@@ -1,5 +1,9 @@
 .hero-splash {
   @apply bg-ml-7/100 w-full inset-0 of-hidden fixed z-16;
+
+  min-height: calc(100vh - ($nav-height * 1.2));
+  min-height: calc(100dvh - ($nav-height * 1.2));
+
 }
 
 .link-xi {
@@ -40,7 +44,7 @@ s {
 
 .tl-screamer {
   @apply tracking-tighter font-light text-(9/1.1em ml-1/75)
-    max-w-72 ss:(text-10 max-w-80) sm:(text-12 max-w-95)
+    max-w-72 mx-auto ss:(text-10 max-w-80) sm:(text-12 max-w-95)
       md:(text-15 max-w-120) lg:(text-16 max-w-125);
 }
 

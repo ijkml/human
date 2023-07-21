@@ -12,6 +12,6 @@
 
 <style lang="scss" scoped>
 [data-default-layout] {
-  @apply flex flex-col justify-between min-h-screen;
+  @apply flex flex-col justify-between min-h-(100vh 100dvh);
 }
 </style>

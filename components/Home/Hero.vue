@@ -25,7 +25,7 @@ function showNext() {
   >
     <div>
       <div v-auto-animate="{ duration: 500 }" class="text-cont">
-        <p class="tl-screamer">
+        <h1 class="tl-screamer mx-0">
           <ClientOnly>
             <TypeWriter
               :loop="1"
@@ -36,7 +36,7 @@ function showNext() {
               <span data-fallback v-text="screamer" />
             </template>
           </ClientOnly>
-        </p>
+        </h1>
 
         <ClientOnly>
           <div v-if="showSub">
@@ -72,10 +72,17 @@ function showNext() {
 
 <style scoped lang="scss">
 .home-hero {
-  @apply flex py-30 px-4 transition-colors-250
-    ss:(px-6) sm:(px-12) md:(px-16);
+  @apply flex bg-ml-8/100 transition-colors-250
+    py-30 px-4 ss:(px-6) sm:(px-12) md:(px-16);
 
-  min-height: calc(100vh - ($nav-height * 1.2));
+  &:not(.hero-splash) {
+    height: clamp(700px, 100vh, 1000px);
+    height: clamp(700px, 100dvh, 1000px);
+
+    padding-top: calc(7.5rem + $nav-height);
+    padding-bottom: 7.5rem;
+    margin-top: -$nav-height;
+  }
 
   > div {
     @apply m-auto w-full max-w-screen-lg
