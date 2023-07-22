@@ -25,7 +25,7 @@ function showNext() {
   >
     <div>
       <div v-auto-animate="{ duration: 500 }" class="text-cont">
-        <h1 class="tl-screamer mx-0">
+        <h1 class="tl-screamer">
           <ClientOnly>
             <TypeWriter
               :loop="1"
@@ -96,6 +96,10 @@ function showNext() {
 
 .vector-img {
   @apply w-full;
+}
+
+.tl-screamer {
+  @apply mx-0;
 }
 
 .text-cont {
