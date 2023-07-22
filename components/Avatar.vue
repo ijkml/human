@@ -3,7 +3,7 @@ import Avatar from '@img/svg/avatar.svg?component';
 </script>
 
 <template>
-  <Avatar class="avatar" height="250" />
+  <Avatar class="avatar" height="250" aria-hidden="true" />
 </template>
 
 <style scoped lang="scss">

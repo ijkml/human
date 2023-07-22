@@ -211,10 +211,10 @@ function sayThanks() {
   }
 
   a {
-    @apply text-ml-1/100 px-1px;
+    @apply text-ml-0/100 px-1px;
 
     &:where(:hover, :focus-visible) {
-      @apply text-ml-0/100;
+      @apply text-ml-1/100;
     }
   }
 }

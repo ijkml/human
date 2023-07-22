@@ -17,7 +17,7 @@ import { contactEmail, footerLinks } from '@data/links';
           <UnoIcon class="i-carbon-email" /> {{ contactEmail.title }}
         </a>
       </div>
-      <nav class="ze-links-outer">
+      <nav aria-label="Footer navigation" class="ze-links-outer">
         <div v-for="(col, i) of footerLinks" :key="i" class="ze-links-inner">
           <NuxtLink
             v-for="ln of col"
@@ -38,10 +38,9 @@ import { contactEmail, footerLinks } from '@data/links';
     </div>
     <div class="ze-copyright">
       <a
-        rel="license"
+        rel="noopener"
         target="_blank"
         class="link-xi"
-        tabindex="-1"
         href="https://github.com/ijkml/human/"
         >&copy;{{ new Date().getFullYear() }} ML</a
       >
@@ -128,7 +127,7 @@ import { contactEmail, footerLinks } from '@data/links';
   @apply text-(3.2/normal center) p-2 mt-8;
 
   a {
-    @apply p-2px mx-2px text-ml-4/100;
+    @apply p-2px mx-2px text-ml-3/100;
   }
 }
 </style>

@@ -14,7 +14,8 @@ const links = [
 </script>
 
 <template>
-  <section>
+  <section role="region" aria-labelledby="sub-hero-head">
+    <h2 id="sub-hero-head" class="sr-only">Links</h2>
     <div class="below-deck">
       <div class="bc-card avatar-cont" aria-hidden="true">
         <Avatar />

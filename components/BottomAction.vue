@@ -6,13 +6,18 @@ const email = contactEmail.link;
 </script>
 
 <template>
-  <section v-if="$route.path !== '/'" class="bottom-action">
+  <section
+    v-if="$route.path !== '/'"
+    role="region"
+    aria-labelledby="bottom-action-head"
+    class="bottom-action"
+  >
     <NuxtLink
       :to="$route.path === '/contact' ? email : contact"
       class="cta-head"
       tabindex="0"
     >
-      <h2>Let's work together</h2>
+      <h2 id="bottom-action-head">Let's work together</h2>
     </NuxtLink>
   </section>
 </template>

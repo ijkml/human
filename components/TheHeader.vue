@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { headerLinks, linkIcons } from '@data/links';
+import TheLogo from '@img/svg/logo.svg?component';
 
 const { y: scrolledHeight } = useWindowScroll();
 const { height: screenHeight } = useWindowSize();
@@ -22,10 +23,10 @@ watchThrottled(
 <template>
   <header class="ze-header" :class="classe">
     <div class="ze-inner-header">
-      <NuxtLink to="/" class="ze-logo" aria-label="ML">
-        <TheLogo height="32" />
+      <NuxtLink to="/" class="ze-logo">
+        <TheLogo height="32" aria-label="ML" />
       </NuxtLink>
-      <nav class="ze-nav">
+      <nav class="ze-nav" aria-label="primary-navigation">
         <NuxtLink
           v-for="ln in headerLinks"
           :key="ln.title"
