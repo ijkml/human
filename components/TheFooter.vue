@@ -63,7 +63,7 @@ import { contactEmail, footerLinks } from '@data/links';
 }
 
 .ze-contact-head {
-  @apply text-6.6/1.35em tracking--0.01em font-light;
+  @apply text-6.6/1.35em tracking--0.02em font-light;
 
   a {
     @apply inline-block text-ml-1;

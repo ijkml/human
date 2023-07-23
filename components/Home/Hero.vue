@@ -21,11 +21,13 @@ function showNext() {
 <template>
   <section
     class="home-hero"
+    role="region"
+    aria-labelledby="hero-head-h1"
     :class="{ 'hero-splash': !showSub && !hasPlayedHeroAnim }"
   >
     <div>
       <div v-auto-animate="{ duration: 500 }" class="text-cont">
-        <h1 class="tl-screamer">
+        <h1 id="hero-head-h1" class="tl-screamer">
           <ClientOnly>
             <TypeWriter
               :loop="1"

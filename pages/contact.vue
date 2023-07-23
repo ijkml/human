@@ -48,9 +48,13 @@ function sayThanks() {
 </script>
 
 <template>
-  <section class="sect-space-top section-contact">
+  <section
+    role="region"
+    aria-labelledby="get-in-touch"
+    class="sect-space-top section-contact"
+  >
     <div class="heading-wrap">
-      <h1 class="tl-screamer">Get in Touch</h1>
+      <h1 id="get-in-touch" class="tl-screamer">Get in Touch</h1>
       <Balancer as="p">
         I'm always open to new opportunities and connections. Reach out anytime
         to discuss a project or just chat.

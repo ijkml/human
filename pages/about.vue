@@ -2,9 +2,13 @@
 </script>
 
 <template>
-  <section class="sect-space-top section-about">
+  <section
+    role="region"
+    aria-labelledby="about-me"
+    class="sect-space-top section-about"
+  >
     <div class="heading-wrap">
-      <h1 class="tl-screamer">About</h1>
+      <h1 id="about-me" class="tl-screamer">About</h1>
       <p class="echo">The man, the myth, the clumsy calamity...</p>
     </div>
 
