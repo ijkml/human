@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { headerLinks, linkIcons } from '@data/links';
+import { headerLinks } from '@data/links';
 import TheLogo from '@img/svg/logo.svg?component';
 
 const { y: scrolledHeight } = useWindowScroll();
@@ -26,19 +26,17 @@ watchThrottled(
       <NuxtLink to="/" class="ze-logo">
         <TheLogo height="32" aria-label="ML" />
       </NuxtLink>
-      <nav class="ze-nav" aria-label="primary-navigation">
+      <nav class="ze-nav" aria-label="Primary navigation">
         <NuxtLink
           v-for="ln in headerLinks"
           :key="ln.title"
-          class="link-wrap link-xi"
+          class="link-text link-xi"
           tabindex="0"
           exact-active-class="link-active"
           :to="ln.link"
+          prefetch
         >
-          <div class="link-icon" aria-hidden="true">
-            <component :is="linkIcons[ln.icon]" />
-          </div>
-          <span class="link-text" v-text="ln.title" />
+          {{ ln.title }}
         </NuxtLink>
       </nav>
     </div>
@@ -47,18 +45,18 @@ watchThrottled(
 
 <style scoped lang="scss">
 .ze-header {
-  @apply sticky top-0 z-16 transform-gpu w-full
-    will-change-transform transition-all-350;
+  @apply static top-0 z-16 transition-all-350 w-full
+    will-change-transform transform-gpu ss500:(sticky);
 
   &.scrolled {
-    @apply translate-y--101%;
+    @apply ss500:(translate-y--101%);
   }
 }
 
 .ze-inner-header {
   @apply max-w-screen-xl flex items-center select-none
     justify-between transition-inherit mx-auto mt-1 px-4
-      w-92% rd-md relative backdrop-blur-4 sm:(mt-8px w-90%);
+      w-92% rd-md relative sm:(mt-8px w-90%);
 
   height: $nav-height-inner;
   max-height: $nav-height-inner;
@@ -70,7 +68,7 @@ watchThrottled(
   }
 
   .contrast &::before {
-    @apply op-100;
+    @apply ss500:(op-100);
   }
 }
 
@@ -79,7 +77,7 @@ watchThrottled(
     decoration-none text-ml-3/100;
 
   > svg {
-    @apply h-6 ss500:h-8 transition-inherit pointer-events-none;
+    @apply h-8 transition-inherit pointer-events-none;
   }
 
   &:where(:hover, :focus-visible) {
@@ -88,42 +86,19 @@ watchThrottled(
 }
 
 .ze-nav {
-  @apply text-3.5/normal mb--1 flex
-    items-center gap-4 tracking-wide sm:gap-6;
+  @apply text-3.5/normal tracking-wide mb--1 hidden
+    items-center ss500:(flex gap-4) sm:(gap-6);
 }
 
-.link-active {
-  @apply text-ml-0;
-}
-
-.link-wrap {
-  @apply text-ml-2/100 lt-sm:bg-none;
+.link-text {
+  @apply text-ml-2/100;
 
   &:where(:hover, :focus-visible) {
     @apply text-ml-0/100;
   }
 
-  .link-icon {
-    @apply mx-1;
-
-    &,
-    & > svg {
-      @apply h-auto w-5.5;
-    }
-  }
-
-  .link-text {
-    @apply sr-only;
-  }
-
-  @screen sm {
-    .link-icon {
-      @apply hidden;
-    }
-
-    .link-text {
-      @apply not-sr-only;
-    }
+  &.link-active {
+    @apply text-ml-0/100;
   }
 }
 </style>
