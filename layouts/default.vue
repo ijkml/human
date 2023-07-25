@@ -1,12 +1,14 @@
 <template>
   <div data-default-layout data-scroll>
-    <TheHeader />
+    <LayoutHeader />
 
     <main>
       <slot />
     </main>
 
-    <TheFooter />
+    <LayoutAction />
+    <LayoutNavBar />
+    <LayoutFooter />
   </div>
 </template>
 
