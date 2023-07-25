@@ -6,11 +6,9 @@ import { hasPlayedHeroAnim, splashLock } from '@/helpers/splash';
 splashLock(true);
 
 const screamer = 'I craft accessible and performant web experiences.';
-const reverb = `Hey, I'm <b>ML</b>, a dedicated web developer and
-  open-source enthusiast. I love building performant websites, and solving
-  problems.`;
+const reverb = `Hey, I'm <b>ML</b>, an open-source enthusiast and dedicated web developer who loves building performant websites.`;
 
-const showSub = ref(false);
+const showSub = ref(hasPlayedHeroAnim.value);
 
 function showNext() {
   showSub.value = true;
@@ -27,7 +25,7 @@ function showNext() {
   >
     <div>
       <div v-auto-animate="{ duration: 500 }" class="text-cont">
-        <h1 id="hero-head-h1" class="tl-screamer">
+        <h1 id="hero-head-h1" class="screamer-h1">
           <ClientOnly>
             <TypeWriter
               :loop="1"
@@ -100,7 +98,7 @@ function showNext() {
   @apply w-full;
 }
 
-.tl-screamer {
+.screamer-h1 {
   @apply mx-0;
 }
 
