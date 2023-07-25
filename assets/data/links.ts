@@ -1,13 +1,17 @@
 import type { RouteLocationRaw } from '#vue-router';
 
-import IconCode from '@/components/Icons/Code.vue';
-import IconCall from '@/components/Icons/Call.vue';
-import IconMe from '@/components/Icons/Me.vue';
+import IconHome from '@/components/Icons/Home.vue';
+import IconAbout from '@/components/Icons/About.vue';
+import IconWork from '@/components/Icons/Work.vue';
+import IconBlog from '@/components/Icons/Blog.vue';
+import IconContact from '@/components/Icons/Contact.vue';
 
 const linkIcons = {
-  about: IconMe,
-  work: IconCode,
-  contact: IconCall,
+  about: IconAbout,
+  contact: IconContact,
+  work: IconWork,
+  home: IconHome,
+  blog: IconBlog,
   none: 'i',
 } as const;
 
@@ -27,7 +31,17 @@ interface SocialLinkFormat extends LinkFormat {
 const headerLinks: LinkFormat[] = [
   { title: 'About', link: '/about', icon: 'about' },
   { title: 'Work', link: '/work', icon: 'work' },
+  { title: 'Blog', link: '/blog', icon: 'blog' },
   { title: 'Contact', link: '/contact', icon: 'contact' },
+];
+
+const headerLinksWithHome: LinkFormat[] = [
+  {
+    title: 'Home',
+    link: '/',
+    icon: 'home',
+  },
+  ...headerLinks,
 ];
 
 const socials: SocialLinkFormat[] = [
@@ -63,6 +77,7 @@ const footerLinks: LinkFormat[][] = [headerLinks, socials];
 
 export {
   headerLinks,
+  headerLinksWithHome,
   footerLinks,
   contactEmail,
   linkIcons,
