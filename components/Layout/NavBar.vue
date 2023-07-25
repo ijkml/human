@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { headerLinksWithHome, linkIcons } from '@data/links';
+import { headerLinks, linkIcons } from '@data/links';
 </script>
 
 <template>
   <nav aria-label="Bottom navigation" class="sticky-bottom">
     <NuxtLink
-      v-for="ln in headerLinksWithHome"
+      v-for="ln in headerLinks"
       :key="ln.title"
       class="link-icon"
       :to="ln.link"

@@ -93,6 +93,10 @@ watchThrottled(
 .link-text {
   @apply text-ml-2/100;
 
+  &:first-of-type {
+    @apply hidden sm:(flex);
+  }
+
   &:where(:hover, :focus-visible) {
     @apply text-ml-0/100;
   }

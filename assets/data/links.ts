@@ -29,19 +29,11 @@ interface SocialLinkFormat extends LinkFormat {
 }
 
 const headerLinks: LinkFormat[] = [
+  { title: 'Home', link: '/', icon: 'home' },
   { title: 'About', link: '/about', icon: 'about' },
   { title: 'Work', link: '/work', icon: 'work' },
   { title: 'Blog', link: '/blog', icon: 'blog' },
   { title: 'Contact', link: '/contact', icon: 'contact' },
-];
-
-const headerLinksWithHome: LinkFormat[] = [
-  {
-    title: 'Home',
-    link: '/',
-    icon: 'home',
-  },
-  ...headerLinks,
 ];
 
 const socials: SocialLinkFormat[] = [
@@ -58,7 +50,7 @@ const socials: SocialLinkFormat[] = [
     icon: 'none',
   },
   {
-    title: 'Twitter',
+    title: 'X (Twitter)',
     link: '/twitter',
     external: true,
     icon: 'none',
@@ -77,7 +69,6 @@ const footerLinks: LinkFormat[][] = [headerLinks, socials];
 
 export {
   headerLinks,
-  headerLinksWithHome,
   footerLinks,
   contactEmail,
   linkIcons,
