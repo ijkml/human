@@ -6,6 +6,8 @@ import { contactEmail, footerLinks } from '@data/links';
 <template>
   <BottomAction />
 
+  <BottomNav />
+
   <footer class="ze-footer">
     <div class="ze-footer-inner">
       <div class="ze-contact">
