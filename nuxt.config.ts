@@ -47,6 +47,7 @@ export default defineNuxtConfig({
   experimental: {
     // inlineSSRStyles: false,
     typedPages: true,
+    componentIslands: true,
   },
   vite: {
     css: {
