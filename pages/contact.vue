@@ -54,7 +54,7 @@ function sayThanks() {
     class="sect-space-top section-contact"
   >
     <div class="heading-wrap">
-      <h1 id="get-in-touch" class="tl-screamer">Get in Touch</h1>
+      <h1 id="get-in-touch" class="screamer-h1">Get in Touch</h1>
       <Balancer as="p">
         I'm always open to new opportunities and connections. Reach out anytime
         to discuss a project or just chat.
@@ -62,7 +62,7 @@ function sayThanks() {
     </div>
 
     <div class="options-deck">
-      <div class="black-red bc-card email-card">
+      <div class="black-red bc-card intro-card">
         <h3 class="heading-lv-3">Let's chat</h3>
 
         <p>
@@ -74,20 +74,19 @@ function sayThanks() {
             target="_blank"
             >Telegram</NuxtLink
           >
-          is the fastest way to reach me. If it's official
+          is the fastest way to reach me. If it's official,
           <small>(or you might want to sue me about it later)</small>,
-          <a class="link-xi" :href="contactEmail.link">here's my email</a>. I
-          also do
+          <a class="link-xi" :href="contactEmail.link">here's my email</a>. You
+          can also find me stalking folks on
           <NuxtLink
             href="/twitter"
             class="link-xi"
             external
             no-rel
             target="_blank"
-            >Twitter</NuxtLink
-          >
-          but almost never check, so please tweet @me if I don't reply within 6
-          months.
+            >X (Twitter)</NuxtLink
+          >, but I never check my DMs
+          <small>(pls tweet @me if I don't reply within 6 months)</small>.
         </p>
 
         <div>
@@ -206,7 +205,7 @@ function sayThanks() {
   @apply w-full max-w-50 text-90%;
 }
 
-.email-card {
+.intro-card {
   @apply to-ml-8/25 leading-[1.65]
     sm:(col-span-2) lg:(col-span-1);
 

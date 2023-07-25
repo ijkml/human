@@ -8,7 +8,7 @@
     class="sect-space-top section-about"
   >
     <div class="heading-wrap">
-      <h1 id="about-me" class="tl-screamer">About</h1>
+      <h1 id="about-me" class="screamer-h1">About</h1>
       <p class="echo">The man, the myth, the clumsy calamity...</p>
     </div>
 
