@@ -12,7 +12,7 @@
 
   background: linear-gradient(0deg, currentColor, currentColor) no-repeat right bottom / 0 1px;
   transition-duration: 350ms;
-  transition-property: background-size, color;
+  transition-property: background-size, color, text-transform;
 
   &:where(:hover, :focus-visible) {
     background-size: 100% 1px;
@@ -42,10 +42,15 @@ s {
   @apply op-70 select-none;
 }
 
-.tl-screamer {
-  @apply tracking-tighter font-light text-(9/1.1em ml-1/75)
+.screamer-h1 {
+  @apply tracking-tighter font-light text-(9/1.1em ml-2/85)
     max-w-72 mx-auto ss:(text-10 max-w-80) sm:(text-12 max-w-95)
       md:(text-15 max-w-120) lg:(text-16 max-w-125);
+}
+
+.screamer-h2 {
+  @apply tracking-tighter font-light text-(5/1.1em ml-3/100)
+    ss:(text-6) sm:(text-7) md:(text-8) lg:(text-10);
 }
 
 .sect-space-top {
@@ -57,12 +62,12 @@ s {
     @apply text-center max-w-130 mx-auto;
   }
 
-  .tl-screamer {
+  .screamer-h1 {
     @apply mx-auto mb-8;
   }
 }
 
-.block-code {
+.block-code, .block-small {
   @apply text-85% block op-90;
 }
 
