@@ -32,7 +32,7 @@ const headerLinks: LinkFormat[] = [
   { title: 'Home', link: '/', icon: 'home' },
   { title: 'About', link: '/about', icon: 'about' },
   { title: 'Work', link: '/work', icon: 'work' },
-  { title: 'Blog', link: '/blog', icon: 'blog' },
+  // { title: 'Blog', link: '/blog', icon: 'blog' },
   { title: 'Contact', link: '/contact', icon: 'contact' },
 ];
 
@@ -65,7 +65,10 @@ const contactEmail = {
   link: 'mailto:me.mlaure@gmail.com',
 } as const;
 
-const footerLinks: LinkFormat[][] = [headerLinks, socials];
+const footerLinks: LinkFormat[][] = [
+  headerLinks.slice(1, headerLinks.length - 1),
+  socials,
+];
 
 export {
   headerLinks,
