@@ -35,7 +35,7 @@
 }
 
 .details-deck {
-  @apply mt-32 grid gap-8 sm:(grid-cols-2 gap-6) md:(gap-7);
+  @apply mt-24 grid gap-8 sm:(grid-cols-2 gap-6) md:(gap-7);
 }
 
 .img-cont {
