@@ -1,28 +1,50 @@
-interface ProjectSchema {
-  // project / company name
+const oss = [
+  { title: 'Nuxt', link: 'nuxt/nuxt' },
+  { title: 'Nuxt Umami', link: 'ijkml/nuxt-umami' },
+];
+
+interface BasicProject {
   name: string;
-  // project roles
-  roles: string;
-  // project details
-  details: string;
-  // tools/tech used
-  tools: string[];
-  // link to case study / preview / source code
-  link: string;
-  // type of link
-  linkType: 'demo' | 'live' | 'none';
-  // image preview url
-  image: string;
+  id: string;
+  img: string;
+  type: string;
+  year: string;
+  live: boolean;
 }
 
-const sampleProject: ProjectSchema = {
-  name: 'PennyPay Inc',
-  roles: '',
-  details: '',
-  tools: [],
-  link: '',
-  linkType: 'demo',
-  image: '',
-};
+const featured: BasicProject[] = [
+  {
+    name: 'MOI Montessori',
+    id: 'moi-montessori',
+    img: 'Montz.webp',
+    type: 'Web Development',
+    year: '2023',
+    live: false,
+  },
+  {
+    name: 'MOI Immigration',
+    id: 'moi-immigration',
+    img: 'MIS.webp',
+    type: 'Web Development',
+    year: '2022',
+    live: true,
+  },
+  {
+    name: 'PennyPay',
+    id: 'pennypay',
+    img: 'PennyPay.webp',
+    type: 'Website Demo',
+    year: '2023',
+    live: true,
+  },
+  {
+    name: 'Voe Air',
+    id: 'voe-air',
+    img: 'Voe.webp',
+    type: 'Website Demo',
+    year: '2023',
+    live: true,
+  },
+];
 
-export { sampleProject, ProjectSchema };
+export { oss, featured, BasicProject };
