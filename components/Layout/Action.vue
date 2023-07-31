@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { contactEmail } from '@data/links';
 
-const contact = '/contact';
 const email = contactEmail.link;
 </script>
 
@@ -13,7 +12,7 @@ const email = contactEmail.link;
     class="bottom-action"
   >
     <NuxtLink
-      :to="$route.path === '/contact' ? email : contact"
+      :to="$route.path === '/contact' ? email : '/contact'"
       class="cta-head"
       tabindex="0"
     >
