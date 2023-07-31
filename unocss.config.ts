@@ -20,6 +20,7 @@ export default defineConfig({
         6: 'hsl(240, 3%, 14%)',
         7: 'hsl(240, 4%, 11%)',
         8: 'hsl(240, 4%, 9%)',
+        9: 'hsl(240, 4%, 4%)',
       },
     },
     fontFamily: {
