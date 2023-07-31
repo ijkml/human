@@ -72,16 +72,17 @@ function showNext() {
 
 <style scoped lang="scss">
 .home-hero {
-  @apply flex bg-ml-8/100 transition-colors-250
+  @apply flex bg-ml-9/100 transition-colors-250
     py-30 px-4 ss:(px-6) sm:(px-12) md:(px-16);
 
+  // copy-paste to no-script.css
   &:not(.hero-splash) {
     height: clamp(700px, 100vh, 1000px);
     height: clamp(700px, 100dvh, 1000px);
 
-    padding-top: calc(7.5rem + $nav-height);
+    padding-top: calc(7.5rem + var(--nav-height));
     padding-bottom: 7.5rem;
-    margin-top: -$nav-height;
+    margin-top: calc(-1 * var(--nav-height));
   }
 
   > div {
