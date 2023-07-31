@@ -54,7 +54,7 @@ function sayThanks() {
     class="sect-space-top section-contact"
   >
     <div class="heading-wrap">
-      <h1 id="get-in-touch" class="screamer-h1">Get in Touch</h1>
+      <h1 id="get-in-touch" class="screamer-h1">Contact</h1>
       <Balancer as="p">
         I'm always open to new opportunities and connections. Reach out anytime
         to discuss a project or just chat.
@@ -70,19 +70,20 @@ function sayThanks() {
             href="/telegram"
             class="link-xi"
             external
-            no-rel
+            rel="noopener"
             target="_blank"
             >Telegram</NuxtLink
           >
           is the fastest way to reach me. If it's official,
           <small>(or you might want to sue me about it later)</small>,
-          <a class="link-xi" :href="contactEmail.link">here's my email</a>. You
-          can also find me stalking folks on
+          <a class="link-xi" rel="noopener" :href="contactEmail.link"
+            >here's my email</a
+          >. You can also find me stalking folks on
           <NuxtLink
             href="/twitter"
             class="link-xi"
             external
-            no-rel
+            rel="noopener"
             target="_blank"
             >X (Twitter)</NuxtLink
           >, but I never check my DMs
