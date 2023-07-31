@@ -22,7 +22,7 @@
 }
 
 [contenteditable] {
-  @apply outline-none break-words;
+  @apply outline-none break-all;
 
   * {
     @apply inline;
@@ -59,11 +59,11 @@ s {
   padding-top: clamp(150px, 300px, 45vh);
 
   .heading-wrap {
-    @apply text-center max-w-130 mx-auto;
+    @apply text-left max-w-130;
   }
 
   .screamer-h1 {
-    @apply mx-auto mb-8;
+    @apply mb-8 mx-0;
   }
 }
 
@@ -72,7 +72,7 @@ s {
 }
 
 .black-red {
-  @apply bg-(ml-8/100 gradient-to-br no-repeat)
+  @apply bg-(ml-9/100 gradient-to-br no-repeat)
     from-(ml-0/0 25%) to-(ml-0/15 200%);
 }
 
@@ -114,7 +114,7 @@ s {
 }
 
 .heading-lv-3 {
-  @apply text-(5.5/[1.1] ml-2/90) ss:(text-6) sm:(text-6.25)
+  @apply text-(5.5/[1.1] ml-2/75) ss:(text-6) sm:(text-6.25)
       md:(text-6.75) lg:(text-7.25);
 
   + p {

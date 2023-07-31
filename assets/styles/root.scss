@@ -11,6 +11,8 @@ $scrollbar-track: theme('colors.ml.7');
   -moz-osx-font-smoothing: grayscale;
 
   @apply text-16px font-sans scroll-smooth;
+
+  --nav-height: #{$nav-height};
 }
 
 html {
@@ -42,7 +44,7 @@ html {
 }
 
 ::selection {
-  @apply bg-ml-8/100 text-ml-0/100;
+  @apply bg-ml-9/100 text-ml-0/100;
 }
 
 .page, .fade {
@@ -62,6 +64,10 @@ html {
 
   @apply flex-1 h-0 max-h-0 max-w-full block
     border-(solid zinc-5/30.5);
+}
+
+:where(img, a) {
+  @apply select-none;
 }
 
 @import "./app";
