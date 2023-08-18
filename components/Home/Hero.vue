@@ -6,7 +6,7 @@ import { hasPlayedHeroAnim, splashLock } from '@/helpers/splash';
 splashLock(true);
 
 const screamer = 'I craft accessible and performant web experiences.';
-const reverb = `Hey, I'm <b>ML</b>, an open-source enthusiast and dedicated web developer who loves building performant websites.`;
+const reverb = `Hey, I'm <b>ML</b>, an open-source enthusiast and dedicated web developer. I like to build simple and usable websites.`;
 
 const showSub = ref(hasPlayedHeroAnim.value);
 
