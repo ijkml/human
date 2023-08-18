@@ -20,6 +20,6 @@ import { featured as projects } from '@data/projects';
 
 <style scoped lang="scss">
 .project-grid {
-  @apply mt-8 grid gap-8 lg:grid-cols-2;
+  @apply mt-8 grid gap-8 md:grid-cols-2;
 }
 </style>

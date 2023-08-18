@@ -5,19 +5,26 @@
   <section aria-labelledby="blog-heading" class="sect-space-top" role="region">
     <div class="heading-wrap">
       <h1 id="blog-heading" class="screamer-h1">Blog</h1>
-      <p class="mb-1em">It's coming soon. I promise.</p>
-      <Balancer as="p">
-        Meanwhile, you can
-        <NuxtLink
-          href="/twitter"
-          class="link-xi"
-          external
-          rel="noopener"
-          target="_blank"
-          >find me on X</NuxtLink
-        >. I'll appreciate it if you can send a couple knife emojis to
-        <i>motivate</i> me to publish that "Hello World" draft :)
-      </Balancer>
+      <div class="reverb">
+        <p>It's coming soon. I promise.</p>
+        <p>
+          I'm currently building (and learning to build) a kickass blog engine
+          with k8s and docker that can scale and handle traffic the size of
+          Google's! Exciting! I just gotta figure out this caching problem...
+        </p>
+        <p>
+          Meanwhile, you can
+          <NuxtLink
+            href="/twitter"
+            class="link-xi"
+            external
+            rel="noopener"
+            target="_blank"
+            >find me on X</NuxtLink
+          >. I'll appreciate it if you can send a couple 🔪🔪 emojis to
+          <i>motivate</i> me to publish that "Hello World" draft :)
+        </p>
+      </div>
     </div>
   </section>
 </template>
@@ -34,5 +41,8 @@ a {
   &:where(:hover, :focus-visible) {
     @apply text-ml-1/100;
   }
+}
+.reverb {
+  @apply grid gap-2;
 }
 </style>

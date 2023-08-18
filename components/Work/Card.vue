@@ -29,11 +29,6 @@ function viewProject() {
 
     <div class="project-info">
       <h3 class="project-head" v-text="name" />
-      <div class="project-deet">
-        <span v-text="year" />
-        <span aria-role="seperator">|</span>
-        <span v-text="type" />
-      </div>
     </div>
   </component>
 </template>
@@ -69,22 +64,17 @@ function viewProject() {
   mask-image: linear-gradient(
     to bottom,
     hsl(0, 0%, 0%),
-    hsla(0, 0%, 0%, 0.09) 70%,
+    hsla(0, 0%, 0%, 0.09) 80%,
     hsla(0, 0%, 0%, 0.025)
   );
 }
 
 .project-info {
   @apply text-ml-2/75 z-1 w-full h-full
-    grid px-6 py-4 content-end sm:py-6;
+    grid px-6 py-3 content-end;
 }
 
 .project-head {
   @apply text-5 sm:(text-6);
-}
-
-.project-deet {
-  @apply text-3.2/5 font-mono inline-flex
-    items-center gap-3 justify-start;
 }
 </style>

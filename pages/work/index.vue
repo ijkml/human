@@ -38,7 +38,8 @@
   @apply mt-24 grid gap-24 ss500:px-1 sm:px-6;
 
   > * {
-    @apply w-full mx-auto ss500:(container) lg:(max-w-full);
+    @apply w-full mx-auto grid-cols-2 ss500:(max-w-screen-ss500)
+      sm:(max-w-screen-sm) md:(max-w-full);
   }
 
   :deep() {
@@ -51,11 +52,11 @@
 :deep() {
   @media (hover: hover) and (pointer: fine) {
     .cursor-project {
-      cursor: url('@img/svg/cursor.svg'), pointer;
+      cursor: url('@img/svg/cursor.svg') 50 50, pointer;
     }
 
     .cursor-project-alt {
-      cursor: url('@img/svg/cursor-alt.svg'), pointer;
+      cursor: url('@img/svg/cursor-alt.svg') 50 50, pointer;
     }
   }
 }

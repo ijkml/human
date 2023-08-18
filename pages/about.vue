@@ -9,7 +9,9 @@
   >
     <div class="heading-wrap">
       <h1 id="about-me" class="screamer-h1">About</h1>
-      <p class="echo">The man, the myth, the clumsy calamity...</p>
+      <p class="echo">
+        The man, the myth, the <s>clumsy calamity</s> legend...
+      </p>
     </div>
 
     <div class="details-deck">

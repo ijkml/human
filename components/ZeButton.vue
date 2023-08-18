@@ -64,7 +64,7 @@ const chunks = computed(() => {
   }));
 });
 
-const bindProps = computed<{}>(() => {
+const bindProps = computed<object>(() => {
   const linkProps = {
     ...(regular.value ? { href: link.value } : { to: link.value }),
     ...(external.value && {

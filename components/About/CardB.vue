@@ -6,7 +6,7 @@
       effectively tackle any task. Here are some of my skills and fav tools:
     </p>
 
-    <ul class="grid">
+    <ul>
       <li>TypeScript</li>
       <li>JavaScript</li>
       <li>Vue</li>

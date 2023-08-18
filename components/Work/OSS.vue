@@ -80,17 +80,26 @@ function getSrc(repo: string) {
 }
 
 .oss-project-card {
-  @apply block bg-ml-8/100 outline-none
-    cursor-pointer select-none aspect-2;
+  @apply block bg-ml-8/100 outline-none rd-md of-hidden
+    cursor-pointer select-none aspect-2 relative transition-300;
 
   img {
     @apply object-contain rd-md filter
-      brightness-90 grayscale-100 transition-500;
+      brightness-90 transition-inherit;
+  }
+
+  &::after {
+    @apply content-[''] absolute w-full h-full rd-inherit
+      z-1 inset-0 bg-(ml-0 op-0) transition-inherit;
   }
 
   &:where(:hover, :focus-visible) {
+    &::after {
+      @apply bg-op-25;
+    }
+
     img {
-      @apply grayscale-0 brightness-100;
+      @apply grayscale-100 brightness-110;
     }
   }
 }
