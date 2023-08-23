@@ -5,6 +5,7 @@ const props = withDefaults(
   defineProps<{
     text: string;
     light?: boolean;
+    primary?: boolean;
     small?: boolean;
     icon?: string;
     suffix?: boolean;
@@ -21,6 +22,7 @@ const props = withDefaults(
     light: false,
     small: false,
     suffix: false,
+    primary: false,
     icon: undefined,
     delay: 45,
     class: '',
@@ -46,6 +48,7 @@ const {
   small,
   delay,
   external,
+  primary,
   link,
   regular,
   icon,
@@ -79,6 +82,7 @@ const bindProps = computed<object>(() => {
       'ze-button': true,
       light: light.value,
       small: small.value,
+      primary: primary.value,
       [classe.value]: true,
     },
     tabindex: 0,
@@ -130,13 +134,17 @@ const bindProps = computed<object>(() => {
 <style scoped lang="scss">
 .ze-button {
   @apply inline-flex font-(normal mono) px-4 tracking-wider
-    relative uppercase text-(3.5 ml-2/90 center) min-w-30
+    relative uppercase text-(3.5 ml-2/90 center) min-w-24
       transition-300 bg-none select-none cursor-pointer z-1
         outline-none items-center justify-center align-middle
           of-hidden h-9.5 rd border-(1 solid ml-5/100);
 
   &:is(.light) {
     @apply border-ml-3/100 text-ml-5/100;
+  }
+
+  &:where(.primary) {
+    @apply text-yellow-5/90;
   }
 
   &:is(.small) {

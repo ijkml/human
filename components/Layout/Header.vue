@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { headerLinks } from '@data/links';
-import TheLogo from '@img/svg/logo.svg?component';
+import Initials from '@img/svg/ml.svg?component';
 
 const { y: scrolledHeight } = useWindowScroll();
 const { height: screenHeight } = useWindowSize();
@@ -24,7 +24,7 @@ watchThrottled(
   <header class="ze-header" :class="classe">
     <div class="ze-inner-header">
       <NuxtLink to="/" class="ze-logo">
-        <TheLogo height="32" aria-label="ML" />
+        <Initials height="32" aria-label="ML" />
       </NuxtLink>
       <nav class="ze-nav" aria-label="Primary navigation">
         <NuxtLink
@@ -73,7 +73,7 @@ watchThrottled(
 }
 
 .ze-logo {
-  @apply transition-all-250 outline-none
+  @apply transition-all-300 outline-none
     decoration-none text-ml-3/100;
 
   > svg {

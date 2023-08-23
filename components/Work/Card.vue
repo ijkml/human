@@ -64,8 +64,8 @@ function viewProject() {
   mask-image: linear-gradient(
     to bottom,
     hsl(0, 0%, 0%),
-    hsla(0, 0%, 0%, 0.09) 80%,
-    hsla(0, 0%, 0%, 0.025)
+    hsla(0, 0%, 0%, 0.09) 75%,
+    hsla(0, 0%, 0%, 0.02)
   );
 }
 

@@ -41,7 +41,7 @@
 }
 
 .img-cont {
-  @apply bg-ml-0/100 p-8 of-hidden;
+  @apply p-8 bg-ml-9/100 of-hidden;
 
   .avatar {
     --body: #000;
@@ -61,8 +61,6 @@
 
 .bottom-cont {
   @apply grid gap-inherit of-hidden sm:(col-span-2 grid-cols-2) lg:(grid-cols-13);
-
-  // @apply outline-(1 dashed yellow);
 }
 
 :deep() {

@@ -85,7 +85,7 @@ function getSrc(repo: string) {
 
   img {
     @apply object-contain rd-md filter
-      brightness-90 transition-inherit;
+      brightness-80 transition-inherit;
   }
 
   &::after {
@@ -99,7 +99,7 @@ function getSrc(repo: string) {
     }
 
     img {
-      @apply grayscale-100 brightness-110;
+      @apply grayscale-100;
     }
   }
 }

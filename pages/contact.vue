@@ -74,29 +74,38 @@ function sayThanks() {
             target="_blank"
             >Telegram</NuxtLink
           >
-          is the fastest way to reach me. If it's official,
-          <small>(or you might want to sue me about it later)</small>,
+          is the fastest way to reach me. If it's official
+          <small>(or you might need the paper trail)</small>,
           <a class="link-xi" rel="noopener" :href="contactEmail.link"
             >here's my email</a
-          >. You can also find me stalking folks on
+          >. You can also catch me stalking folks on
           <NuxtLink
             href="/twitter"
             class="link-xi"
             external
             rel="noopener"
             target="_blank"
-            >X (Twitter)</NuxtLink
-          >, but I never check my DMs
-          <small>(pls tweet @me if I don't reply within 6 months)</small>.
+            >TweeX</NuxtLink
+          >&MediumSpace;<small
+            >(pls tweet @me if I don't reply within 6 months)</small
+          >.
         </p>
 
-        <div>
+        <div class="intro-actions">
           <ZeButton
-            text="Send me an email"
+            text="Chat"
+            link="/telegram"
+            external
+            primary
+            :delay="80"
+            icon="i-carbon-send-alt w-4"
+            suffix
+          />
+          <ZeButton
+            text="Email"
             :link="contactEmail.link"
             external
-            suffix
-            :delay="30"
+            :delay="80"
           />
         </div>
       </div>
@@ -135,6 +144,7 @@ function sayThanks() {
             text="Buy me a coffee"
             :link="bmcLink"
             external
+            primary
             :delay="30"
             @click="sayThanks"
           />
@@ -190,14 +200,8 @@ function sayThanks() {
     gap-3 justify-(start items-start);
 
   :deep() {
-    .coffee {
-      &:where(:hover, :focus-visible) {
-        @apply text-yellow-5/90;
-      }
-    }
-
     .no-coffee {
-      @apply min-w-20;
+      @apply min-w-15;
     }
   }
 }
@@ -221,5 +225,9 @@ function sayThanks() {
       @apply text-ml-1/100;
     }
   }
+}
+
+.intro-actions {
+  @apply flex flex-wrap gap-3 items-center w-auto;
 }
 </style>

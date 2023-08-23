@@ -11,8 +11,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
-      // link: [{ rel: 'icon', type: 'image/png', href: '/nuxt.png' }],
+      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
       htmlAttrs: {
         lang: 'en-US',
       },
