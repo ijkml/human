@@ -55,8 +55,6 @@ import { contactEmail, footerLinks } from '@data/links';
 }
 
 .ze-footer-inner {
-  // @apply outline outline-(1 white);
-
   @apply max-w-screen-lg mx-auto pt-12 px-8 grid gap-8;
 }
 
@@ -82,8 +80,6 @@ import { contactEmail, footerLinks } from '@data/links';
 }
 
 .ze-links-outer {
-  // @apply outline outline-(1 yellow);
-
   @apply inline-grid grid-cols-2 gap-8 items-start;
 }
 
