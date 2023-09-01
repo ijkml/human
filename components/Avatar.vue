@@ -24,9 +24,7 @@ import Avatar from '@img/svg/avatar.svg?component';
     .eyes {
       fill: var(--eyes);
     }
-  }
 
-  :deep() {
     path:hover + .eyes,
     .eyes:hover {
       fill: var(--stare);
