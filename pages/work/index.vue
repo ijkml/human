@@ -1,5 +1,8 @@
 <script setup lang="ts">
-
+useHead({
+  title: 'Work',
+  // meta: [{ name: 'description', content: '' }],
+});
 </script>
 
 <template>

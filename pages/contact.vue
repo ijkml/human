@@ -2,6 +2,11 @@
 // import { contactEmail, footerLinks } from '@data/links';
 import { bmcLink, contactEmail, socials } from '@data/links';
 
+useHead({
+  title: 'Contact',
+  // meta: [{ name: 'description', content: 'Get in touch' }],
+});
+
 const coaxTexts = [
   'Thank you!',
   'Not impressed? Sponsor me so I can level up & do better :)',
