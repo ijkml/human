@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import type { BasicProject } from '@data/projects';
+import type { FeaturedCardProps } from '@data/work';
 
-const props = defineProps<BasicProject>();
+const props = defineProps<FeaturedCardProps>();
 
-const { live, id, img } = toRefs(props);
+const { live, id, name } = toRefs(props);
 
 const link = live.value ? `/work/${id.value}` : undefined;
-const src = `/img/projects/${live.value ? img.value : 'soon.svg'}`;
-
-// const classes = link ? 'cursor-pointer' : 'cursor-wait';
+const src = `/img/projects/${live.value ? `${id.value}.webp` : 'soon.svg'}`;
 
 function viewProject() {
   if (link) {

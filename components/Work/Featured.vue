@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { featured as projects } from '@data/projects';
+import { featuredCards } from '@data/work';
 </script>
 
 <template>
@@ -13,7 +13,7 @@ import { featured as projects } from '@data/projects';
     </div>
 
     <div class="project-grid">
-      <WorkCard v-for="pr in projects" :key="pr.id" v-bind="pr" />
+      <WorkCard v-for="pr in featuredCards" :key="pr.id" v-bind="pr" />
     </div>
   </section>
 </template>
