@@ -5,7 +5,7 @@ useHead({
 });
 
 const props = {
-  title: 'Bro<span aria-hidden="true">·_·</span>ken',
+  title: 'Bro<span class="select-none" aria-hidden="true">·_·</span>ken',
   paragraph:
     'Congratulations, you found a broken link! <br /> If this is not what you were hoping to find, please give me a shout.',
 
