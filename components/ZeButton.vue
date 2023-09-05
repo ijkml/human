@@ -144,7 +144,7 @@ const bindProps = computed<object>(() => {
   }
 
   &:where(.primary) {
-    @apply text-yellow-5/90;
+    @apply text-amber-5/90;
   }
 
   &:is(.small) {

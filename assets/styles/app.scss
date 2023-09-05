@@ -1,9 +1,6 @@
 .hero-splash {
-  @apply bg-ml-7/100 w-full inset-0 of-hidden fixed z-16;
-
-  min-height: calc(100vh - ($nav-height * 1.2));
-  min-height: calc(100dvh - ($nav-height * 1.2));
-
+  @apply bg-ml-7/100 w-full inset-0 of-hidden
+    fixed z-16 items-center;
 }
 
 .link-xi {
@@ -97,7 +94,7 @@ s {
   }
 
   .arrow {
-    @apply op-60 text-yellow-1/100;
+    @apply op-60 text-amber-1/100;
   }
 
   &:is(:hover, :focus-visible) {

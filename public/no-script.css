@@ -10,14 +10,20 @@
   z-index: auto;
   inset: unset;
 
-  height: clamp(700px, 100vh, 1000px);
-  height: clamp(700px, 100dvh, 1000px);
-
   padding-top: calc(7.5rem + var(--nav-height));
   padding-bottom: 7.5rem;
   margin-top: calc(-1 * var(--nav-height));
+
+  height: clamp(700px, 100vh, 900px);
+  height: clamp(700px, 100dvh, 900px);
 }
 
 .ze-header {
   position: static !important;
+}
+
+@media (max-width: 1023px) {
+  .hero-splash {
+    height: auto;
+  }
 }
