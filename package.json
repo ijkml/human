@@ -8,6 +8,7 @@
     "dev": "nuxi dev",
     "start": "node .output/server/index.mjs",
     "lint": "eslint .",
+    "postinstall": "nuxi prepare",
     "generate": "nuxi generate"
   },
   "devDependencies": {
