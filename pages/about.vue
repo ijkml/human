@@ -3,6 +3,10 @@ useHead({
   title: '',
   // meta: [{ name: 'description', content: '' }],
 });
+
+definePageMeta({
+  alias: ['/about-me'],
+});
 </script>
 
 <template>

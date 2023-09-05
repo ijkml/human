@@ -7,6 +7,10 @@ useHead({
   // meta: [{ name: 'description', content: 'Get in touch' }],
 });
 
+definePageMeta({
+  alias: ['/contact-me'],
+});
+
 const coaxTexts = [
   'Thank you!',
   'Not impressed? Sponsor me so I can level up & do better :)',
