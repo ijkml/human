@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { oss } from '@data/projects';
+import { oss } from '@data/work';
 
 const editable = ref(false);
 
@@ -10,7 +10,6 @@ onMounted(() => {
 
 function getSrc(repo: string) {
   const randomizer = new Date().toISOString().substring(0, 10); // YYYY-MM-DD
-  //                 Math.floor(Math.random() * 90000) + 10000;
   return `https://opengraph.githubassets.com/${randomizer}/${repo}`;
 }
 </script>
@@ -48,7 +47,7 @@ function getSrc(repo: string) {
           target="_blank"
           rel="noopener"
         >
-          <img :src="getSrc(repo.link)" :alt="repo.title" />
+          <img :src="getSrc(repo.link)" :alt="`GitHub: ${repo.title}`" />
         </a>
       </div>
     </div>
@@ -56,10 +55,6 @@ function getSrc(repo: string) {
 </template>
 
 <style scoped lang="scss">
-.screamer-h2 {
-  // @apply text-ml-2/100;
-}
-
 .gh-commit {
   @apply text-3.4/[1.1] font-mono bg-zinc-8/100 rd-1
     py-0.3em px-0.5em mt-1 inline-block transition-200;

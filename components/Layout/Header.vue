@@ -13,7 +13,7 @@ const classe = reactive({
 watchThrottled(
   scrolledHeight,
   (nv, ov) => {
-    classe.contrast = nv > 300;
+    classe.contrast = nv > 200;
     classe.scrolled = nv > ov && nv > screenHeight.value;
   },
   { throttle: 150 }
