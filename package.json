@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@8.6.11",
+  "packageManager": "pnpm@8.7.1",
   "author": "ML (ijkml)",
   "license": "CC-BY-NC-SA-4.0",
   "scripts": {
@@ -12,25 +12,25 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.39.8",
+    "@antfu/eslint-config-vue": "^0.41.0",
     "@formkit/auto-animate": "1.0.0-beta.6",
-    "@iconify-json/carbon": "^1.1.18",
-    "@types/node": "^18.17.1",
-    "@unocss/nuxt": "^0.54.0",
-    "@vueuse/nuxt": "^10.3.0",
+    "@iconify-json/carbon": "^1.1.21",
+    "@types/node": "^18.17.14",
+    "@unocss/nuxt": "^0.55.7",
+    "@vueuse/nuxt": "^10.4.1",
     "consola": "^3.2.3",
-    "eslint": "^8.46.0",
-    "eslint-config-prettier": "^8.9.0",
-    "eslint-plugin-prettier-vue": "^4.2.0",
-    "eslint-plugin-vue": "^9.16.1",
-    "nuxt": "^3.6.5",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier-vue": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "nuxt": "^3.7.1",
     "nuxt-beastcss": "^1.0.3",
-    "nuxt-umami": "2.5.2",
-    "prettier": "^3.0.0",
-    "sass": "^1.64.1",
-    "typescript": "^5.1.6",
+    "nuxt-umami": "2.5.4",
+    "prettier": "^3.0.3",
+    "sass": "^1.66.1",
+    "typescript": "^5.2.2",
     "vite-svg-loader": "^4.0.0",
     "vue-typical": "^2.1.0",
-    "vue-wrap-balancer": "^1.0.0"
+    "vue-wrap-balancer": "^1.1.3"
   }
 }
