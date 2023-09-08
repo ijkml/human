@@ -88,11 +88,16 @@ const featuredProjects: Project[] = [
 
 type FeaturedCardProps = Pick<Project, 'id' | 'name' | 'live'>;
 
-const featuredCards = featuredProjects.map(({ name, live, id }) => ({
-  id,
-  name,
-  live,
-})) satisfies FeaturedCardProps[];
+const featuredCards = featuredProjects
+  .map(({ name, live, id }) => ({
+    id,
+    name,
+    live,
+  }))
+  // sort by "live", put live projects first
+  .sort(({ live: p1 }, { live: p2 }) =>
+    p1 === p2 ? 0 : p1 ? -1 : 1
+  ) satisfies FeaturedCardProps[];
 
 const publicWork = featuredProjects.filter((p) => p.live).map((p) => p.id);
 
