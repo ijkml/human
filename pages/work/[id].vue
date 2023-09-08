@@ -16,7 +16,7 @@ if (publicWork.includes(id)) {
 </script>
 
 <template>
-  <WorkProject v-if="project" v-bind="project" />
+  <WorkProjectPage v-if="project" v-bind="project" />
 
   <WorkMissing v-else />
 </template>

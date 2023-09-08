@@ -109,7 +109,13 @@ useHead({
       </div>
 
       <div class="project-prvw">
-        <img :src="`/img/projects/${id}-preview.webp`" />
+        <img
+          :src="`/img/projects/${id}-preview.webp`"
+          width="780"
+          loading="lazy"
+          decoding="async"
+          :alt="`Full-view screenshot of the ${name} website.`"
+        />
       </div>
     </div>
   </section>
@@ -136,18 +142,19 @@ useHead({
 .project-prvw {
   @apply mt-4 lg:(col-span-2);
 
-  // 1400x1600
-  // 1400x700
-  // 1400x1000 *
+  // width = 1400px; height = auto
   > img {
-    @apply aspect-1.4 object-(contain center) rd-lg outline-(1 solid ml-5/40);
+    @apply object-(contain center) rd-lg select-none
+      h-auto w-full outline-(1 solid ml-5/40);
   }
 }
 
 .project-deet {
   @apply col-span-1 grid gap-3 content-start self-start 
     justify-items-start items-start sm:(grid-cols-2)
-      lg:(grid-cols-1);
+      lg:(grid-cols-1 sticky);
+
+  top: calc(1.23 * var(--nav-height));
 }
 
 .sub-g {
