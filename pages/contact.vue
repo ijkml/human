@@ -110,12 +110,7 @@ function sayThanks() {
             icon="i-carbon-send-alt w-4"
             suffix
           />
-          <ZeButton
-            text="Email"
-            :link="contactEmail.link"
-            external
-            :delay="80"
-          />
+          <ZeButton text="Email" :link="contactEmail.link" :delay="80" />
         </div>
       </div>
 
