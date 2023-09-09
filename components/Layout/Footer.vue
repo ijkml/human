@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { contactEmail, footerLinks } from '@data/links';
+
+const { copy, copied } = useClipboard({ legacy: true });
 </script>
 
 
@@ -11,9 +13,19 @@ import { contactEmail, footerLinks } from '@data/links';
           I'm always up for a chat,
           <NuxtLink class="link-xi" to="/contact">get in touch &rarr;</NuxtLink>
         </p>
-        <a :href="contactEmail.link" class="email-link link-xi">
-          <UnoIcon class="i-carbon-email" /> {{ contactEmail.title }}
-        </a>
+        <div class="email-link">
+          <a :href="contactEmail.link" class="link-xi">
+            {{ contactEmail.title }}
+          </a>
+
+          <button
+            type="button"
+            title="Copy Email Address"
+            aria-lab
+            :class="copied ? 'i-carbon-checkmark' : 'i-carbon-copy'"
+            @click="copy(contactEmail.title)"
+          />
+        </div>
       </div>
       <nav aria-label="Footer navigation" class="ze-links-outer">
         <div v-for="(col, i) of footerLinks" :key="i" class="ze-links-inner">
@@ -67,8 +79,19 @@ import { contactEmail, footerLinks } from '@data/links';
 }
 
 .email-link {
-  @apply inline-flex justify-self-start items-center
-    gap-1.5 mt-4 text-current;
+  @apply inline-flex justify-self-start items-center gap-2 mt-4;
+
+  > button {
+    @apply text-90% op-40 transition-200;
+
+    &:where(:focus-visible, :hover) {
+      @apply op-100;
+    }
+  }
+
+  > a {
+    @apply text-current;
+  }
 }
 
 .ze-contact {
