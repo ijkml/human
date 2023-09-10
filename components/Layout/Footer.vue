@@ -14,17 +14,19 @@ const { copy, copied } = useClipboard({ legacy: true });
           <NuxtLink class="link-xi" to="/contact">get in touch &rarr;</NuxtLink>
         </p>
         <div class="email-link">
-          <a :href="contactEmail.link" class="link-xi">
+          <a :href="contactEmail.link" class="link-xi text-current">
             {{ contactEmail.title }}
           </a>
 
-          <button
-            type="button"
-            title="Copy Email Address"
-            aria-lab
-            :class="copied ? 'i-carbon-checkmark' : 'i-carbon-copy'"
-            @click="copy(contactEmail.title)"
-          />
+          <ClientOnly>
+            <button
+              type="button"
+              title="Copy Email Address"
+              class="copy-btn"
+              :class="copied ? 'i-carbon-checkmark' : 'i-carbon-copy'"
+              @click="copy(contactEmail.title)"
+            />
+          </ClientOnly>
         </div>
       </div>
       <nav aria-label="Footer navigation" class="ze-links-outer">
@@ -80,17 +82,13 @@ const { copy, copied } = useClipboard({ legacy: true });
 
 .email-link {
   @apply inline-flex justify-self-start items-center gap-2 mt-4;
+}
 
-  > button {
-    @apply text-90% op-40 transition-200;
+.copy-btn {
+  @apply op-40 transition-200 w-4 h-4;
 
-    &:where(:focus-visible, :hover) {
-      @apply op-100;
-    }
-  }
-
-  > a {
-    @apply text-current;
+  &:where(:focus-visible, :hover) {
+    @apply op-100;
   }
 }
 
