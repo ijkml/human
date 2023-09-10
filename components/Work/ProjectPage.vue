@@ -33,10 +33,19 @@ useHead({
   title: name,
   meta: [{ name: 'description', content: details }],
 });
+
+const pager = [
+  { title: 'Contact Me', desc: 'Get in touch', link: '/contact' },
+  { title: 'All Works', desc: 'View all projects', link: '/work' },
+];
 </script>
 
 <template>
-  <section class="sect-space-top" aria-labelledby="project-title" role="region">
+  <section
+    class="sect-space-top even"
+    aria-labelledby="project-title"
+    role="region"
+  >
     <div class="heading-wrap">
       <h1 id="project-title" class="screamer-h1">{{ name }}</h1>
       <div class="text-url">
@@ -46,7 +55,7 @@ useHead({
       </div>
     </div>
 
-    <div class="project-info-page">
+    <div class="project-info-grid">
       <div class="project-deet">
         <SubSect title="Project">
           <div class="project-text">
@@ -118,17 +127,35 @@ useHead({
         />
       </div>
     </div>
+
+    <div class="pagination">
+      <NuxtLink
+        v-for="ln in pager"
+        :key="ln.title"
+        :to="ln.link"
+        class="pager-link"
+      >
+        <div class="link-text">
+          <span class="desc" v-text="ln.desc" />
+          <span class="title" v-text="ln.title" />
+        </div>
+
+        <div class="link-arrow">
+          <span class="i-carbon-arrow-right" />
+        </div>
+      </NuxtLink>
+    </div>
   </section>
 </template>
 
 <style scoped lang="scss">
 .sect-space-top {
-  @apply px-2 ss:(px-3) ss500:(px-4)
+  @apply px-2 mb-16 ss:(px-3) ss500:(px-4)
     sm:(px-6) md:(px-10) xl:(px-13);
 }
 
-.project-info-page {
-  @apply grid gap-8 mt-24 items-center lg:(grid-cols-3);
+.project-info-grid {
+  @apply grid gap-8 my-24 items-center lg:(grid-cols-3);
 }
 
 .text-url {
@@ -191,8 +218,10 @@ ul {
   }
 
   li {
+    @apply inline-flex items-center;
+
     &::before {
-      @apply content-['▹'] text-(size-inherit ml-0/70) mr-2;
+      @apply content-['▹'] text-(1.5em/0 amber-5/50) mr-2 sm:(text-1em);
     }
   }
 }
@@ -210,6 +239,41 @@ ul {
 
   &:not(:where(:hover, :focus-visible)) {
     @apply text-inherit;
+  }
+}
+
+.pagination {
+  @apply grid gap-3 max-w-screen-md mx-auto ss500:(gap-5 grid-cols-2) sm:(gap-8);
+}
+
+.pager-link {
+  @apply flex items-center justify-between transition-300
+    cursor-pointer rd-lg text-ml-2/75 border-(1 ml-5/60)
+      p-(x-5 y-3) outline-none sm:(text-lg);
+
+  &:where(:hover, :focus-visible) {
+    @apply text-ml-0/90 border-ml-0/50;
+
+    .link-arrow {
+      @apply rotate--45;
+    }
+  }
+}
+
+.link-text {
+  @apply inline-grid transition-inherit;
+
+  .desc {
+    @apply font-light my-1px text-(xs ml-3/100) sm:(text-sm);
+  }
+}
+
+.link-arrow {
+  @apply transition-inherit transform
+    preserve-3d backface-hidden;
+
+  > span {
+    @apply block h-6 w-6;
   }
 }
 </style>
