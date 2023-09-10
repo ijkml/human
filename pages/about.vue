@@ -81,8 +81,12 @@ definePageMeta({
     @apply mb-2;
   }
 
-  ul > li:not(:only-child)::before {
-    @apply content-['▹'] text-(size-inherit ml-0/100) mr-2;
+  ul > li {
+    @apply inline-flex items-center;
+
+    &:not(:only-child)::before {
+      @apply content-['▹'] text-(1.5em/0 amber-5/50) mr-2 sm:(text-1em);
+    }
   }
 
   :where(dt, li) {
