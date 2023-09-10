@@ -1,18 +1,16 @@
 <script setup lang="ts">
 import { contactEmail } from '@data/links';
-
-const email = contactEmail.link;
 </script>
 
 <template>
   <section
-    v-if="$route.path !== '/'"
+    v-if="!['work-id', 'home'].includes($route.name)"
     role="region"
     aria-labelledby="bottom-action-head"
     class="bottom-action"
   >
     <NuxtLink
-      :to="$route.path === '/contact' ? email : '/contact'"
+      :to="$route.path === '/contact' ? contactEmail.link : '/contact'"
       class="cta-head"
       tabindex="0"
     >
