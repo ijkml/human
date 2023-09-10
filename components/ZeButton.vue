@@ -99,7 +99,7 @@ const bindProps = computed<object>(() => {
       </slot>
     </span>
 
-    <div class="text-body">
+    <span class="text-body">
       <span
         v-for="c in chunks"
         :key="c.delay"
@@ -109,7 +109,7 @@ const bindProps = computed<object>(() => {
         v-text="c.char"
       />
       <span class="full-text" v-text="text" />
-    </div>
+    </span>
 
     <span v-if="icon && suffix" class="icon-fix suffix" aria-hidden="true">
       <slot name="icon">
@@ -153,7 +153,7 @@ const bindProps = computed<object>(() => {
 }
 
 .text-body {
-  @apply relative transition-inherit;
+  @apply relative transition-inherit block;
 }
 
 :where(.char, .full-text) {
