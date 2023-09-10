@@ -38,6 +38,11 @@ defineProps<{
 .page-section {
   @apply max-w-screen-lg mx-auto mt-24 px-2 ss:(px-3)
     ss500:(px-4) sm:(px-6) md:(px-10 mt-36);
+
+  &.padded {
+    // project page 404 has no CTA
+    @apply mb-24 md:(mb-36);
+  }
 }
 
 .sect-wrap {
