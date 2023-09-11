@@ -16,18 +16,6 @@ useHead({
           with k8s and docker that can scale and handle traffic the size of
           Google's! Exciting! I just gotta figure out this caching problem...
         </p>
-        <p>
-          Meanwhile, you can
-          <NuxtLink
-            href="/twitter"
-            class="link-xi"
-            external
-            rel="noopener"
-            target="_blank"
-            >find me on X</NuxtLink
-          >. I'll appreciate it if you can send a couple 🔪🔪 emojis to
-          <i>motivate</i> me to publish that "Hello World" draft :)
-        </p>
       </div>
     </div>
   </section>
