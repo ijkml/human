@@ -6,14 +6,14 @@
     <div class="sect-head gap-4">
       <h2 id="head-oss" class="screamer-h2">Open For Work</h2>
       <Balancer as="p">
-        I'm a dedicated web developer with a passion for building simple and
-        usable websites. I'm looking for an internship or full-time position at
-        a company that values creativity and <i>good</i> sense of humour. I'm
-        available for full-time, part-time, or remote work. I'm confident that I
-        can make a significant contribution to your team.
+        I am a dedicated and self-driven web developer with a passion for
+        learning and growing. I am actively looking for an internship or
+        full-time position. I'm self-taught and eager to improve. I'm available
+        for full-time, part-time, or remote work.
       </Balancer>
       <Balancer as="p">
-        I am currently freelancing and open to gigs. Get in touch, let's talk.
+        I am also available for freelance projects. I am confident that I can
+        deliver high-quality work on time and within budget.
       </Balancer>
       <div class="action">
         <ZeButton primary link="/contact" text="Get in touch" />
