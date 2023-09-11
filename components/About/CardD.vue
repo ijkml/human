@@ -20,10 +20,7 @@
     <div class="black-red bc-card work-card">
       <h3 class="heading-lv-3">Experiences</h3>
 
-      <p>
-        Discover my featured projects, work experiences, OSS contributions, and
-        side projects.
-      </p>
+      <p>Explore my featured projects OSS contributions, and experiences.</p>
 
       <div class="action">
         <ZeButton text="Work" link="/work" small />

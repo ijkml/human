@@ -2,36 +2,52 @@
   <div class="text-cont black-red">
     <h2 class="heading-h2">Moses Laurence</h2>
 
+    <SubSect title="Intro">
+      <p>
+        Moses Laurence, front-end developer, the
+        <i>nth</i> of his name, maker of websites, master of CSS, maintainer and
+        contributor of open-source,
+        <a
+          href="https://nuxters.nuxt.com/ijkml"
+          class="link-nuxt"
+          target="_blank"
+          rel="noopener"
+          >Nuxter</a
+        >
+        of the great Nuxt community, and squasher of bugs.
+      </p>
+    </SubSect>
+
     <SubSect title="About">
       <p>
-        The alarm still oscillated, louder here, the rear of the Villa bespeak a
-        turning in, a denial of the bright void beyond the hull.
+        I am a front-end developer with a strong focus on user experience. I am
+        passionate about creating websites and web applications that are easy to
+        use and enjoyable to interact with. I am self-taught and eager improve
+        myself and the quality of my work.
+      </p>
+
+      <p>
+        I've been obsessed with technology ever since I could spell the word.
+        Learning what
+        <code class="code">#ff2d2d</code> meant in 2018 was the sign from heaven
+        I was waiting for, "DO COMPUTERS" it said.
+      </p>
+
+      <p>
+        In my free time, I watch movies, read blogs and listen to music. I'm
+        also a big fan of interactive fiction.
       </p>
     </SubSect>
 
-    <SubSect title="u/w/u?">
-      <p>It is actually Lawrence, but I write "color" for a living, so...</p>
-    </SubSect>
-
-    <SubSect title="Hobbies">
+    <SubSect title="Work">
       <p>
-        The last Case saw of Chiba were the dark angles of the Sprawl’s towers
-        and ragged Fuller domes, dim figures moving toward him in the dark.
+        I'm currently freelancing, and I've been lucky to work with brands and
+        individuals who share my passion for creating innovative and
+        user-friendly experiences.
       </p>
-    </SubSect>
 
-    <SubSect title="Age">
       <p>
-        65.<br />
-        <small class="block-code">
-          (Technically, 20, but age is just a social construct)
-        </small>
-      </p>
-    </SubSect>
-
-    <SubSect title="Job">
-      <p>
-        I'm currently enjoying the free world of freelancing!
+        Lots of free time, too.
         <span class="block-code">
           <code>&lt;thumbs-up-crying-cat-gif /&gt;</code>
         </span>

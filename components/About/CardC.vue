@@ -20,8 +20,6 @@
         </dd>
         <dt>Digital Marketing:</dt>
         <dd>Certified. I can sell ice to polar bears, believe me!</dd>
-        <dt>Writing:</dt>
-        <dd>Let's just say I've got an eye for it.</dd>
       </dl>
     </SubSect>
   </div>
