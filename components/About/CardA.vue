@@ -22,8 +22,8 @@
       <p>
         I am a front-end developer with a strong focus on user experience. I am
         passionate about creating websites and web applications that are easy to
-        use and enjoyable to interact with. I am self-taught and eager improve
-        myself and the quality of my work.
+        use and enjoyable to interact with. I am self-taught and eager to
+        improve myself and the quality of my work.
       </p>
 
       <p>
