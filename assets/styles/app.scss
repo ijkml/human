@@ -3,6 +3,19 @@
     fixed z-16 items-center;
 }
 
+.link-nuxt {
+  @apply decoration-(dashed underline offset-4) mx-1px
+    outline-none transition-300;
+
+    &:after {
+      @apply content-['↗︎'] ml-2px;
+    }
+
+  &:where(:hover, :focus-visible) {
+    @apply text-green-5/100;
+  }
+}
+
 .link-xi {
   @apply decoration-none relative text-ml-4/100
     items-center inline-flex outline-none px-1 select-none;
@@ -37,6 +50,11 @@
 
 s {
   @apply op-70 select-none;
+}
+
+.code {
+  @apply font-mono bg-zinc-9/100 text-90%/none
+    p-0.3em rd-1 inline-block transition-200;
 }
 
 .screamer-h1 {
