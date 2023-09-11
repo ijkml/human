@@ -13,7 +13,7 @@ useHead({
 
 splashLock(true);
 
-const reverb = `Hey, I'm <b>ML</b>, an open-source enthusiast and dedicated web developer. I like to build simple and usable websites.`;
+const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer and open-source enthusiast. I like to build simple and usable websites.`;
 </script>
 
 <template>
