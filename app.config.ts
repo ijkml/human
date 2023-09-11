@@ -6,6 +6,6 @@ export default defineAppConfig({
     version: 2,
     useDirective: true,
     // ignoreLocalhost: true,
-    debug: true,
+    // debug: true,
   },
 });
