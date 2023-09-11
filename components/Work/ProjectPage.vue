@@ -150,12 +150,12 @@ const pager = [
 
 <style scoped lang="scss">
 .sect-space-top {
-  @apply px-2 mb-16 ss:(px-3) ss500:(px-4)
+  @apply px-2 ss:(px-3) ss500:(px-4)
     sm:(px-6) md:(px-10) xl:(px-13);
 }
 
 .project-info-grid {
-  @apply grid gap-8 my-24 items-center lg:(grid-cols-3);
+  @apply grid gap-8 mt-24 items-center lg:(grid-cols-3);
 }
 
 .text-url {
@@ -243,7 +243,8 @@ ul {
 }
 
 .pagination {
-  @apply grid gap-3 max-w-screen-md mx-auto ss500:(gap-5 grid-cols-2) sm:(gap-8);
+  @apply grid gap-3 my-24 max-w-screen-md mx-auto
+    ss500:(gap-5 grid-cols-2) sm:(gap-8) md:(my-32);
 }
 
 .pager-link {
