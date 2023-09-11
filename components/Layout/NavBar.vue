@@ -9,11 +9,11 @@ import { headerLinks, linkIcons } from '@data/links';
       :key="ln.title"
       class="link-icon"
       :to="ln.link"
-      aria-hidden="true"
+      :aria-label="ln.title"
       prefetch
       exact-active-class="active-link"
     >
-      <component :is="linkIcons[ln.icon]" />
+      <component :is="linkIcons[ln.icon]" aria-hidden="true" />
     </NuxtLink>
   </nav>
 </template>
