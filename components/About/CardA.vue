@@ -5,8 +5,8 @@
     <SubSect title="Intro">
       <p>
         Moses Laurence, front-end developer, the
-        <i>nth</i> of his name, maker of websites, master of CSS, maintainer and
-        contributor of open-source,
+        <em>nth</em> of his name, maker of websites, master of CSS, maintainer
+        and contributor of open-source,
         <a
           href="https://nuxters.nuxt.com/ijkml"
           class="link-nuxt"
