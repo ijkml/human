@@ -26,11 +26,6 @@ useHead({
 </template>
 
 <style scoped lang="scss">
-.sect-space-top {
-  @apply px-2 ss:(px-3) ss500:(px-4) sm:(px-6)
-    md:(px-10) xl:(px-13);
-}
-
 :deep() {
   .screamer-h2 {
     @apply text-ml-2/80;
@@ -55,11 +50,15 @@ useHead({
 :deep() {
   @media (hover: hover) and (pointer: fine) {
     .cursor-project {
-      cursor: url('@img/svg/cursor.svg') 50 50, pointer;
+      cursor:
+        url('@img/svg/cursor.svg') 50 50,
+        pointer;
     }
 
     .cursor-project-alt {
-      cursor: url('@img/svg/cursor-alt.svg') 50 50, pointer;
+      cursor:
+        url('@img/svg/cursor-alt.svg') 50 50,
+        pointer;
     }
   }
 }

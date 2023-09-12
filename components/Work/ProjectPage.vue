@@ -149,11 +149,6 @@ const pager = [
 </template>
 
 <style scoped lang="scss">
-.sect-space-top {
-  @apply px-2 ss:(px-3) ss500:(px-4)
-    sm:(px-6) md:(px-10) xl:(px-13);
-}
-
 .project-info-grid {
   @apply grid gap-8 mt-24 items-center lg:(grid-cols-3);
 }

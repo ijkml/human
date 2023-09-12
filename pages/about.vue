@@ -10,11 +10,7 @@ definePageMeta({
 </script>
 
 <template>
-  <section
-    role="region"
-    aria-labelledby="about-me"
-    class="sect-space-top section-about"
-  >
+  <section role="region" aria-labelledby="about-me" class="sect-space-top">
     <div class="heading-wrap">
       <h1 id="about-me" class="screamer-h1">About</h1>
       <p class="echo">
@@ -39,11 +35,6 @@ definePageMeta({
 </template>
 
 <style scoped lang="scss">
-.section-about {
-  @apply px-2 ss:(px-3) ss500:(px-4) sm:(px-6)
-    md:(px-10) xl:(px-13);
-}
-
 .details-deck {
   @apply mt-24 grid gap-8 sm:(grid-cols-2 gap-6) md:(gap-7);
 }

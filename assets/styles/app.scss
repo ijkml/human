@@ -69,7 +69,8 @@ s {
 }
 
 .sect-space-top {
-  @apply max-w-screen-xl mx-auto pb-4;
+  @apply max-w-screen-xl mx-auto pb-4 px-4
+    sm:(px-6) md:(px-10) xl:(px-13);
 
   padding-top: clamp(150px, 300px, 45vh);
 

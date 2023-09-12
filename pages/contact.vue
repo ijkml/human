@@ -57,11 +57,7 @@ function sayThanks() {
 </script>
 
 <template>
-  <section
-    role="region"
-    aria-labelledby="get-in-touch"
-    class="sect-space-top section-contact"
-  >
+  <section role="region" aria-labelledby="get-in-touch" class="sect-space-top">
     <div class="heading-wrap">
       <h1 id="get-in-touch" class="screamer-h1">Contact</h1>
       <Balancer as="p">
@@ -175,11 +171,6 @@ function sayThanks() {
 </template>
 
 <style scoped lang="scss">
-.section-contact {
-  @apply px-2 ss:(px-3) ss500:(px-4) sm:(px-6)
-    md:(px-10) xl:(px-13);
-}
-
 .options-deck {
   @apply mx-auto mt-24 gap-6 grid ss500:(gap-8) sm:(grid-cols-2)
     md:(max-w-200) lg:(grid-cols-3 max-w-screen-xl);
