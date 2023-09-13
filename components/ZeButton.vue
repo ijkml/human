@@ -70,11 +70,15 @@ const chunks = computed(() => {
 const bindProps = computed<object>(() => {
   const linkProps = {
     ...(regular.value ? { href: link.value } : { to: link.value }),
-    ...(external.value && {
-      ...(!regular.value && { external: true }),
-      target: '_blank',
-      rel: 'noopener',
-    }),
+    ...(external.value
+      ? {
+          ...(!regular.value && { external: true }),
+          target: '_blank',
+          rel: 'noopener',
+        }
+      : {
+          prefetch: true,
+        }),
   };
 
   return {
