@@ -1,7 +1,7 @@
 @use "./fonts";
 
 $scrollbar-thumb: #888;
-$scrollbar-track: theme('colors.ml.7');
+$scrollbar-track: theme("colors.ml.7");
 
 :root {
   -ms-text-size-adjust: 100%;
@@ -17,7 +17,7 @@ $scrollbar-track: theme('colors.ml.7');
 
 html {
   // also set inline in nuxt.config
-  @apply text-ml-3/100 bg-ml-7/100 scroll-py-16 of-y-scroll;
+  @apply text-ml-2/70 bg-ml-8/100 scroll-py-16 of-y-scroll;
 }
 
 * {
@@ -47,7 +47,8 @@ html {
   @apply bg-ml-9/100 text-ml-0/100;
 }
 
-.page, .fade {
+.page,
+.fade {
   &-enter-active,
   &-leave-active {
     transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -66,8 +67,12 @@ html {
     border-(solid zinc-5/30.5);
 }
 
-:where(img, a) {
+:where(img, a):not(.prose-a) {
   @apply select-none;
 }
+
+pre.monokai {
+  @apply bg-#0e0e0e;
+} 
 
 @import "./app";

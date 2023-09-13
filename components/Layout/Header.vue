@@ -14,7 +14,7 @@ watchThrottled(
   scrolledHeight,
   (nv, ov) => {
     classe.contrast = nv > 200;
-    classe.scrolled = nv > ov && nv > screenHeight.value;
+    classe.scrolled = nv > ov && nv > screenHeight.value * 0.5;
   },
   { throttle: 150 }
 );
@@ -56,7 +56,8 @@ watchThrottled(
 .ze-inner-header {
   @apply max-w-screen-xl flex items-center select-none
     justify-between transition-inherit mx-auto mt-1 px-4
-      w-92% rd-md relative sm:(mt-8px w-90%);
+      w-92% rd-md relative outline-(1 solid transparent)
+        sm:(mt-8px w-90%);
 
   height: $nav-height-inner;
   max-height: $nav-height-inner;
@@ -67,8 +68,12 @@ watchThrottled(
         to-(ml-0/25 150%) transition-inherit absolute;
   }
 
-  .contrast &::before {
-    @apply ss500:(op-100);
+  .contrast & {
+    @apply outline-ml-6/75;
+
+    &::before {
+      @apply ss500:(op-100);
+    }
   }
 }
 

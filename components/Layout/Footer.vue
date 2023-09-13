@@ -65,7 +65,7 @@ const { copy, copied } = useClipboard({ legacy: true });
 .ze-footer {
   @apply border-(b-5 ml-0/25);
 
-  @apply bg-ml-8/100 text-ml-3/100;
+  @apply bg-ml-9/100 text-ml-3/100;
 }
 
 .ze-footer-inner {

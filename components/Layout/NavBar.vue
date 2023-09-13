@@ -20,7 +20,7 @@ import { headerLinks, linkIcons } from '@data/links';
 
 <style scoped lang="scss">
 .sticky-bottom {
-  @apply sticky bottom-0 p-1 w-full bg-ml-8/90
+  @apply sticky bottom-0 p-1 w-full bg-ml-9/90
     backdrop-blur-4 z-13 border-t-(1 solid ml-5/30);
 
   height: $nav-height-inner;
