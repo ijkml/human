@@ -3,6 +3,11 @@ useHead({
   title: 'Blog',
   // meta: [{ name: 'description', content: '' }],
 });
+
+definePageMeta({
+  alias: ['/blog'],
+  documentDriven: false,
+});
 </script>
 
 <template>
@@ -16,17 +21,15 @@ useHead({
           with k8s and docker that can scale and handle traffic the size of
           Google's! Exciting! I just gotta figure out this caching problem...
         </p>
+        <div>
+          <ZeButton text="Blog Post" link="/posts/hello" />
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped lang="scss">
-.sect-space-top {
-  @apply px-2 ss:(px-3) ss500:(px-4) sm:(px-6)
-    md:(px-10) xl:(px-13);
-}
-
 a {
   @apply text-ml-0/100 px-1px;
 

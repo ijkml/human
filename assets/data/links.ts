@@ -32,7 +32,7 @@ const headerLinks: LinkFormat[] = [
   { title: 'Home', link: '/', icon: 'home' },
   { title: 'About', link: '/about', icon: 'about' },
   { title: 'Work', link: '/work', icon: 'work' },
-  { title: 'Blog', link: '/blog', icon: 'blog' },
+  { title: 'Posts', link: '/posts', icon: 'blog' },
   { title: 'Contact', link: '/contact', icon: 'contact' },
 ];
 
