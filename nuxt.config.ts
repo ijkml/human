@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'node:url';
 import svgLoader from 'vite-svg-loader';
+import { resolve } from 'pathe';
 import { redirects } from './assets/data/redirects';
 
 export default defineNuxtConfig({
@@ -7,13 +8,13 @@ export default defineNuxtConfig({
     host: '',
     port: 3221,
   },
-  extends: ['nuxt-umami'],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
       htmlAttrs: {
         lang: 'en-US',
+        class: 'dark',
       },
       meta: [
         { name: 'description', content: 'Moses Laurence' },
@@ -42,7 +43,42 @@ export default defineNuxtConfig({
     // '@icons': fileURLToPath(new URL('./assets/icons', import.meta.url)),
     '@data': fileURLToPath(new URL('./assets/data', import.meta.url)),
   },
-  modules: ['@vueuse/nuxt', '@unocss/nuxt', 'nuxt-beastcss'],
+  modules: ['@vueuse/nuxt', '@unocss/nuxt', 'nuxt-beastcss', '@nuxt/content'],
+  extends: ['nuxt-umami', '@nuxt-themes/typography'],
+  content: {
+    documentDriven: true,
+    sources: {
+      // overwrite default source AKA `content` directory
+      content: {
+        driver: 'fs',
+        prefix: '/posts',
+        base: resolve(__dirname, 'content/articles'),
+      },
+    },
+    highlight: {
+      // Theme used in all color schemes.
+      theme: 'monokai',
+      preload: [
+        'ts',
+        'vue',
+        'js',
+        'json',
+        'html',
+        'css',
+        'diff',
+        'scss',
+        'less',
+        'shell',
+        'bash',
+        'sh',
+        'markdown',
+        'mdx',
+        'yaml',
+        'toml',
+        'tsx',
+      ],
+    },
+  },
   experimental: {
     // inlineSSRStyles: false,
     typedPages: true,
