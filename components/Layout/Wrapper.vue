@@ -1,5 +1,5 @@
 <template>
-  <div data-default-layout data-scroll>
+  <div class="page-layout" data-scroll>
     <LayoutHeader />
 
     <main>
@@ -12,8 +12,8 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-[data-default-layout] {
+<style scoped lang="scss">
+.page-layout {
   @apply flex flex-col justify-start min-h-(100vh 100dvh);
 }
 </style>
