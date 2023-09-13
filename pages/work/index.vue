@@ -3,6 +3,10 @@ useHead({
   title: 'Work',
   // meta: [{ name: 'description', content: '' }],
 });
+
+definePageMeta({
+  documentDriven: false,
+});
 </script>
 
 <template>

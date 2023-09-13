@@ -4,6 +4,7 @@ import { splashLock, hasPlayedHeroAnim as splashOver } from '@/helpers/splash';
 definePageMeta({
   path: '/',
   alias: ['/home'],
+  documentDriven: false,
 });
 
 useHead({

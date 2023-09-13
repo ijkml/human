@@ -2,6 +2,10 @@
 import type { Project } from '@data/work';
 import { featuredProjects, publicWork } from '@data/work';
 
+definePageMeta({
+  documentDriven: false,
+});
+
 interface RouteParams {
   id: string;
 }

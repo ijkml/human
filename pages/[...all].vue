@@ -4,6 +4,11 @@ useHead({
   meta: [{ name: 'description', content: 'This page does not exist.' }],
 });
 
+definePageMeta({
+  documentDriven: false,
+  alias: ['/404'],
+});
+
 const props = {
   title: 'Bro<span class="select-none" aria-hidden="true">·_·</span>ken',
   paragraph:
