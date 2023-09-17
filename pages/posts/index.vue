@@ -22,7 +22,7 @@ definePageMeta({
           Google's! Exciting! I just gotta figure out this caching problem...
         </p>
         <div>
-          <ZeButton text="Blog Post" link="/posts/hello" />
+          <ZeButton text="Blog Post" link="/posts/test" />
         </div>
       </div>
     </div>
