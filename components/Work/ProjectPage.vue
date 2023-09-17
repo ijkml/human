@@ -108,7 +108,7 @@ const pager = [
                   class="link-xi credits-link"
                   :href="c.link"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener nofollow"
                   >{{ c.name }}</a
                 >
               </li>
