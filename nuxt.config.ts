@@ -14,7 +14,6 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
       htmlAttrs: {
         lang: 'en-US',
-        class: 'dark',
       },
       meta: [
         { name: 'description', content: 'Moses Laurence' },
@@ -44,7 +43,7 @@ export default defineNuxtConfig({
     '@data': fileURLToPath(new URL('./assets/data', import.meta.url)),
   },
   modules: ['@vueuse/nuxt', '@unocss/nuxt', 'nuxt-beastcss', '@nuxt/content'],
-  extends: ['nuxt-umami', '@nuxt-themes/typography'],
+  extends: ['nuxt-umami'],
   content: {
     documentDriven: true,
     sources: {
