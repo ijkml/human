@@ -7,11 +7,8 @@
 
 <style lang="scss" scoped>
 code {
-  @apply font-mono mx-1px rd-1 py-0.2em px-0.5em
+  @apply font-mono mx-1px rd-1 py-0.2em px-0.5em inline-block
     text-(0.87em ml-2/100) leading-[1] bg-zinc-8/100;
-
-  word-wrap: break-word;
-  white-space: break-spaces;
 
   tbody & {
     @apply text-0.95em;
