@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VTypical } from 'vue-typical';
-import { hasPlayedHeroAnim, splashLock } from '@/helpers/splash';
+import { hasPlayedHero, splashLock } from '@/helpers/splash';
 
 const screamer = 'I craft accessible and performant web experiences.';
 
@@ -11,7 +11,7 @@ function showNext() {
 
 <template>
   <ClientOnly>
-    <span v-if="hasPlayedHeroAnim" v-text="screamer" />
+    <span v-if="hasPlayedHero" v-text="screamer" />
 
     <VTypical
       v-else

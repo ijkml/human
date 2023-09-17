@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { splashLock, hasPlayedHeroAnim as splashOver } from '@/helpers/splash';
+import { hasPlayedHero, splashLock } from '@/helpers/splash';
 
 definePageMeta({
   path: '/',
@@ -22,7 +22,7 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer and open-sou
     class="home-hero"
     role="region"
     aria-labelledby="hero-head-h1"
-    :class="{ 'hero-splash': !splashOver }"
+    :class="{ 'hero-splash': !hasPlayedHero }"
   >
     <div>
       <div v-auto-animate="{ duration: 500 }" class="text-cont">
@@ -31,7 +31,7 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer and open-sou
         </h1>
 
         <ClientOnly>
-          <p v-if="splashOver" class="reverb">
+          <p v-if="hasPlayedHero" class="reverb">
             <Balancer v-html="reverb" />
           </p>
 
@@ -42,7 +42,7 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer and open-sou
       </div>
 
       <ClientOnly>
-        <HomeLinks v-if="splashOver" />
+        <HomeLinks v-if="hasPlayedHero" />
 
         <template #fallback>
           <HomeLinks data-fallback />

@@ -5,13 +5,13 @@ const html = computed(() => {
   return document.documentElement;
 });
 
-const hasPlayedHeroAnim = ref(false);
+const hasPlayedHero = ref(false);
 const rootScrollLock = useScrollLock(html, false);
 
 const scrollGap = ref<`${number}px`>('0px');
 
 function splashLock(lock: boolean) {
-  if (typeof window === 'undefined' || hasPlayedHeroAnim.value) {
+  if (typeof window === 'undefined' || hasPlayedHero.value) {
     return;
   }
 
@@ -25,8 +25,8 @@ function splashLock(lock: boolean) {
   if (lock) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } else {
-    hasPlayedHeroAnim.value = true;
+    hasPlayedHero.value = true;
   }
 }
 
-export { splashLock, hasPlayedHeroAnim };
+export { splashLock, hasPlayedHero };
