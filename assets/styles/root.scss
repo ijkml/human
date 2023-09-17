@@ -10,14 +10,14 @@ $scrollbar-track: theme("colors.ml.7");
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @apply text-16px font-sans scroll-smooth;
+  @apply text-16px font-sans;
 
   --nav-height: #{$nav-height};
 }
 
 html {
   // also set inline in nuxt.config
-  @apply text-ml-2/70 bg-ml-8/100 scroll-py-16 of-y-scroll;
+  @apply text-ml-2/70 bg-ml-8/100 of-y-scroll scroll-smooth;
 }
 
 * {
@@ -47,8 +47,7 @@ html {
   @apply bg-ml-9/100 text-ml-0/100;
 }
 
-.page,
-.fade {
+.page {
   &-enter-active,
   &-leave-active {
     transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -67,12 +66,9 @@ html {
     border-(solid zinc-5/30.5);
 }
 
-:where(img, a):not(.prose-a) {
+:where(img, a) {
   @apply select-none;
 }
 
-pre.monokai {
-  @apply bg-#0e0e0e;
-} 
-
 @import "./app";
+@import "./novel";

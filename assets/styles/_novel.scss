@@ -1,0 +1,25 @@
+:target, .novel-heading {
+  scroll-margin-top: #{$nav-height};
+}
+
+.novel-heading {
+  @apply text-ml-2/90 tracking-tight block font-semibold;
+
+  // inspired by antfu's
+  a {
+    @apply text-0.85em my-0.125em ml--1.2em pr-0.5em float-left
+      outline-none op-0 font-(mono semibold) transition-200;
+
+    &:hover {
+      @apply text-ml-0/100;
+    }
+  }
+
+  &:hover a {
+    @apply op-50;
+  }
+
+  > :is(code) {
+    @apply align-bottom;
+  }
+}
