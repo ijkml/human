@@ -1,16 +1,11 @@
 <script setup lang="ts">
 useHead({
-  title: '404 Not Found',
+  title: 'Page not found',
   meta: [{ name: 'description', content: 'This page does not exist.' }],
 });
 
-definePageMeta({
-  documentDriven: false,
-  alias: ['/404'],
-});
-
 const props = {
-  title: 'Bro<span class="select-none" aria-hidden="true">·_·</span>ken',
+  title: 'Bro<span class="broken" aria-hidden="true">·_·</span>ken',
   paragraph:
     'Congratulations, you found a broken link! <br /> If this is not what you were hoping to find, please give me a shout.',
 

@@ -38,11 +38,6 @@ defineProps<{
 .page-section {
   @apply max-w-screen-lg mx-auto mt-24 px-4
     sm:(px-6) md:(px-10 mt-36);
-
-  &.padded {
-    // project page 404 has no CTA
-    @apply mb-24 md:(mb-36);
-  }
 }
 
 .sect-wrap {
@@ -70,6 +65,12 @@ defineProps<{
 
   > :where(svg, img) {
     @apply w-full object-contain max-h-80 md:(max-h-96) lg:(max-h-128);
+  }
+}
+
+:deep() {
+  .broken {
+    @apply select-none op-25 pointer-events-none;
   }
 }
 </style>

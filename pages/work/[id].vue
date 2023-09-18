@@ -22,5 +22,5 @@ if (publicWork.includes(id)) {
 <template>
   <WorkProjectPage v-if="project" v-bind="project" />
 
-  <WorkMissing v-else />
+  <NotFoundWork v-else />
 </template>

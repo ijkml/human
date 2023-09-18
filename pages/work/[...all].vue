@@ -5,5 +5,5 @@ definePageMeta({
 </script>
 
 <template>
-  <WorkMissing />
+  <NotFoundWork />
 </template>
