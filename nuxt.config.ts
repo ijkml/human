@@ -42,7 +42,13 @@ export default defineNuxtConfig({
     // '@icons': fileURLToPath(new URL('./assets/icons', import.meta.url)),
     '@data': fileURLToPath(new URL('./assets/data', import.meta.url)),
   },
-  modules: ['@vueuse/nuxt', '@unocss/nuxt', 'nuxt-beastcss', '@nuxt/content'],
+  modules: [
+    '@vueuse/nuxt',
+    '@unocss/nuxt',
+    'nuxt-beastcss',
+    '@nuxt/content',
+    'nuxt-simple-sitemap',
+  ],
   extends: ['nuxt-umami'],
   content: {
     documentDriven: true,
@@ -51,7 +57,7 @@ export default defineNuxtConfig({
       content: {
         driver: 'fs',
         prefix: '/posts',
-        base: resolve(__dirname, 'content/articles'),
+        base: resolve(__dirname, 'content/posts'),
       },
     },
     highlight: {
