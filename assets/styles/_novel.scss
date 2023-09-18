@@ -1,4 +1,5 @@
-:target, .novel-heading {
+:target,
+.novel-heading {
   scroll-margin-top: #{$nav-height};
 }
 
@@ -7,8 +8,9 @@
 
   // inspired by antfu's
   a {
-    @apply text-0.85em my-0.125em ml--1.2em pr-0.5em float-left
-      outline-none op-0 font-(mono semibold) transition-200;
+    @apply text-0.85em my-0.125em ml--1em pr-0.5em float-left
+      outline-none op-0 font-(mono semibold) transition-200
+        sm:(ml--1.2em);
 
     &:hover {
       @apply text-ml-0/100;
@@ -16,10 +18,6 @@
   }
 
   &:hover a {
-    @apply op-50;
-  }
-
-  > :is(code) {
-    @apply align-bottom;
+    @apply op-40;
   }
 }

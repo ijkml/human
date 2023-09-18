@@ -4,7 +4,7 @@ date: 2022-08-23
 description: Writing Nuxt Content-powered Markdown articles is straightforward.
 ---
 
-# Typography Example
+# The art and struggles of styling markdown content
 
 Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.
 

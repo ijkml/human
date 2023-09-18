@@ -85,7 +85,7 @@ onClickOutside(copyButtonRef, () => {
 
 .novel-code {
   @apply text-ml-2/90 bg-#0e0e0e relative of-hidden rd-2
-    w-full b-(0 none) my-6 text-3.5 backdrop-contrast-100;
+    b-(0 none) my-6 text-3.5 backdrop-contrast-100 w-full;
 
   :deep(code) {
     @apply w-full;
@@ -101,8 +101,8 @@ onClickOutside(copyButtonRef, () => {
         @apply relative ps-4;
 
         &::before {
-          @apply content-['>'] absolute top-50% inset-s--0.1rem
-            select-none font-inherit text-(ml-5/100 0.9em/[0]);
+          @apply content-['>'] absolute inset-0 max-w-min select-none
+            font-inherit inline-flex items-center text-(ml-5/100 0.9em/[0]);
         }
       }
     }

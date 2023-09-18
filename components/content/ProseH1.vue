@@ -11,6 +11,6 @@ defineProps<{ id: string }>();
 
 <style scoped lang="scss">
 h1 {
-  @apply block text-9/[1.1] mt-0 mb-4;
+  @apply text-8/[1.2] mt-0 mb-4;
 }
 </style>

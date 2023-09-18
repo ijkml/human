@@ -8,8 +8,8 @@ const { page } = useContent();
       <div class="heading">
         <h1 v-if="page?.title" class="title">
           <!-- <Balancer>{{ page.title }}</Balancer> -->
-          <Balancer>
-            The art and struggles of styling markdown elements
+          <Balancer :ratio="0.5">
+            {{ page.title }}
           </Balancer>
         </h1>
         <time v-if="page?.date" :datetime="page.date">
@@ -36,7 +36,7 @@ article {
 }
 
 .title {
-  @apply mx-0 mb-4 font-semibold text-(ml-2/100 10/[1.1]);
+  @apply mx-0 mb-4 font-semibold text-(ml-2/100 8/[1.2]) sm:(text-10);
 }
 
 time {
