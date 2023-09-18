@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { headerLinks, linkIcons } from '@data/links';
+
+const activeClass = 'active-link';
 </script>
 
 <template>
@@ -11,7 +13,8 @@ import { headerLinks, linkIcons } from '@data/links';
       :to="ln.link"
       :aria-label="ln.title"
       prefetch
-      exact-active-class="active-link"
+      :exact-active-class="activeClass"
+      :class="ln.children === $route.name ? activeClass : null"
     >
       <component :is="linkIcons[ln.icon]" aria-hidden="true" />
     </NuxtLink>

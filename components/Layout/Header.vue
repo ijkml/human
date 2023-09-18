@@ -18,6 +18,9 @@ watchThrottled(
   },
   { throttle: 150 }
 );
+
+// FIX: NuxtLink activeClass doesn't work?
+const activeClass = 'link-active';
 </script>
 
 <template>
@@ -32,7 +35,8 @@ watchThrottled(
           :key="ln.title"
           class="link-text link-xi"
           tabindex="0"
-          exact-active-class="link-active"
+          :exact-active-class="activeClass"
+          :class="ln.children === $route.name ? activeClass : null"
           :to="ln.link"
           prefetch
         >

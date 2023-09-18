@@ -22,6 +22,7 @@ interface LinkFormat {
   link: RouteLocationRaw;
   external?: boolean;
   icon: LinkIcon;
+  children?: string;
 }
 
 interface SocialLinkFormat extends LinkFormat {
@@ -31,8 +32,8 @@ interface SocialLinkFormat extends LinkFormat {
 const headerLinks: LinkFormat[] = [
   { title: 'Home', link: '/', icon: 'home' },
   { title: 'About', link: '/about', icon: 'about' },
-  { title: 'Work', link: '/work', icon: 'work' },
-  { title: 'Posts', link: '/posts', icon: 'blog' },
+  { title: 'Work', link: '/work', icon: 'work', children: 'work-id' },
+  { title: 'Posts', link: '/posts', icon: 'blog', children: 'posts-all' },
   { title: 'Contact', link: '/contact', icon: 'contact' },
 ];
 
