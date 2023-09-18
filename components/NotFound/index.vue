@@ -38,6 +38,11 @@ defineProps<{
 .page-section {
   @apply max-w-screen-lg mx-auto mt-24 px-4
     sm:(px-6) md:(px-10 mt-36);
+
+  &.padded {
+    // for pages with no CTA (eg. posts-all)
+    @apply mb-24 md:(mb-36);
+  }
 }
 
 .sect-wrap {

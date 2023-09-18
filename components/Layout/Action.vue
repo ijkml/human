@@ -4,7 +4,7 @@ import { contactEmail } from '@data/links';
 
 <template>
   <section
-    v-if="!['work-id', 'home', 'posts-all'].includes($route.name)"
+    v-if="!['home', 'posts-all'].includes($route.name)"
     role="region"
     aria-labelledby="bottom-action-head"
     class="bottom-action"

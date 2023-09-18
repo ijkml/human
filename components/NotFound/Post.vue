@@ -19,5 +19,5 @@ const props = {
 </script>
 
 <template>
-  <NotFound v-bind="props" />
+  <NotFound class="padded" v-bind="props" />
 </template>
