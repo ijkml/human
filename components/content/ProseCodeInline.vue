@@ -7,15 +7,18 @@
 
 <style lang="scss" scoped>
 code {
-  @apply font-mono mx-1px rd-1 py-0.2em px-0.5em inline-block
-    text-(0.87em ml-2/100) leading-[1] bg-zinc-8/100;
+  @apply font-mono mx-1px rd-1.5 py-0.2em px-0.5em inline
+    text-(85% ml-2/100) leading-[1] bg-zinc-8/100;
+
+  white-space: break-spaces;
+  word-wrap: break-word;
 
   tbody & {
     @apply text-0.95em;
   }
 
   :where(h1, h2, h3, h4, h5, h6) & {
-    @apply text-0.75em;
+    @apply text-75%;
   }
 
   .novel-heading > & {
@@ -23,9 +26,7 @@ code {
   }
 
   a > & {
-    @apply text-inherit align-text-top;
+    @apply text-inherit px-0.4em;
   }
-
-  // a:where(:hover, :focus-visible) & {}
 }
 </style>

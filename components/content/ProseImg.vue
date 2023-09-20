@@ -40,6 +40,6 @@ const refinedSrc = computed(() => {
 
 <style lang="scss" scoped>
 img {
-  @apply rd-3 my-8;
+  @apply rd-1.75 my-8 sm:(rd-2.5);
 }
 </style>

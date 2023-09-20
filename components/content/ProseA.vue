@@ -38,15 +38,11 @@ const extraProps = computed(() => {
 
 <style lang="scss" scoped>
 a {
-  @apply outline-none decoration-none pb-2px
-    b-b-(1 dashed current) text-ml-2/80;
+  @apply outline-none transition-200 text-ml-1/100
+    decoration-(1 current underline offset-4 dashed);
 
   &:where(:hover, :focus-visible) {
-    @apply text-ml-0/100 b-b-solid;
-  }
-
-  &:has(img) {
-    @apply border-0;
+    @apply text-ml-0/100 decoration-(offset-2);
   }
 }
 </style>
