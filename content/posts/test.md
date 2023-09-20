@@ -1,10 +1,11 @@
 ---
 cover: /articles/write-articles.webp
 date: 2022-08-23
-description: Writing Nuxt Content-powered Markdown articles is straightforward.
+title: The Kitchen Sink
+description: The art and struggles of styling markdown content.
 ---
 
-# The art and struggles of styling markdown content
+## The art and struggles of styling markdown content
 
 Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.
 
@@ -42,15 +43,12 @@ For more information about how to use the plugin and the features it includes, [
 
 # Heading h1
 
-A paragraph with a line<br>break inside. and here, [an external link](https://external.com) But this, [this one](/) is an internal link!
+A paragraph with a line<br>break inside. and here, [an external link (nuxt.com)](https://nuxt.com) But this, [this one](/posts) is an internal link!
 
 ## Heading h2
 
-Here, 
-
-> Typography is pretty important if you don't want your stuff to look like trash. Make it good then it won't be bad. My mentor once said to me:
-> > Always use a nested blockquote yay!
-> And I have tried to live by this!
+> Typography is pretty important if you don't want your stuff to look like trash. Make it good then it won't be bad.
+> > Always use a nested blockquote, yay!
 > 
 > <figcaption>Tonya (Author of That Design Book)</figcaption>
 

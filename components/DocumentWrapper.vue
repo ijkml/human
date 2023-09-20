@@ -29,7 +29,7 @@ defineProps<{
 }
 
 article {
-  @apply outline-(1 dashed green/50);
+  // @apply outline-(1 dashed yellow/50);
 
   @apply mx-auto mt-16 max-w-55ch sm:(py-12) md:(max-w-65ch);
 }
