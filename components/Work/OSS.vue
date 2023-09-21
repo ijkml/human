@@ -20,8 +20,8 @@ function getSrc(repo: string) {
       <h2 id="head-oss" class="screamer-h2">Open Source</h2>
       <div>
         <Balancer as="p">
-          I believe open source makes the web more open and accessible, so I try
-          to contribute whenever I can.
+          I believe open source makes the web more accessible, I try to
+          contribute whenever I can.
         </Balancer>
         <p role="note">
           <code class="gh-commit">
