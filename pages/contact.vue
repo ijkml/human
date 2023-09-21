@@ -17,9 +17,9 @@ const coaxTexts = [
   'Not impressed? Sponsor me so I can level up & do better :)',
   'Pretty please?',
   'Preeeeety pleeeeease?',
-];
+] as const;
 
-const linkProps = {
+const bmcLinkProps = {
   regular: true,
   external: true,
   link: bmcLink,
@@ -32,29 +32,37 @@ const convinced = ref(false);
 const msgId = ref(0);
 
 function coax() {
-  interacted.value || (interacted.value = true);
+  interacted.value = true;
 
   if (convinced.value) {
-    navigateTo(bmcLink, {
-      external: true,
-      open: { target: '_blank', windowFeatures: { noopener: true } },
-    });
-
     return sayThanks();
   }
 
-  msgId.value = msgId.value + 1;
+  const id = msgId.value;
 
-  if (msgId.value === coaxTexts.length - 1) {
+  if (id === coaxTexts.length - 2) {
     convinced.value = true;
   }
+
+  const typingDuration = Math.floor(Math.random() * (2000 - 800 + 1)) + 800;
+  // random, 800 - 2000
+  msgId.value = -1;
+
+  const dotsTimer = setTimeout(() => {
+    msgId.value = id + 1;
+    clearTimeout(dotsTimer);
+  }, typingDuration);
 }
 
 function sayThanks() {
   msgId.value = 0;
   accepted.value = true;
-  interacted.value || (interacted.value = true);
+  interacted.value = true;
 }
+
+const btnText = computed(() => {
+  return msgId.value < 0 ? '...' : convinced.value ? 'Fine' : 'No';
+});
 </script>
 
 <template>
@@ -131,7 +139,7 @@ function sayThanks() {
         </div>
       </div>
 
-      <div v-auto-animate class="black-red bc-card">
+      <div class="black-red bc-card">
         <h3 class="heading-lv-3">Coffee?</h3>
 
         <p>
@@ -154,17 +162,21 @@ function sayThanks() {
               v-if="!accepted"
               class="no-coffee"
               :delay="80"
-              :text="convinced ? 'Fine' : 'No'"
-              v-bind="convinced ? linkProps : null"
-              @click.prevent="coax"
+              :disabled="msgId < 0"
+              :text="btnText"
+              v-bind="convinced && msgId > 0 ? bmcLinkProps : null"
+              @click="coax"
             />
           </ClientOnly>
         </div>
 
         <ClientOnly>
-          <div v-if="interacted" :key="msgId" class="no-coffee-message">
-            {{ coaxTexts[msgId] }}
-          </div>
+          <Transition name="slide-fade" mode="out-in">
+            <div v-if="interacted" :key="msgId" class="no-coffee-message">
+              <template v-if="msgId < 0">. . .</template>
+              <template v-else>{{ coaxTexts[msgId] }}</template>
+            </div>
+          </Transition>
         </ClientOnly>
       </div>
     </div>
@@ -225,5 +237,18 @@ function sayThanks() {
 
 .intro-actions {
   @apply flex flex-wrap gap-3 items-center w-auto;
+}
+
+.slide-fade-enter-active {
+  transition: all 250ms ease;
+}
+
+.slide-fade-leave-active {
+  transition: all 250ms ease;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  @apply op-0 translate-y-4;
 }
 </style>
