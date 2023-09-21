@@ -8,9 +8,6 @@ devDependencies:
   '@antfu/eslint-config-vue':
     specifier: ^0.42.1
     version: 0.42.1(@typescript-eslint/parser@6.7.0)(eslint@8.49.0)(typescript@5.2.2)
-  '@formkit/auto-animate':
-    specifier: 1.0.0-beta.6
-    version: 1.0.0-beta.6
   '@iconify-json/carbon':
     specifier: ^1.1.21
     version: 1.1.21
@@ -913,10 +910,6 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@formkit/auto-animate@1.0.0-beta.6:
-    resolution: {integrity: sha512-PVDhLAlr+B4Xb7e+1wozBUWmXa6BFU8xUPR/W/E+TsQhPS1qkAdAsJ25keEnFrcePSnXHrOsh3tiFbEToOzV9w==}
-    dev: true
-
   /@freddy38510/dropcss@2.5.0:
     resolution: {integrity: sha512-gzFIpGpXX4QpSYLl/DVYiKkE8cmLvcQBvD7lNuoXXtztz31/da+3eZCeuw91FrA4fQwq8/JchOteufymze+XZQ==}
     dev: true
@@ -1394,6 +1387,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -6067,6 +6061,10 @@ packages:
     resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
     engines: {node: ^14 || ^16 || >=18}
     hasBin: true
+    dev: true
+
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
     dev: true
 
   /natural-compare@1.4.0:
