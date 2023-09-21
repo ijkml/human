@@ -17,7 +17,6 @@
     "@types/node": "^18.17.17",
     "@unocss/nuxt": "^0.55.7",
     "@vueuse/nuxt": "^10.4.1",
-    "consola": "^3.2.3",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier-vue": "^5.0.0",
