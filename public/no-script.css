@@ -3,27 +3,6 @@
   visibility: visible !important
 }
 
-.hero-splash {
-  background-color: hsla(0, 0%, 0%, 0);
-  position: static;
-  overflow: auto;
-  z-index: auto;
-  inset: unset;
-
-  padding-top: calc(7.5rem + var(--nav-height));
-  padding-bottom: 7.5rem;
-  margin-top: calc(-1 * var(--nav-height));
-
-  height: clamp(700px, 100vh, 900px);
-  height: clamp(700px, 100dvh, 900px);
-}
-
 .ze-header {
   position: static !important;
-}
-
-@media (max-width: 1023px) {
-  .hero-splash {
-    height: auto;
-  }
 }
