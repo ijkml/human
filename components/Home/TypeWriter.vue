@@ -1,22 +1,18 @@
 <script setup lang="ts">
 import { VTypical } from 'vue-typical';
-import { hasPlayedHero, splashLock } from '@/helpers/splash';
+import { endSplash, status } from '@/helpers/splash';
 
 const screamer = 'I craft accessible and performant web experiences.';
-
-function showNext() {
-  splashLock(false);
-}
 </script>
 
 <template>
   <ClientOnly>
-    <span v-if="hasPlayedHero" v-text="screamer" />
+    <span v-if="status.playedHero" v-text="screamer" />
 
     <VTypical
       v-else
       :loop="1"
-      :steps="[screamer, 350, showNext]"
+      :steps="[screamer, 350, endSplash]"
       wrapper="span"
     />
 

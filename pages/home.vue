@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { hasPlayedHero, splashLock } from '@/helpers/splash';
+import { startSplash, status } from '@/helpers/splash';
 
 definePageMeta({
   path: '/',
@@ -12,28 +12,25 @@ useHead({
   // meta: [{ name: 'description', content: '' }],
 });
 
-splashLock(true);
+startSplash();
 
 const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer and open-source enthusiast. I like to build simple and usable websites.`;
 </script>
 
 <template>
-  <section
-    class="home-hero"
-    role="region"
-    aria-labelledby="hero-head-h1"
-    :class="{ 'hero-splash': !hasPlayedHero }"
-  >
-    <div>
-      <div v-auto-animate="{ duration: 500 }" class="text-cont">
+  <section class="home-hero" role="region" aria-labelledby="hero-head-h1">
+    <div :class="{ splash: !status.playedHero }">
+      <div class="text-cont">
         <h1 id="hero-head-h1" class="screamer-h1">
           <HomeTypeWriter />
         </h1>
 
         <ClientOnly>
-          <p v-if="hasPlayedHero" class="reverb">
-            <Balancer v-html="reverb" />
-          </p>
+          <Transition name="slide-fade">
+            <p v-if="status.showText" class="reverb">
+              <Balancer v-html="reverb" />
+            </p>
+          </Transition>
 
           <template #fallback>
             <p class="reverb" data-fallback v-html="reverb" />
@@ -42,7 +39,9 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer and open-sou
       </div>
 
       <ClientOnly>
-        <HomeLinks v-if="hasPlayedHero" />
+        <Transition name="slide-fade">
+          <HomeLinks v-if="status.showLinks" />
+        </Transition>
 
         <template #fallback>
           <HomeLinks data-fallback />
@@ -55,23 +54,27 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer and open-sou
 <style lang="scss" scoped>
 .home-hero {
   @apply flex bg-ml-9/100 transition-colors-250
-    py-30 px-4 ss:(px-6) sm:(px-12) md:(px-16);
+    px-4 ss:(px-6) sm:(px-12) md:(px-16);
 
-  // copy-paste to no-script.css
-  &:not(.hero-splash) {
-    height: clamp(700px, 100vh, 900px);
-    height: clamp(700px, 100dvh, 900px);
+  height: clamp(700px, 100vh, 900px);
+  height: clamp(700px, 100dvh, 900px);
 
-    padding-top: calc(7.5rem + var(--nav-height));
-    padding-bottom: 7.5rem;
-    margin-top: calc(-1 * var(--nav-height));
-
-    @apply lt-lg:h-auto;
+  // @media (max-width: 1023.9px) and (max-height: 900px) {
+  @media (max-width: 1023.9px) {
+    height: auto;
   }
+
+  padding-top: calc(7.5rem + var(--nav-height));
+  padding-bottom: 7.5rem;
+  margin-top: calc(-1 * var(--nav-height));
 
   > div {
     @apply mx-auto w-full max-w-screen-lg grid
       items-end gap-8 lg:(grid-cols-5);
+
+    &.splash {
+      @apply items-center;
+    }
   }
 }
 
@@ -81,6 +84,11 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer and open-sou
 
 .text-cont {
   @apply w-full mx-auto md:(mx-0) lg:(col-span-3);
+
+  &,
+  > * {
+    @apply transition-all-500;
+  }
 }
 
 .reverb {
@@ -92,5 +100,18 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer and open-sou
       @apply font-normal text-ml-0/100;
     }
   }
+}
+
+.slide-fade-enter-active {
+  transition: all 500ms ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 500ms cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  @apply op-0 translate-y-25%;
 }
 </style>

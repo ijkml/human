@@ -5,13 +5,18 @@ const html = computed(() => {
   return document.documentElement;
 });
 
-const hasPlayedHero = ref(false);
+const status = reactive({
+  playedHero: false,
+  showText: false,
+  showLinks: false,
+});
+
 const rootScrollLock = useScrollLock(html, false);
 
 const scrollGap = ref<`${number}px`>('0px');
 
-function splashLock(lock: boolean) {
-  if (typeof window === 'undefined' || hasPlayedHero.value) {
+function splashLock(lock = true) {
+  if (typeof window === 'undefined' || status.playedHero) {
     return;
   }
 
@@ -25,8 +30,18 @@ function splashLock(lock: boolean) {
   if (lock) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } else {
-    hasPlayedHero.value = true;
+    status.playedHero = true;
   }
 }
 
-export { splashLock, hasPlayedHero };
+function endSplash() {
+  splashLock(false);
+  status.showText = true;
+
+  const timer1 = setTimeout(() => {
+    status.showLinks = true;
+    clearTimeout(timer1);
+  }, 800);
+}
+
+export { splashLock as startSplash, endSplash, status };

@@ -8,7 +8,7 @@ const links = [
 </script>
 
 <template>
-  <div class="hero-links-cont">
+  <div class="links-container">
     <NuxtLink v-for="ln in links" :key="ln.to" :to="ln.to" class="hero-link">
       <div class="link-text" v-text="ln.text" />
 
@@ -20,7 +20,7 @@ const links = [
 </template>
 
 <style scoped lang="scss">
-.hero-links-cont {
+.links-container {
   @apply w-full max-w-100 grid gap-4 lg:(col-span-2);
 }
 
