@@ -4,7 +4,6 @@ import type { RouteLocationRaw } from '@/.nuxt/vue-router';
 const props = withDefaults(
   defineProps<{
     text: string;
-    light?: boolean;
     primary?: boolean;
     small?: boolean;
     icon?: string;
@@ -17,9 +16,10 @@ const props = withDefaults(
     external?: boolean;
     class?: string;
     regular?: boolean;
+    disabled?: boolean;
+    // type?: 'button' | 'submit'
   }>(),
   {
-    light: false,
     small: false,
     suffix: false,
     primary: false,
@@ -29,6 +29,7 @@ const props = withDefaults(
     link: undefined,
     external: false,
     regular: false,
+    disabled: false,
   }
 );
 
@@ -44,7 +45,6 @@ function bubble(event: any) {
 
 const {
   text,
-  light,
   small,
   delay,
   external,
@@ -54,6 +54,7 @@ const {
   icon,
   suffix,
   class: classe,
+  disabled,
 } = toRefs(props);
 
 const element = computed(() => {
@@ -84,7 +85,6 @@ const bindProps = computed<object>(() => {
   return {
     class: {
       'ze-button': true,
-      light: light.value,
       small: small.value,
       primary: primary.value,
       [classe.value]: true,
@@ -130,7 +130,14 @@ const bindProps = computed<object>(() => {
     <ReuseTemplate />
   </a>
 
-  <button v-else v-bind="bindProps" @click="bubble">
+  <button
+    v-else
+    type="button"
+    :disabled="disabled"
+    :class="{ disabled }"
+    v-bind="bindProps"
+    @click="bubble"
+  >
     <ReuseTemplate />
   </button>
 </template>
@@ -138,14 +145,12 @@ const bindProps = computed<object>(() => {
 <style scoped lang="scss">
 .ze-button {
   @apply inline-flex font-(normal mono) px-4 tracking-wider
-    relative uppercase text-(3.5 ml-2/90 center) min-w-24
+    relative uppercase text-(3.5 ml-2 op-90 center) min-w-24
       transition-300 bg-none select-none cursor-pointer z-1
         outline-none items-center justify-center align-middle
           of-hidden h-9.5 rd border-(1 solid ml-5/100);
 
-  &:is(.light) {
-    @apply border-ml-3/100 text-ml-5/100;
-  }
+  // &:is(.light) {@apply border-ml-3/100 text-ml-5/100;}
 
   &:where(.primary) {
     @apply text-amber-5/90;
@@ -153,6 +158,10 @@ const bindProps = computed<object>(() => {
 
   &:is(.small) {
     @apply min-w-auto max-w-full text-3.1 h-8.5;
+  }
+
+  &:is(:disabled, .disabled) {
+    @apply text-op-50 op-45;
   }
 }
 
@@ -192,7 +201,7 @@ const bindProps = computed<object>(() => {
   @apply text-120%;
 }
 
-.ze-button:where(:hover, :focus-visible) {
+.ze-button:not(:disabled, .disabled):where(:hover, :focus-visible) {
   @apply text-ml-0/100 border-current;
 
   .full-text {
