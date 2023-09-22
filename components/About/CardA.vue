@@ -5,16 +5,15 @@
     <SubSect title="Intro">
       <p>
         Moses Laurence, front-end developer, the
-        <em>nth</em> of his name, maker of websites, master of CSS, squasher of
-        bugs, contributor of open-source, and
+        <em>nth</em> of his name, maker of websites, maester of CSS, squasher of
+        bugs, contributor of open-source, and a
         <a
           href="https://nuxters.nuxt.com/ijkml"
           class="link-nuxt"
           target="_blank"
           rel="noopener"
           >Nuxter</a
-        >
-        of the great Nuxt community.
+        >.
       </p>
     </SubSect>
 
@@ -31,24 +30,20 @@
       </p>
 
       <p>
-        In my free time, I watch movies, read blogs and listen to music. I'm
-        also a big fan of interactive fiction.
+        In my free time, I watch movies, listen to music, and read blogs and
+        interactive fiction.
       </p>
     </SubSect>
 
     <SubSect title="Work">
       <p>
-        I'm currently freelancing, and I've been lucky to work with brands and
-        individuals who share my passion for creating innovative and
-        user-friendly experiences.
+        As a freelance developer, I've collaborated with brands and individuals,
+        including an immigration agency, to create innovative and user-friendly
+        experiences.
       </p>
-
       <p>
-        Lots of free time, too.
-        <span class="block-code">
-          <code>&lt;thumbs-up-crying-cat-gif /&gt;</code>
-        </span>
-        I'm open to freelance projects and full-time employment!
+        I'm primarily interested in full-time work, but I'm open to freelance
+        opportunities that are a good fit for my skills and experience.
       </p>
       <div>
         <ZeButton text="Hire Me" link="/contact" small />
