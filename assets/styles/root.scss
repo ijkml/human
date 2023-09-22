@@ -17,7 +17,8 @@ $scrollbar-track: theme("colors.ml.7");
 
 html {
   // also set inline in nuxt.config
-  @apply text-ml-2/70 bg-ml-8/100 of-y-scroll scroll-smooth;
+  @apply text-ml-2/70 bg-ml-8/100
+    scroll-(smooth py-10) of-y-scroll;
 }
 
 * {
