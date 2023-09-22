@@ -98,7 +98,7 @@ onClickOutside(copyButtonRef, () => {
     &-shell,
     &-shellscript {
       :deep(code .line) {
-        @apply relative ps-4;
+        @apply relative pl-4;
 
         &::before {
           @apply content-['>'] absolute inset-0 max-w-min select-none
@@ -147,24 +147,20 @@ onClickOutside(copyButtonRef, () => {
 }
 
 :deep() {
+  pre {
+    @apply flex flex-1 of-x-auto leading-relaxed m-0 p-4 bg-inherit;
+  }
+
   code {
     @apply flex flex-col;
   }
 
   .line {
-    @apply inline-table min-h-4;
+    @apply inline-table min-h-4 pr-8;
   }
 
   .line.highlight {
     @apply bg-zinc-5/25;
-  }
-
-  pre {
-    @apply flex flex-1 of-x-auto leading-relaxed m-0 p-4 bg-inherit;
-
-    code {
-      @apply pe-30px;
-    }
   }
 }
 </style>

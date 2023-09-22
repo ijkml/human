@@ -7,10 +7,10 @@ th {
   @apply text-(left ml-2/80) font-semibold p-4 pt-0;
 
   &:first-child {
-    @apply ps-0;
+    @apply pl-0;
   }
   &:last-child {
-    @apply pe-0;
+    @apply pr-0;
   }
 }
 </style>

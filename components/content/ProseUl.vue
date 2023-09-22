@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 ul {
-  @apply list-(outside disc) my-6 mx-0 ps-21px;
+  @apply list-(outside disc) my-6 mx-0 pl-21px;
 
   > :deep(li) {
     &::marker {
