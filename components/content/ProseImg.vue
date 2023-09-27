@@ -35,6 +35,8 @@ const refinedSrc = computed(() => {
     :alt="alt"
     :width="width"
     :height="height"
+    decoding="async"
+    loading="lazy"
   >
 </template>
 

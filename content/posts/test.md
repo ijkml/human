@@ -148,17 +148,22 @@ module.exports = {
 };
 ```
 
-(With lang=js)
+(With language, file-name, and line highlights)
 
-```js [file.js]
-module.exports = {
-  purge: [],
-  theme: {
-    extend: {},
+```js [eslint.config.js]{10}
+import antfu from '@antfu/eslint-config';
+
+export default antfu(
+  {},
+  {
+    rules: {
+      'style/semi': ['error', 'always'],
+      'style/quotes': ['error', 'single'],
+      // let's highlight the next line
+      'strict': ['error', 'safe'],
+    },
   },
-  variants: {},
-  plugins: [],
-};
+);
 ```
 
 (Shell script)

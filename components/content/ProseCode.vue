@@ -123,11 +123,11 @@ onClickOutside(copyButtonRef, () => {
 }
 
 .copy-button {
-  @apply absolute bottom-0 op-0 inset-e-0 p-1 m-1 rd-3px
+  @apply absolute right-1 bottom-3 op-0 p-1 m-1 rd-3px
     transition-all-200 transform-gpu scale-80 outline-none;
 
-  &:focus-visible {
-    @apply op-100 ring-(2 emerald-6/100);
+  &:where(:hover, :focus-visible) {
+    @apply op-100 ring-(0.1rem emerald-5/50);
   }
 
   &.show {
@@ -159,7 +159,7 @@ onClickOutside(copyButtonRef, () => {
   }
 
   .line.highlight {
-    @apply bg-zinc-5/20 rd-sm;
+    @apply bg-zinc-7/25 rd-sm;
   }
 }
 </style>
