@@ -3,11 +3,34 @@ defineProps<{
   title?: string
   date?: string
 }>();
+
+const { y: scrolledHeight } = useWindowScroll();
+const { height: screenHeight } = useWindowSize();
+
+const scrollHelp = ref(false);
+
+watchThrottled(
+  scrolledHeight,
+  (nv) => {
+    scrollHelp.value = nv > screenHeight.value * 0.75;
+  },
+  { throttle: 150 },
+);
+
+const article = ref<HTMLElement | null>(null);
+
+function backToTop() {
+  history.pushState('', document.title, window.location.pathname);
+
+  article.value?.scrollIntoView({
+    behavior: 'smooth',
+  });
+}
 </script>
 
 <template>
   <div class="layout-pad">
-    <article>
+    <article ref="article">
       <div class="heading">
         <h1 class="title">
           <Balancer :ratio="0.5">
@@ -21,13 +44,16 @@ defineProps<{
       <div class="body">
         <slot />
       </div>
+      <button class="to-top" :class="{ shown: scrollHelp }" title="Scroll to top" @click="backToTop">
+        <UnoIcon class="i-carbon-arrow-up" />
+      </button>
     </article>
   </div>
 </template>
 
 <style scoped lang="scss">
 .layout-pad {
-  @apply p-4 ss:(px-7) sm:(px-10) xl:(px-13);
+  @apply p-4 ss:(px-7) sm:(px-10) xl:(px-13) isolate;
 }
 
 article {
@@ -42,5 +68,19 @@ article {
 
 time {
   @apply text-ml-4/100;
+}
+
+.to-top {
+  @apply h-10 w-10 inline-flex items-center justify-center
+    rd-full outline-none transition-250 right-3 bottom-13
+    fixed ss500:(bottom-3);
+
+  &:not(.shown) {
+    @apply op-0 pointer-events-none;
+  }
+
+  &.shown:where(:hover, :focus-visible) {
+    @apply bg-ml-9/100 text-ml-0/100;
+  }
 }
 </style>
