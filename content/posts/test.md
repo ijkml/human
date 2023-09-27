@@ -150,7 +150,7 @@ module.exports = {
 
 (With lang=js)
 
-```js [file.js]{highlights=[1,2,3]}
+```js [file.js]
 module.exports = {
   purge: [],
   theme: {

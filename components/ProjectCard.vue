@@ -55,6 +55,16 @@
 </template>
 
 <style scoped lang="scss">
+.pc-img {
+  @apply self-center row-end--1 transition-350 saturate-35
+    sm:(row-end-auto col-span-3) md:(col-span-2) lg:(p-2);
+
+  img {
+    @apply w-full h-full object-(cover center)
+      rd-1 aspect-1.6 sm:(rd-2);
+  }
+}
+
 .project-card {
   @apply bg-ml-8/100 rd-2 p-2
     sm:(p-6 rd-3) md:(p-8);
@@ -69,16 +79,6 @@
 .pc-inner {
   @apply grid items-start gap-8 auto-flow-dense
     sm:(grid-cols-5) md:(grid-cols-3);
-}
-
-.pc-img {
-  @apply self-center row-end--1 transition-350 saturate-35
-    sm:(row-end-auto col-span-3) md:(col-span-2) lg:(p-2);
-
-  img {
-    @apply w-full h-full object-(cover center)
-      rd-1 aspect-1.6 sm:(rd-2);
-  }
 }
 
 .pc-details {

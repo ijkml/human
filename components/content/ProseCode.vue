@@ -146,8 +146,10 @@ onClickOutside(copyButtonRef, () => {
 }
 
 :deep() {
-  pre {
-    @apply flex flex-1 of-x-auto leading-relaxed m-0 p-4 bg-inherit;
+  > pre {
+    @apply flex flex-1 of-x-auto leading-relaxed m-0 p-4;
+
+    background-color: inherit !important;
   }
 
   code {
@@ -159,7 +161,7 @@ onClickOutside(copyButtonRef, () => {
   }
 
   .line.highlight {
-    @apply bg-zinc-5/25;
+    @apply bg-zinc-5/20 rd-sm;
   }
 }
 </style>
