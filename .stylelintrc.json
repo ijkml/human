@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recommended-vue/scss"
+  ],
+  "rules": {
+    "indentation": 2,
+    "max-empty-lines": 1,
+    "string-quotes": "single",
+    "scss/operator-no-unspaced": null
+  }
+}

@@ -1,11 +1,16 @@
 {
+  "eslint.experimental.useFlatConfig": true,
   "prettier.enable": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "files.associations": {
-    "*.css": "css"
-  },
   "editor.formatOnSave": false,
-  "vue.codeActions.enabled": false
+  "vue.codeActions.enabled": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "sass",
+    "vue"
+  ],
 }
