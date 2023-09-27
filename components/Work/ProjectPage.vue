@@ -25,7 +25,8 @@ let linkText: string;
 
 try {
   linkText = new URL(link).host;
-} catch (error) {
+}
+catch (error) {
   linkText = link;
 }
 
@@ -47,7 +48,9 @@ const pager = [
     role="region"
   >
     <div class="heading-wrap">
-      <h1 id="project-title" class="screamer-h1">{{ name }}</h1>
+      <h1 id="project-title" class="screamer-h1">
+        {{ name }}
+      </h1>
       <div class="text-url">
         <a :href="link" target="_blank" rel="noopener" class="link-xi">
           {{ linkText }}
@@ -63,7 +66,9 @@ const pager = [
               <span v-for="ch of chips" :key="ch" class="chip" v-text="ch" />
             </div>
 
-            <Balancer as="p">{{ details }}</Balancer>
+            <Balancer as="p">
+              {{ details }}
+            </Balancer>
 
             <div class="project-links">
               <ZeButton
@@ -91,13 +96,17 @@ const pager = [
         <div class="sub-g">
           <SubSect title="Roles">
             <ul class="single">
-              <li v-for="r in roles" :key="r">{{ r }}</li>
+              <li v-for="r in roles" :key="r">
+                {{ r }}
+              </li>
             </ul>
           </SubSect>
 
           <SubSect title="Tools">
             <ul>
-              <li v-for="t in tools" :key="t">{{ t }}</li>
+              <li v-for="t in tools" :key="t">
+                {{ t }}
+              </li>
             </ul>
           </SubSect>
 
@@ -109,8 +118,7 @@ const pager = [
                   :href="c.link"
                   target="_blank"
                   rel="noopener nofollow"
-                  >{{ c.name }}</a
-                >
+                >{{ c.name }}</a>
               </li>
             </ul>
           </SubSect>
@@ -124,7 +132,7 @@ const pager = [
           loading="lazy"
           decoding="async"
           :alt="`Full-view screenshot of the ${name} website.`"
-        />
+        >
       </div>
     </div>
 
@@ -172,7 +180,7 @@ const pager = [
 }
 
 .project-deet {
-  @apply col-span-1 grid gap-3 content-start self-start 
+  @apply col-span-1 grid gap-3 content-start self-start
     justify-items-start items-start sm:(grid-cols-2)
       lg:(grid-cols-1 sticky);
 

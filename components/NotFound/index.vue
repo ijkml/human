@@ -2,9 +2,9 @@
 import NotFoundSvg from '@img/svg/404.svg?component';
 
 defineProps<{
-  title: string;
-  paragraph: string;
-  links: { text: string; link: string }[];
+  title: string
+  paragraph: string
+  links: { text: string; link: string }[]
 }>();
 </script>
 

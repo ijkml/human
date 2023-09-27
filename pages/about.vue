@@ -13,7 +13,9 @@ definePageMeta({
 <template>
   <section role="region" aria-labelledby="about-me" class="sect-space-top">
     <div class="heading-wrap">
-      <h1 id="about-me" class="screamer-h1">About</h1>
+      <h1 id="about-me" class="screamer-h1">
+        About
+      </h1>
       <p class="echo">
         The man, the myth, the <s>clumsy calamity</s> legend...
       </p>

@@ -21,9 +21,9 @@ const props = defineProps({
 });
 
 const refinedSrc = computed(() => {
-  if (props.src?.startsWith('/') && !props.src.startsWith('//')) {
+  if (props.src?.startsWith('/') && !props.src.startsWith('//'))
     return withBase(props.src, useRuntimeConfig().app.baseURL);
-  }
+
   return props.src;
 });
 </script>
@@ -35,7 +35,7 @@ const refinedSrc = computed(() => {
     :alt="alt"
     :width="width"
     :height="height"
-  />
+  >
 </template>
 
 <style lang="scss" scoped>

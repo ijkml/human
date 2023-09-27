@@ -9,9 +9,8 @@ const link = live.value ? `/work/${id.value}` : undefined;
 const src = `/img/projects/${live.value ? `${id.value}.webp` : 'soon.svg'}`;
 
 function viewProject() {
-  if (link) {
+  if (link)
     navigateTo(link);
-  }
 }
 </script>
 
@@ -23,7 +22,7 @@ function viewProject() {
     :class="link ? 'cursor-project' : 'coming-soon'"
     @click.prevent="viewProject"
   >
-    <img class="project-img" :src="src" :alt="name" />
+    <img class="project-img" :src="src" :alt="name">
 
     <div class="project-info">
       <h3 class="project-head" v-text="name" />

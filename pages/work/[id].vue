@@ -7,16 +7,15 @@ definePageMeta({
 });
 
 interface RouteParams {
-  id: string;
+  id: string
 }
 
 const id = ((useRoute().params as RouteParams).id || '').toLowerCase();
 
 let project: Project | false = false;
 
-if (publicWork.includes(id)) {
-  project = featuredProjects.find((p) => p.id === id) || false;
-}
+if (publicWork.includes(id))
+  project = featuredProjects.find(p => p.id === id) || false;
 </script>
 
 <template>

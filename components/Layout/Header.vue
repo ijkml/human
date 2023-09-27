@@ -16,7 +16,7 @@ watchThrottled(
     classe.contrast = nv > 200;
     classe.scrolled = nv > ov && nv > screenHeight.value * 0.5;
   },
-  { throttle: 150 }
+  { throttle: 150 },
 );
 
 // FIX: NuxtLink activeClass doesn't work?

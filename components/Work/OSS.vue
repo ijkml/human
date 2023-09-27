@@ -17,7 +17,9 @@ function getSrc(repo: string) {
 <template>
   <section role="region" aria-labelledby="head-oss">
     <div class="sect-head">
-      <h2 id="head-oss" class="screamer-h2">Open Source</h2>
+      <h2 id="head-oss" class="screamer-h2">
+        Open Source
+      </h2>
       <div>
         <Balancer as="p">
           I believe open source makes the web more accessible, I try to
@@ -47,7 +49,7 @@ function getSrc(repo: string) {
           target="_blank"
           rel="noopener"
         >
-          <img :src="getSrc(repo.link)" :alt="`GitHub: ${repo.title}`" />
+          <img :src="getSrc(repo.link)" :alt="`GitHub: ${repo.title}`">
         </a>
       </div>
     </div>

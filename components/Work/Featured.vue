@@ -5,10 +5,16 @@ import { featuredCards } from '@data/work';
 <template>
   <section role="region" aria-labelledby="head-featured-work">
     <div class="sect-head">
-      <h2 id="head-featured-work" class="screamer-h2">Featured Work</h2>
+      <h2 id="head-featured-work" class="screamer-h2">
+        Featured Work
+      </h2>
       <div>
-        <Balancer as="p">Some of my <em>best</em> work.</Balancer>
-        <p role="note" class="block-small">don't be mean :)</p>
+        <Balancer as="p">
+          Some of my <em>best</em> work.
+        </Balancer>
+        <p role="note" class="block-small">
+          don't be mean :)
+        </p>
       </div>
     </div>
 

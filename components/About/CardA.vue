@@ -1,6 +1,8 @@
 <template>
   <div class="text-cont black-red">
-    <h2 class="heading-h2">Moses Laurence</h2>
+    <h2 class="heading-h2">
+      Moses Laurence
+    </h2>
 
     <SubSect title="Intro">
       <p>
@@ -12,8 +14,7 @@
           class="link-nuxt"
           target="_blank"
           rel="noopener"
-          >Nuxter</a
-        >.
+        >Nuxter</a>.
       </p>
     </SubSect>
 

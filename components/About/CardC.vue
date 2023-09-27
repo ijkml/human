@@ -1,6 +1,8 @@
 <template>
   <div class="black-red bc-card services-card">
-    <h3 class="heading-lv-3">My Services</h3>
+    <h3 class="heading-lv-3">
+      My Services
+    </h3>
 
     <SubSect title="Hireable">
       <ul>

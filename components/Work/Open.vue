@@ -4,7 +4,9 @@
 <template>
   <section role="region" aria-labelledby="head-oss">
     <div class="sect-head gap-4">
-      <h2 id="head-oss" class="screamer-h2">Open For Work</h2>
+      <h2 id="head-oss" class="screamer-h2">
+        Open For Work
+      </h2>
       <Balancer as="p">
         I am a dedicated and self-driven web developer with a passion for
         learning and growing. I am actively looking for an internship or

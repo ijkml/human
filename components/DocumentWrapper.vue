@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps<{
-  title?: string;
-  date?: string;
+  title?: string
+  date?: string
 }>();
 </script>
 
@@ -10,7 +10,9 @@ defineProps<{
     <article>
       <div class="heading">
         <h1 class="title">
-          <Balancer :ratio="0.5">{{ title }}</Balancer>
+          <Balancer :ratio="0.5">
+            {{ title }}
+          </Balancer>
         </h1>
         <time v-if="date" :datetime="date">
           {{ formatDate(date) }}

@@ -18,15 +18,15 @@ const linkIcons = {
 type LinkIcon = keyof typeof linkIcons;
 
 interface LinkFormat {
-  title: string;
-  link: RouteLocationRaw;
-  external?: boolean;
-  icon: LinkIcon;
-  children?: string;
+  title: string
+  link: RouteLocationRaw
+  external?: boolean
+  icon: LinkIcon
+  children?: string
 }
 
 interface SocialLinkFormat extends LinkFormat {
-  external: true;
+  external: true
 }
 
 const headerLinks: LinkFormat[] = [

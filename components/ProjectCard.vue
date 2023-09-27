@@ -5,15 +5,21 @@
   <div class="project-card">
     <div class="pc-inner">
       <div class="pc-details">
-        <h3 class="title">PennyPay</h3>
+        <h3 class="title">
+          PennyPay
+        </h3>
 
         <div class="sub-sect">
-          <div class="sub-head">Roles</div>
+          <div class="sub-head">
+            Roles
+          </div>
           <div>Designer, Developer</div>
         </div>
 
         <div class="sub-sect">
-          <div class="sub-head">Project</div>
+          <div class="sub-head">
+            Project
+          </div>
           <div>
             He stared at the clinic, Molly took him to the simple Chinese hollow
             points Shin had sold him.
@@ -21,8 +27,12 @@
         </div>
 
         <div class="sub-sect">
-          <div class="sub-head">Tech</div>
-          <div class="tech">Vue, Nuxt, Headless UI</div>
+          <div class="sub-head">
+            Tech
+          </div>
+          <div class="tech">
+            Vue, Nuxt, Headless UI
+          </div>
         </div>
 
         <div>
@@ -38,7 +48,7 @@
           loading="lazy"
           decoding="async"
           alt="ALT"
-        />
+        >
       </div>
     </div>
   </div>
@@ -87,7 +97,7 @@
 .sub-head {
   @apply text-3.3/[1.5] font-mono text-ml-3/100
     border-(b-1 ml-3/35) min-w-25 inline-block
-      tracking-wide uppercase mb-2.5 ml--1 px-1;
+    tracking-wide uppercase mb-2.5 ml--1 px-1;
 }
 
 .tech {

@@ -5,17 +5,17 @@ import type { Lang } from 'shiki-es';
 
 const props = withDefaults(
   defineProps<{
-    code: string;
-    language: Lang | null;
-    filename: string | null;
-    highlights: number[];
+    code: string
+    language: Lang | null
+    filename: string | null
+    highlights: number[]
   }>(),
   {
     code: '',
     language: null,
     filename: null,
     highlights: () => [],
-  }
+  },
 );
 
 const hovered = ref(false);
@@ -31,14 +31,13 @@ function copy(_e: MouseEvent) {
       state.value = 'copied';
     })
     .catch((err) => {
-      console.warn("Couldn't copy to clipboard!", err);
+      console.warn('Couldn\'t copy to clipboard!', err);
     });
 }
 
 onClickOutside(copyButtonRef, () => {
-  if (state.value === 'copied') {
+  if (state.value === 'copied')
     state.value = 'init';
-  }
 });
 </script>
 
@@ -122,7 +121,7 @@ onClickOutside(copyButtonRef, () => {
 .filename {
   @apply font-mono backdrop-blur-4 transition-200
     rd-14px inset-e-0 absolute top-0 p-(y-2 x-3)
-      text-xs/normal text-ml-3/100 select-all;
+    text-xs/normal text-ml-3/100 select-all;
 }
 
 .copy-button {

@@ -4,14 +4,15 @@ import { contactEmail, footerLinks } from '@data/links';
 const { copy, copied } = useClipboard({ legacy: true });
 </script>
 
-
 <template>
   <footer class="ze-footer">
     <div class="ze-footer-inner">
       <div class="ze-contact">
         <p class="ze-contact-head">
           I'm always up for a chat,
-          <NuxtLink class="link-xi" to="/contact">get in touch &rarr;</NuxtLink>
+          <NuxtLink class="link-xi" to="/contact">
+            get in touch &rarr;
+          </NuxtLink>
         </p>
         <div class="email-link">
           <a :href="contactEmail.link" class="link-xi text-current">
@@ -40,9 +41,7 @@ const { copy, copied } = useClipboard({ legacy: true });
           >
             <div>
               {{ ln.title }}
-              <span v-if="ln.external" aria-hidden="true" class="arrow"
-                >↗︎</span
-              >
+              <span v-if="ln.external" aria-hidden="true" class="arrow">↗︎</span>
             </div>
           </NuxtLink>
         </div>
@@ -54,12 +53,10 @@ const { copy, copied } = useClipboard({ legacy: true });
         target="_blank"
         class="link-xi"
         href="https://github.com/ijkml/human/"
-        >&copy;{{ new Date().getFullYear() }} ML</a
-      >
+      >&copy;{{ new Date().getFullYear() }} ML</a>
     </div>
   </footer>
 </template>
-
 
 <style lang="scss" scoped>
 .ze-footer {

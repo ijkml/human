@@ -1,7 +1,9 @@
 <template>
   <div class="end-grid">
     <div class="black-red bc-card certs-card">
-      <h3 class="heading-lv-3">Recognitions</h3>
+      <h3 class="heading-lv-3">
+        Recognitions
+      </h3>
 
       <SubSect title="Certs">
         <ul>
@@ -18,7 +20,9 @@
     </div>
 
     <div class="black-red bc-card work-card">
-      <h3 class="heading-lv-3">Experiences</h3>
+      <h3 class="heading-lv-3">
+        Experiences
+      </h3>
 
       <p>Explore my featured projects OSS contributions, and experiences.</p>
 

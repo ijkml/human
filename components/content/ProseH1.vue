@@ -5,7 +5,9 @@ defineProps<{ id: string }>();
 <template>
   <h1 :id="id" class="novel-heading">
     <slot />
-    <NuxtLink :href="`#${id}`" tabindex="-1" aria-hidden="true">#</NuxtLink>
+    <NuxtLink :href="`#${id}`" tabindex="-1" aria-hidden="true">
+      #
+    </NuxtLink>
   </h1>
 </template>
 

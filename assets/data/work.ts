@@ -2,18 +2,18 @@
 // but it works... fix it later :)
 
 interface Project {
-  id: string;
-  live: boolean;
-  name: string;
-  details: string;
-  link: string;
-  kind: 'Personal' | 'Contract' | 'Full-time';
-  period: string;
-  roles: string[];
-  tools: string[];
+  id: string
+  live: boolean
+  name: string
+  details: string
+  link: string
+  kind: 'Personal' | 'Contract' | 'Full-time'
+  period: string
+  roles: string[]
+  tools: string[]
   // optional
-  git?: string;
-  credits?: { name: string; link: string }[];
+  git?: string
+  credits?: { name: string; link: string }[]
 }
 
 const oss = [
@@ -50,7 +50,7 @@ const featuredProjects: Project[] = [
     live: true,
     name: 'Voe',
     details:
-      "Voe is a responsive demo of Egbo Prosper's Voe Airport landing page (nice pun, huh?). The website features a sleek dark mode and GPT-translation in 5 languages: English, Spanish, French, Japanese, and Chinese).",
+      'Voe is a responsive demo of Egbo Prosper\'s Voe Airport landing page (nice pun, huh?). The website features a sleek dark mode and GPT-translation in 5 languages: English, Spanish, French, Japanese, and Chinese).',
     kind: 'Personal',
     period: 'Nov 2022 - Jan 2023',
     link: 'https://voey.netlify.app/',
@@ -95,11 +95,9 @@ const featuredCards = featuredProjects
     live,
   }))
   // sort by "live", put live projects first
-  .sort(({ live: p1 }, { live: p2 }) =>
-    p1 === p2 ? 0 : p1 ? -1 : 1
-  ) satisfies FeaturedCardProps[];
+  .sort(({ live: p1 }, { live: p2 }) => p1 === p2 ? 0 : p1 ? -1 : 1) satisfies FeaturedCardProps[];
 
-const publicWork = featuredProjects.filter((p) => p.live).map((p) => p.id);
+const publicWork = featuredProjects.filter(p => p.live).map(p => p.id);
 
 export { oss, featuredProjects, featuredCards, publicWork };
 

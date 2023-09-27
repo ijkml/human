@@ -4,7 +4,6 @@
   </code>
 </template>
 
-
 <style lang="scss" scoped>
 code {
   @apply font-mono mx-1px rd-1.5 py-0.2em px-0.5em inline

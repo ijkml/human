@@ -13,7 +13,9 @@ definePageMeta({
 <template>
   <section aria-labelledby="blog-heading" class="sect-space-top" role="region">
     <div class="heading-wrap">
-      <h1 id="blog-heading" class="screamer-h1">Blog</h1>
+      <h1 id="blog-heading" class="screamer-h1">
+        Blog
+      </h1>
       <div class="reverb">
         <p>It's coming soon. I promise.</p>
         <p>

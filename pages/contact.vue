@@ -34,15 +34,13 @@ const msgId = ref(0);
 function coax() {
   interacted.value = true;
 
-  if (convinced.value) {
+  if (convinced.value)
     return sayThanks();
-  }
 
   const id = msgId.value;
 
-  if (id === coaxTexts.length - 2) {
+  if (id === coaxTexts.length - 2)
     convinced.value = true;
-  }
 
   const typingDuration = Math.floor(Math.random() * (2000 - 800 + 1)) + 800;
   // random, 800 - 2000
@@ -68,7 +66,9 @@ const btnText = computed(() => {
 <template>
   <section role="region" aria-labelledby="get-in-touch" class="sect-space-top">
     <div class="heading-wrap">
-      <h1 id="get-in-touch" class="screamer-h1">Contact</h1>
+      <h1 id="get-in-touch" class="screamer-h1">
+        Contact
+      </h1>
       <Balancer as="p">
         I'm always open to new opportunities and connections. Reach out anytime
         to discuss a project or just chat.
@@ -77,7 +77,9 @@ const btnText = computed(() => {
 
     <div class="options-deck">
       <div class="black-red bc-card intro-card">
-        <h3 class="heading-lv-3">Let's chat</h3>
+        <h3 class="heading-lv-3">
+          Let's chat
+        </h3>
 
         <p>
           <NuxtLink
@@ -86,23 +88,21 @@ const btnText = computed(() => {
             external
             rel="noopener"
             target="_blank"
-            >Telegram</NuxtLink
           >
+            Telegram
+          </NuxtLink>
           is the fastest way to reach me. If it's official
           <small>(or you might need the paper trail)</small>,
-          <a class="link-xi" rel="noopener" :href="contactEmail.link"
-            >here's my email</a
-          >. You can also catch me stalking folks on
+          <a class="link-xi" rel="noopener" :href="contactEmail.link">here's my email</a>. You can also catch me stalking folks on
           <NuxtLink
             href="/twitter"
             class="link-xi"
             external
             rel="noopener"
             target="_blank"
-            >TweeX</NuxtLink
-          >&MediumSpace;<small
-            >(pls tweet @me if I don't reply within 6 months)</small
-          >.
+          >
+            TweeX
+          </NuxtLink>&MediumSpace;<small>(pls tweet @me if I don't reply within 6 months)</small>.
         </p>
 
         <div class="intro-actions">
@@ -120,7 +120,9 @@ const btnText = computed(() => {
       </div>
 
       <div class="black-red bc-card">
-        <h3 class="heading-lv-3">Find me on</h3>
+        <h3 class="heading-lv-3">
+          Find me on
+        </h3>
 
         <div class="socials-list">
           <NuxtLink
@@ -140,7 +142,9 @@ const btnText = computed(() => {
       </div>
 
       <div class="black-red bc-card">
-        <h3 class="heading-lv-3">Coffee?</h3>
+        <h3 class="heading-lv-3">
+          Coffee?
+        </h3>
 
         <p>
           If you find value in my work and/or want to support me, please
@@ -173,8 +177,12 @@ const btnText = computed(() => {
         <ClientOnly>
           <Transition name="slide-fade" mode="out-in">
             <div v-if="interacted" :key="msgId" class="no-coffee-message">
-              <template v-if="msgId < 0">. . .</template>
-              <template v-else>{{ coaxTexts[msgId] }}</template>
+              <template v-if="msgId < 0">
+                . . .
+              </template>
+              <template v-else>
+                {{ coaxTexts[msgId] }}
+              </template>
             </div>
           </Transition>
         </ClientOnly>

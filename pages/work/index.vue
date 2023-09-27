@@ -12,7 +12,9 @@ definePageMeta({
 <template>
   <section aria-labelledby="work-heading" class="sect-space-top" role="region">
     <div class="heading-wrap">
-      <h1 id="work-heading" class="screamer-h1">Work</h1>
+      <h1 id="work-heading" class="screamer-h1">
+        Work
+      </h1>
       <Balancer as="p">
         My work experiences, including select creative projects and
         contributions to open source.

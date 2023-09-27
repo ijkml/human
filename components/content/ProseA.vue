@@ -15,10 +15,10 @@ const props = defineProps({
 });
 
 const extraProps = computed(() => {
-  const isExternal =
-    (props.target && props.target !== '_self') ||
-    props.href === '' ||
-    hasProtocol(props.href, { acceptRelative: true });
+  const isExternal
+    = (props.target && props.target !== '_self')
+    || props.href === ''
+    || hasProtocol(props.href, { acceptRelative: true });
 
   return isExternal
     ? {

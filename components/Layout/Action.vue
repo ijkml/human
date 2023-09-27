@@ -14,7 +14,9 @@ import { contactEmail } from '@data/links';
       class="cta-head"
       tabindex="0"
     >
-      <h2 id="bottom-action-head">Let's work together</h2>
+      <h2 id="bottom-action-head">
+        Let's work together
+      </h2>
     </NuxtLink>
   </section>
 </template>

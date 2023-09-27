@@ -7,7 +7,7 @@ useHead({
 const props = {
   title: 'Undefined',
   paragraph:
-    "This project does not exist, <em>yet</em>. But we can change that! Reach out, let's work together to craft something amazing.",
+    'This project does not exist, <em>yet</em>. But we can change that! Reach out, let\'s work together to craft something amazing.',
 
   links: [
     { text: 'View works', link: '/work' },
