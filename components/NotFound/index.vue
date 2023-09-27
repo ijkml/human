@@ -48,7 +48,7 @@ defineProps<{
 .sect-wrap {
   @apply mx-auto grid gap-8 items-center
     ss500:(max-w-500px) sm:(max-w-screen-sm)
-      md:(max-w-full grid-cols-2) lg:(gap-12);
+    md:(max-w-full grid-cols-2) lg:(gap-12);
 }
 
 .text-cont {

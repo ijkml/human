@@ -60,9 +60,7 @@ const { copy, copied } = useClipboard({ legacy: true });
 
 <style lang="scss" scoped>
 .ze-footer {
-  @apply border-(b-5 ml-0/25);
-
-  @apply bg-ml-9/100 text-ml-3/100;
+  @apply bg-ml-9/100 text-ml-3/100 z-2 border-(b-5 ml-0/25);
 }
 
 .ze-footer-inner {
@@ -109,12 +107,15 @@ const { copy, copied } = useClipboard({ legacy: true });
   .ze-footer-inner {
     @apply grid-cols-2;
   }
+
   .ze-links-inner {
     @apply justify-items-end;
   }
+
   .ze-contact {
     @apply mb-0;
   }
+
   .ze-contact-head {
     @apply text-7;
   }
@@ -124,12 +125,15 @@ const { copy, copied } = useClipboard({ legacy: true });
   .ze-footer-inner {
     @apply grid grid-cols-5;
   }
+
   .ze-contact {
     @apply col-span-3;
   }
+
   .ze-contact-head {
     @apply text-8;
   }
+
   .ze-links-outer {
     @apply col-span-2;
   }

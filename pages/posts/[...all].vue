@@ -8,7 +8,8 @@
       </template>
 
       <template #empty>
-        <h1>Document is empty</h1>
+        <!-- Document is empty -->
+        <NotFoundPost />
       </template>
 
       <template #not-found>

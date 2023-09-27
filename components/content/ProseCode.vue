@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { Lang } from 'shiki-es';
 
-// import { CopyCodeButton } from '#components';
-
 const props = withDefaults(
   defineProps<{
     code: string

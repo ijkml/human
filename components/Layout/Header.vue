@@ -60,8 +60,8 @@ const activeClass = 'link-active';
 .ze-inner-header {
   @apply max-w-screen-xl flex items-center select-none
     justify-between transition-inherit mx-auto mt-1 px-4
-      w-92% rd-md relative outline-(1 solid transparent)
-        sm:(mt-8px w-90%);
+    w-92% rd-md relative outline-(1 solid transparent)
+    sm:(mt-8px w-90%);
 
   height: $nav-height-inner;
   max-height: $nav-height-inner;
@@ -69,7 +69,7 @@ const activeClass = 'link-active';
   &::before {
     @apply content-[''] inset-0 w-full h-full rd-inherit op-0
       z--2 bg-(gradient-to-r ml-8/100) from-(ml-8/100 75%)
-        to-(ml-0/25 150%) transition-inherit absolute;
+      to-(ml-0/25 150%) transition-inherit absolute;
   }
 
   .contrast & {
@@ -102,12 +102,12 @@ const activeClass = 'link-active';
 .link-text {
   @apply text-ml-2/100;
 
-  &:first-of-type {
-    @apply hidden sm:(flex);
-  }
-
   &:where(:hover, :focus-visible) {
     @apply text-ml-0/100;
+  }
+
+  &:first-of-type {
+    @apply hidden sm:(flex);
   }
 
   &.link-active {

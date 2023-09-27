@@ -19,9 +19,9 @@ definePageMeta({
       <div class="reverb">
         <p>It's coming soon. I promise.</p>
         <p>
-          I'm currently building (and learning to build) a kickass blog engine
-          with k8s and docker that can scale and handle traffic the size of
-          Google's! Exciting! I just gotta figure out this caching problem...
+          I'm currently building a kickass blog engine
+          with docker, k8s and [buzzword] that can scale and handle traffic the size of
+          Google's!
         </p>
         <div>
           <ZeButton text="Blog Post" link="/posts/test" />
@@ -39,6 +39,7 @@ a {
     @apply text-ml-1/100;
   }
 }
+
 .reverb {
   @apply grid gap-2;
 }
