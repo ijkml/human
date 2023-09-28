@@ -37,6 +37,13 @@ export default defineConfig({
         'Segoe UI',
         'sans-serif',
       ],
+      mono: [
+        'Roboto Mono',
+        'Mono Code',
+        'ui-monospace',
+        'Ubuntu Mono',
+        'SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
+      ],
     },
     breakpoints: {
       'ss': '360px',
