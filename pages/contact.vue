@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import { contactEmail, footerLinks } from '@data/links';
 import { bmcLink, contactEmail, socials } from '@data/links';
 
 useHead({
@@ -73,6 +72,8 @@ const btnText = computed(() => {
         I'm always open to new opportunities and connections. Reach out anytime
         to discuss a project or just chat.
       </Balancer>
+
+      <Available class="mt-4" :link="contactEmail.link" />
     </div>
 
     <div class="options-deck">
@@ -200,7 +201,7 @@ const btnText = computed(() => {
 .bc-card {
   @apply rd-2 p-(x-4 b-8 t-24) text-(3.8/[1.5] ml-3/100)
     justify-items-start content-end grid gap-4 ss:(px-6)
-      sm:(min-h-80) md:(px-8) at-lg:(px-6);
+    sm:(min-h-80) md:(px-8) at-lg:(px-6);
 }
 
 .socials-list {

@@ -15,10 +15,13 @@ definePageMeta({
       <h1 id="work-heading" class="screamer-h1">
         Work
       </h1>
+
       <Balancer as="p">
         My work experiences, including select creative projects and
         contributions to open source.
       </Balancer>
+
+      <Available class="mt-4" link="#open-to-work" />
     </div>
 
     <div class="subsect-offset">
@@ -32,12 +35,6 @@ definePageMeta({
 </template>
 
 <style scoped lang="scss">
-:deep() {
-  .screamer-h2 {
-    @apply text-ml-2/80;
-  }
-}
-
 .subsect-offset {
   @apply mt-24 grid gap-24 ss500:px-1 sm:px-6;
 
@@ -54,6 +51,10 @@ definePageMeta({
 }
 
 :deep() {
+  .screamer-h2 {
+    @apply text-ml-2/80;
+  }
+
   @media (hover: hover) and (pointer: fine) {
     .cursor-project {
       cursor:

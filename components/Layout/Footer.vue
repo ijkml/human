@@ -71,7 +71,7 @@ const { copy, copied } = useClipboard({ legacy: true });
   @apply text-6.6/1.35em tracking--0.02em font-light;
 
   a {
-    @apply inline-block text-ml-1;
+    @apply inline-block text-ml-1/100;
   }
 }
 
@@ -83,7 +83,7 @@ const { copy, copied } = useClipboard({ legacy: true });
   @apply op-40 transition-200 w-4 h-4;
 
   &:where(:focus-visible, :hover) {
-    @apply op-100;
+    @apply op-100 text-ml-0/100;
   }
 }
 

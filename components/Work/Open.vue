@@ -2,20 +2,13 @@
 </script>
 
 <template>
-  <section role="region" aria-labelledby="head-oss">
+  <section id="open-to-work" role="region" aria-labelledby="head-otw">
     <div class="sect-head gap-4">
-      <h2 id="head-oss" class="screamer-h2">
-        Open For Work
+      <h2 id="head-otw" class="screamer-h2">
+        Open To Work
       </h2>
       <Balancer as="p">
-        I am a dedicated and self-driven web developer with a passion for
-        learning and growing. I am actively looking for an internship or
-        full-time position. I'm self-taught and eager to improve. I'm available
-        for full-time, part-time, or remote work.
-      </Balancer>
-      <Balancer as="p">
-        I am also available for freelance projects. I am confident that I can
-        deliver high-quality work on time and within budget.
+        I am actively seeking full-time work, but I am also open to freelance opportunities. Hit me up if you have any new projects, creative ideas, or collaborations in the works.
       </Balancer>
       <div class="action">
         <ZeButton primary link="/contact" text="Get in touch" />

@@ -14,7 +14,8 @@ useHead({
 
 startSplash();
 
-const reverb = 'Hey, I\'m <b>ML</b>, a dedicated front-end developer and open-source enthusiast. I like to build simple and usable websites.';
+const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
+  and open-source enthusiast. I like to build simple and usable websites.`;
 </script>
 
 <template>
@@ -27,13 +28,21 @@ const reverb = 'Hey, I\'m <b>ML</b>, a dedicated front-end developer and open-so
 
         <ClientOnly>
           <Transition name="slide-fade">
-            <p v-if="status.showText" class="reverb">
-              <Balancer>{{ reverb }}</Balancer>
-            </p>
+            <div v-if="status.showText" class="reverb">
+              <Balancer as="p">
+                <span v-html="reverb" />
+              </Balancer>
+
+              <Available class="mt-3" />
+            </div>
           </Transition>
 
           <template #fallback>
-            <p class="reverb" data-fallback v-html="reverb" />
+            <div class="reverb" data-fallback>
+              <p v-html="reverb" />
+
+              <Available class="mt-3" />
+            </div>
           </template>
         </ClientOnly>
       </div>
@@ -59,7 +68,6 @@ const reverb = 'Hey, I\'m <b>ML</b>, a dedicated front-end developer and open-so
   height: clamp(700px, 100vh, 900px);
   height: clamp(700px, 100dvh, 900px);
 
-  // @media (max-width: 1023.9px) and (max-height: 900px) {
   @media (width <= 1023.9px) {
     height: auto;
   }
