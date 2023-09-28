@@ -1,11 +1,11 @@
-@use "./fonts";
+/* stylelint-disable no-invalid-position-at-import-rule, at-rule-empty-line-before */
+
+@import './fonts';
 
 $scrollbar-thumb: #888;
-$scrollbar-track: theme("colors.ml.7");
+$scrollbar-track: theme('colors.ml.7');
 
 :root {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,6 +17,7 @@ $scrollbar-track: theme("colors.ml.7");
 
 html {
   // also set inline in nuxt.config
+
   @apply text-ml-2/70 bg-ml-8/100
     scroll-(smooth py-10) of-y-scroll;
 }
@@ -28,6 +29,7 @@ html {
 ::-webkit-scrollbar {
   width: 6px;
 
+  /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
   &:horizontal {
     height: 6px;
   }
@@ -71,5 +73,5 @@ html {
   @apply select-none;
 }
 
-@import "./app";
-@import "./novel";
+@import './app';
+@import './novel';
