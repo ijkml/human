@@ -63,7 +63,9 @@ const pager = [
         <SubSect title="Project">
           <div class="project-text">
             <div class="chips-cont">
-              <span v-for="ch of chips" :key="ch" class="chip" v-text="ch" />
+              <Chip v-for="ch of chips" :key="ch">
+                {{ ch }}
+              </Chip>
             </div>
 
             <Balancer as="p">
@@ -182,7 +184,7 @@ const pager = [
 .project-deet {
   @apply col-span-1 grid gap-3 content-start self-start
     justify-items-start items-start sm:(grid-cols-2)
-      lg:(grid-cols-1 sticky);
+    lg:(grid-cols-1 sticky);
 
   top: calc(1.23 * var(--nav-height));
 }
@@ -196,11 +198,6 @@ const pager = [
     gap-2 mt-0.5 justify-start select-none;
 }
 
-.chip {
-  @apply inline-flex items-center text-xs/[1] border-(1 ml-5/33)
-    px-2.25 py-1.25 uppercase tracking-wide rd bg-ml-6/100 font-mono;
-}
-
 :deep() {
   .sub-sect {
     @apply p-1 text-3.8 w-full max-w-40ch;
@@ -208,7 +205,7 @@ const pager = [
 
   .sub-head {
     @apply text-3.3/[1.5] font-mono text-ml-3/100
-    border-(b-1 ml-3/35) min-w-25 inline-block
+      border-(b-1 ml-3/35) min-w-25 inline-block
       tracking-wide uppercase mb-2.5 ml--1 px-1;
   }
 }
@@ -250,10 +247,19 @@ ul {
     ss500:(gap-5 grid-cols-2) sm:(gap-8) md:(my-32);
 }
 
+.link-arrow {
+  @apply transition-inherit transform
+    preserve-3d backface-hidden;
+
+  > span {
+    @apply block h-6 w-6;
+  }
+}
+
 .pager-link {
   @apply flex items-center justify-between transition-300
     cursor-pointer rd-lg text-ml-2/75 border-(1 ml-5/60)
-      p-(x-5 y-3) outline-none sm:(text-lg);
+    p-(x-5 y-3) outline-none sm:(text-lg);
 
   &:where(:hover, :focus-visible) {
     @apply text-ml-0/90 border-ml-0/50;
@@ -269,15 +275,6 @@ ul {
 
   .desc {
     @apply font-light my-1px text-(xs ml-3/100) sm:(text-sm);
-  }
-}
-
-.link-arrow {
-  @apply transition-inherit transform
-    preserve-3d backface-hidden;
-
-  > span {
-    @apply block h-6 w-6;
   }
 }
 </style>
