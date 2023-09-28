@@ -144,13 +144,11 @@ const bindProps = computed<object>(() => {
 
 <style scoped lang="scss">
 .ze-button {
-  @apply inline-flex font-(normal mono) px-4 tracking-wider
-    relative uppercase text-(3.5 ml-2 op-90 center) min-w-24
-      transition-300 bg-none select-none cursor-pointer z-1
-        outline-none items-center justify-center align-middle
-          of-hidden h-9.5 rd border-(1 solid ml-5/100);
-
-  // &:is(.light) {@apply border-ml-3/100 text-ml-5/100;}
+  @apply inline-flex font-(450 mono) px-4 tracking-wider
+    relative uppercase text-(3.5 ml-2 op-80 center) min-w-24
+    transition-300 bg-none select-none cursor-pointer z-1
+    outline-none items-center justify-center align-middle
+    of-hidden h-9.5 rd border-(1 solid ml-5/100);
 
   &:where(.primary) {
     @apply text-amber-5/90;
@@ -170,7 +168,7 @@ const bindProps = computed<object>(() => {
 }
 
 :where(.char, .full-text) {
-  @apply will-change-transform transform-gpu mt-0.3;
+  @apply will-change-transform transform-gpu;
 }
 
 :where(.char, .full-text, .icon-fix) {

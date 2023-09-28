@@ -2,9 +2,9 @@
   @apply decoration-(dashed underline offset-4) mx-1px
     outline-none transition-300;
 
-    &:after {
-      @apply content-['↗︎'] ml-2px;
-    }
+  &::after {
+    @apply content-['↗︎'] ml-2px;
+  }
 
   &:where(:hover, :focus-visible) {
     @apply text-green-5/100;
@@ -15,14 +15,14 @@
   @apply decoration-none relative text-ml-4/100
     items-center inline-flex outline-none px-1 select-none;
 
-  background: linear-gradient(0deg, currentColor, currentColor) no-repeat right bottom / 0 1px;
+  background: linear-gradient(0deg, currentcolor, currentcolor) no-repeat right bottom / 0 1px;
   transition-duration: 350ms;
   transition-property: background-size, color, text-transform;
 
   &:where(:hover, :focus-visible) {
     background-size: 100% 1px;
     background-position-x: left;
-    color: theme("colors.ml.0");
+    color: theme('colors.ml.0');
   }
 }
 
@@ -55,7 +55,7 @@ s {
 .screamer-h1 {
   @apply tracking-tighter font-light text-(9/1.1em ml-2/85)
     max-w-72 mx-auto ss:(text-10 max-w-80) sm:(text-12 max-w-95)
-      md:(text-15 max-w-120) lg:(text-16 max-w-125);
+    md:(text-15 max-w-120) lg:(text-16 max-w-125);
 }
 
 .screamer-h2 {
@@ -126,9 +126,43 @@ s {
 
 .heading-lv-3 {
   @apply text-(5.5/[1.1] ml-2/75) ss:(text-6) sm:(text-6.25)
-      md:(text-6.75) lg:(text-7.25);
+    md:(text-6.75) lg:(text-7.25);
 
   + p {
     @apply max-w-110;
   }
+}
+
+@keyframes flicker {
+  0%,
+  31.98%,
+  32.82%,
+  34.98%,
+  35.72%,
+  36.98%,
+  37.62%,
+  67.98%,
+  68.42%,
+  95.98%,
+  99.62%,
+  96.72%,
+  98.98%,
+  100% {
+    opacity: 1;
+  }
+
+  32%,
+  35%,
+  35.7%,
+  37%,
+  37.6%,
+  68%,
+  68.4%,
+  96%,
+  96.7%,
+  99%,
+  99.6% {
+    opacity: 0;
+  }
+
 }

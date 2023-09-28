@@ -1,6 +1,7 @@
 :target,
+[role='region'],
 .novel-heading {
-  scroll-margin-top: #{$nav-height};
+  scroll-margin-top: #{$nav-height * 1.25};
 }
 
 .novel-heading {
@@ -10,7 +11,7 @@
   a {
     @apply text-0.85em my-0.125em ml--1em pr-0.5em float-left
       outline-none op-0 font-(mono semibold) transition-200
-        sm:(ml--1.2em);
+      sm:(ml--1.2em);
 
     &:hover {
       @apply text-ml-0/100;
