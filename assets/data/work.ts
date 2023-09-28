@@ -34,6 +34,19 @@ const featuredProjects: Project[] = [
     tools: [],
   },
   {
+    id: 'human',
+    live: false,
+    name: 'Human',
+    details: '',
+    kind: 'Full-time',
+    link: 'https://ijkml.vercel.app',
+    period: '2015 - Present',
+    roles: ['Designer', 'Developer'],
+    tools: ['Vue/TS', 'Nuxt', 'Uno/Sass', 'Nuxt Studio'],
+    git: 'https://github.com/ijkml/human',
+
+  },
+  {
     id: 'moi-immigration',
     live: true,
     name: 'MOI Immigration',
