@@ -7,12 +7,12 @@ defineProps<{
 const { y: scrolledHeight } = useWindowScroll();
 const { height: screenHeight } = useWindowSize();
 
-const scrollHelp = ref(false);
+const showJump = ref(false);
 
 watchThrottled(
   scrolledHeight,
   (nv) => {
-    scrollHelp.value = nv > screenHeight.value * 0.75;
+    showJump.value = nv > screenHeight.value * 0.75;
   },
   { throttle: 150 },
 );
@@ -44,7 +44,7 @@ function backToTop() {
       <div class="body">
         <slot />
       </div>
-      <button class="to-top" :class="{ shown: scrollHelp }" title="Scroll to top" @click="backToTop">
+      <button class="to-top" :class="{ shown: showJump }" title="Scroll to top" @click="backToTop">
         <UnoIcon class="i-carbon-arrow-up" />
       </button>
     </article>
