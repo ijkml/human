@@ -2,7 +2,7 @@
 import { VTypical } from 'vue-typical';
 import { endSplash, status } from '@/helpers/splash';
 
-const screamer = 'I craft accessible and performant web experiences.';
+const screamer = 'I craft performant and accessible web experiences.';
 </script>
 
 <template>

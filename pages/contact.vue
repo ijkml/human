@@ -14,7 +14,7 @@ const coaxTexts = [
   'Thank you!',
   'Not impressed? Sponsor me so I can level up & do better :)',
   'Pretty please?',
-  'Preeeeety pleeeeease?',
+  'Want to see something cool?',
 ] as const;
 
 const bmcLinkProps = {

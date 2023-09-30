@@ -26,7 +26,7 @@ function getSrc(repo: string) {
           contribute whenever I can.
         </Balancer>
         <p role="note">
-          <code class="gh-commit">
+          <Chip class="gh-commit">
             chore(docs):
             <span
               class="fix-typos"
@@ -36,7 +36,7 @@ function getSrc(repo: string) {
             >
               fix typoss
             </span>
-          </code>
+          </Chip>
         </p>
       </div>
     </div>
@@ -58,12 +58,12 @@ function getSrc(repo: string) {
 
 <style scoped lang="scss">
 .gh-commit {
-  @apply text-3.4/[1.1] font-mono bg-zinc-8/100 rd-1
-    py-0.3em px-0.5em mt-1 inline-block transition-200;
+  // @apply text-3/[1] font-mono bg-zinc-8/100 rd-1
+  //   py-0.3em px-0.5em mt-1 inline-block transition-200;
 
-  .fix-typos {
-    @apply transition-inherit;
-  }
+  text-transform: none;
+
+  @apply leading-[1.1] mt-2 gap-1 of-clip;
 
   &:hover {
     .fix-typos:not(:focus) {

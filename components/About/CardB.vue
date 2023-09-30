@@ -5,18 +5,30 @@
     </h3>
     <p>
       I am dedicated to expanding my skill set and adopting new technologies to
-      effectively tackle any task. Here are some of my skills and fav tools:
+      effectively tackle any task.
     </p>
 
-    <ul>
-      <li>TypeScript</li>
-      <li>JavaScript</li>
-      <li>Vue</li>
-      <li>HTML/CSS</li>
-      <li>Nuxt</li>
-      <li>Sass/Less</li>
-      <li>Astro</li>
-      <li>UnoCSS</li>
-    </ul>
+    <div>
+      <h4>Tools & languages I frequent:</h4>
+      <ul>
+        <li>TypeScript</li>
+        <li>JavaScript</li>
+        <li>Vue</li>
+        <li>Nuxt</li>
+        <li>Sass/Less</li>
+        <li>UnoCSS</li>
+      </ul>
+    </div>
+
+    <hr class="hr my-4">
+
+    <div>
+      <h4>Learning and exploring:</h4>
+      <ul>
+        <li>Java</li>
+        <li>Astro</li>
+        <li>GSAP</li>
+      </ul>
+    </div>
   </div>
 </template>

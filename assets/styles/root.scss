@@ -53,12 +53,12 @@ html {
 .page {
   &-enter-active,
   &-leave-active {
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply transition-400;
   }
 
   &-enter-from,
   &-leave-to {
-    opacity: 0;
+    @apply op-0 translate-y-16;
   }
 }
 

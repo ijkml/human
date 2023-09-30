@@ -15,8 +15,9 @@ definePageMeta({
       <h1 id="about-me" class="screamer-h1">
         About
       </h1>
-      <p class="echo">
-        The man, the myth, the <s>clumsy calamity</s> legend...
+      <p>
+        Hey, I'm ML. <br>
+        Nice to meet you!
       </p>
     </div>
 
@@ -123,8 +124,16 @@ definePageMeta({
   .skills-card {
     @apply gap-0 text-3.8/[1.5] bg-gradient-shape-tl;
 
+    > p {
+      @apply mb-6;
+    }
+
+    h4 {
+      @apply mb-2 text-(ml-2/80 base);
+    }
+
     ul {
-      @apply mt-4 px-1 grid grid-cols-2 space-y-0 gap-2;
+      @apply px-1 grid grid-cols-2 space-y-0 gap-2;
     }
   }
 

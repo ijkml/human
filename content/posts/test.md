@@ -1,6 +1,6 @@
 ---
 cover: /articles/write-articles.webp
-date: 2022-08-23
+date: 2023-09-30
 title: The Kitchen Sink
 description: The art and struggles of styling markdown content.
 ---

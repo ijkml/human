@@ -17,8 +17,8 @@ interface Project {
 }
 
 const oss = [
-  { title: 'Nuxt', link: 'nuxt/nuxt' },
   { title: 'Nuxt Umami', link: 'ijkml/nuxt-umami' },
+  { title: 'Nuxt', link: 'nuxt/nuxt' },
 ];
 
 const featuredProjects: Project[] = [
@@ -34,9 +34,9 @@ const featuredProjects: Project[] = [
     tools: [],
   },
   {
-    id: 'human',
+    id: 'human-v0',
     live: false,
-    name: 'Human',
+    name: 'Human v0',
     details: '',
     kind: 'Full-time',
     link: 'https://ijkml.vercel.app',
@@ -56,7 +56,7 @@ const featuredProjects: Project[] = [
     period: 'Nov 2022',
     link: 'https://www.moiimmigrationsolutions.com/',
     roles: ['Developer'],
-    tools: ['Vue/TS', 'Nuxt', 'Windi/Less', 'Umami', 'MDIcons'],
+    tools: ['Vue/TS', 'Nuxt', 'Windi/Less', 'Umami'],
   },
   {
     id: 'voe',
@@ -108,7 +108,7 @@ const featuredCards = featuredProjects
     live,
   }))
   // sort by "live", put live projects first
-  .sort(({ live: p1 }, { live: p2 }) => p1 === p2 ? 0 : p1 ? -1 : 1) satisfies FeaturedCardProps[];
+  .sort(({ live: l1 }, { live: l2 }) => l1 === l2 ? 0 : l1 ? -1 : 1) satisfies FeaturedCardProps[];
 
 const publicWork = featuredProjects.filter(p => p.live).map(p => p.id);
 

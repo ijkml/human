@@ -16,15 +16,19 @@ definePageMeta({
         Blog
       </h1>
       <div class="reverb">
-        <p>It's coming soon. I promise.</p>
-        <p>
-          I'm currently building a kickass blog engine
-          with docker, k8s and [buzzword] that can scale and handle traffic the size of
-          Google's!
-        </p>
-        <div>
-          <ZeButton text="Blog Post" link="/posts/test" />
-        </div>
+        <p>Hello, friend.</p>
+
+        <Balancer as="p">
+          It's coming soon... I'm not sure what I'm going to write about yet,
+          but I promise it will be lighthearted, engaging, and informative.
+          Or at least one of those things.
+        </Balancer>
+
+        <p>For now, here is a kitchen sink preview:</p>
+      </div>
+
+      <div class="mt-4">
+        <ZeButton text="Kitchen Sink" small link="/posts/test" />
       </div>
     </div>
   </section>
