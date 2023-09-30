@@ -5,7 +5,6 @@ useHead({
 });
 
 definePageMeta({
-  documentDriven: false,
   alias: ['/about-me'],
 });
 </script>

@@ -1,10 +1,22 @@
+<script setup lang="ts">
+definePageMeta({
+  documentDriven: true,
+});
+
+// if (page.value && page.value.cover) {
+//   useHead({
+//     meta: [{ property: 'og:image', content: page.value.cover }],
+//   });
+// }
+</script>
+
 <template>
   <div>
     <ContentDoc>
       <template #default="{ doc }">
-        <DocumentWrapper v-bind="{ title: doc.title, date: doc.date }">
+        <ContentWrapper v-bind="{ title: doc.title, date: doc.date }">
           <ContentRenderer :value="doc" />
-        </DocumentWrapper>
+        </ContentWrapper>
       </template>
 
       <template #empty>

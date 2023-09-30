@@ -8,7 +8,6 @@ useHead({
 
 definePageMeta({
   alias: ['/contact-me'],
-  documentDriven: false,
 });
 
 const coaxTexts = [

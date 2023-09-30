@@ -4,7 +4,6 @@ import { startSplash, status } from '@/helpers/splash';
 definePageMeta({
   path: '/',
   alias: ['/home'],
-  documentDriven: false,
 });
 
 useHead({
@@ -62,14 +61,18 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
 
 <style lang="scss" scoped>
 .home-hero {
-  @apply flex bg-ml-9/100 transition-colors-250
-    px-4 ss:(px-6) sm:(px-12) md:(px-16);
+  @apply flex transition-colors-250 px-4 ss:(px-6)
+    sm:(px-12) md:(px-16) lg:(bg-fixed);
 
-  height: clamp(700px, 100vh, 900px);
-  height: clamp(700px, 100dvh, 900px);
+  background: theme('colors.ml.9') url('@img/svg/bg-1.svg') center / cover no-repeat;
+  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
 
-  @media (width <= 1023.9px) {
-    height: auto;
+  @media (width >= 1024px) {
+    min-height: auto;
+    height: clamp(700px, 100vh, 900px);
+    height: clamp(700px, 100dvh, 900px);
   }
 
   padding-top: calc(7.5rem + var(--nav-height));

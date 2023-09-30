@@ -6,7 +6,6 @@ useHead({
 
 definePageMeta({
   alias: ['/blog'],
-  documentDriven: false,
 });
 </script>
 

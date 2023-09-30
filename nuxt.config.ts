@@ -51,7 +51,7 @@ export default defineNuxtConfig({
   ],
   extends: ['nuxt-umami'],
   content: {
-    documentDriven: true,
+    documentDriven: false,
     sources: {
       // overwrite default source AKA `content` directory
       content: {
@@ -74,8 +74,6 @@ export default defineNuxtConfig({
         'scss',
         'less',
         'shell',
-        'bash',
-        'sh',
         'markdown',
         'mdx',
         'yaml',
