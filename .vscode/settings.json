@@ -13,4 +13,21 @@
     "sass",
     "vue"
   ],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    ".nuxt": true,
+  },
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/content/work/*.json"
+      ],
+      "url": "/types/work-schema.json"
+    }
+  ]
 }
