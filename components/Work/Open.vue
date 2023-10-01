@@ -12,7 +12,7 @@
       </Balancer>
       <div class="action">
         <ZeButton primary link="/contact" text="Get in touch" />
-        <ZeButton link="/cv" text="Get my CV" external />
+        <ZeButton link="/resume" text="Get my CV" external />
       </div>
     </div>
   </section>

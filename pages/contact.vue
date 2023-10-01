@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { bmcLink, contactEmail, socials } from '@data/links';
+import { contactEmail, socials } from '@data/links';
 
 useHead({
   title: 'Contact',
@@ -20,7 +20,7 @@ const coaxTexts = [
 const bmcLinkProps = {
   regular: true,
   external: true,
-  link: bmcLink,
+  link: '/coffee',
 };
 
 const interacted = ref(false);
@@ -82,27 +82,29 @@ const btnText = computed(() => {
         </h3>
 
         <p>
-          <NuxtLink
+          <a
             href="/telegram"
             class="link-xi"
-            external
             rel="noopener"
             target="_blank"
-          >
-            Telegram
-          </NuxtLink>
-          is the fastest way to reach me. If it's official
+          >Telegram</a> is the fastest way to reach me. If it's official
           <small>(or you might need the paper trail)</small>,
-          <a class="link-xi" rel="noopener" :href="contactEmail.link">here's my email</a>. You can also catch me stalking folks on
-          <NuxtLink
+          <a class="link-xi" rel="noopener" :href="contactEmail.link">
+            here's my email</a> or better,
+          <a
+            class="link-xi"
+            href="/resume"
+            rel="noopener"
+            target="_blank"
+          >grab my resume</a>. You can also catch me stalking folks on
+          <a
             href="/twitter"
             class="link-xi"
-            external
             rel="noopener"
             target="_blank"
           >
             TweeX
-          </NuxtLink>&MediumSpace;<small>(pls tweet @me if I don't reply within 6 months)</small>.
+          </a> <small>(pls tweet @me if I don't reply within 6 months)</small>.
         </p>
 
         <div class="intro-actions">
@@ -155,7 +157,7 @@ const btnText = computed(() => {
           <ZeButton
             class="coffee"
             text="Buy me a coffee"
-            :link="bmcLink"
+            link="/coffee"
             external
             primary
             :delay="30"

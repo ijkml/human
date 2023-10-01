@@ -1,8 +1,4 @@
-const links = {
-  github: 'https://github.com/ijkml/',
-  telegram: 'https://t.me/ijk_ml',
-  twitter: 'https://twitter.com/ijk_ml',
-};
+import { redirects as links } from './content/data/contact.json';
 
 // '/github': { redirect: { to: 'https://github.com/ijkml/' } },
 const redirects = Object.fromEntries(

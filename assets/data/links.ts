@@ -1,4 +1,5 @@
 import type { RouteLocationRaw } from '#vue-router';
+import { email } from '@/content/data/contact.json';
 
 import IconHome from '@/components/Icons/Home.server.vue';
 import IconAbout from '@/components/Icons/About.server.vue';
@@ -58,12 +59,9 @@ const socials: SocialLinkFormat[] = [
   },
 ];
 
-const bmcLink = 'https://bmc.link/ijkml';
-const bioLink = 'https://bio.link/ijkml';
-
 const contactEmail = {
-  title: 'me.mlaure@gmail.com',
-  link: 'mailto:me.mlaure@gmail.com',
+  title: email,
+  link: `mailto:${email}`,
 } as const;
 
 const footerLinks: LinkFormat[][] = [
@@ -77,6 +75,4 @@ export {
   contactEmail,
   linkIcons,
   socials,
-  bmcLink,
-  bioLink,
 };
