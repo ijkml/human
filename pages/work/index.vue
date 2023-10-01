@@ -3,9 +3,6 @@ useHead({
   title: 'Work',
   // meta: [{ name: 'description', content: '' }],
 });
-
-definePageMeta({
-});
 </script>
 
 <template>

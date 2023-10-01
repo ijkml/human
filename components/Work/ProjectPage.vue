@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { Project } from '@data/work';
 
+defineOptions({
+  inheritAttrs: false,
+});
+
 const props = withDefaults(defineProps<Project>(), {
   credits: undefined,
   git: undefined,
