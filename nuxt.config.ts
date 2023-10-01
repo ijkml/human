@@ -36,6 +36,7 @@ export default defineNuxtConfig({
   routeRules: {
     // Add link shortcuts/redirects
     ...redirects,
+    '/posts/**': { prerender: true },
   },
   alias: {
     '@img': fileURLToPath(new URL('./assets/images', import.meta.url)),
@@ -53,14 +54,6 @@ export default defineNuxtConfig({
   extends: ['nuxt-umami'],
   content: {
     documentDriven: false,
-    sources: {
-      // overwrite default source AKA `content` directory
-      content: {
-        driver: 'fs',
-        prefix: '/posts',
-        base: resolve(__dirname, 'content/posts'),
-      },
-    },
     highlight: {
       // Theme used in all color schemes.
       theme: 'monokai',
