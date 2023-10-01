@@ -37,6 +37,7 @@ export default defineNuxtConfig({
     // Add link shortcuts/redirects
     ...redirects,
     '/posts/**': { prerender: true },
+    '/work/**': { prerender: true },
   },
   alias: {
     '@img': fileURLToPath(new URL('./assets/images', import.meta.url)),

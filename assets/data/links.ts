@@ -33,7 +33,7 @@ interface SocialLinkFormat extends LinkFormat {
 const headerLinks: LinkFormat[] = [
   { title: 'Home', link: '/', icon: 'home' },
   { title: 'About', link: '/about', icon: 'about' },
-  { title: 'Work', link: '/work', icon: 'work', children: 'work-id' },
+  { title: 'Work', link: '/work', icon: 'work', children: 'work-all' },
   { title: 'Posts', link: '/posts', icon: 'blog', children: 'posts-all' },
   { title: 'Contact', link: '/contact', icon: 'contact' },
 ];
