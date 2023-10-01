@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { currentStack, learning } from '@data/tools';
+</script>
+
 <template>
   <div class="black-red bc-card skills-card">
     <h3 class="heading-lv-3">
@@ -8,27 +12,22 @@
       effectively tackle any task.
     </p>
 
-    <div>
-      <h4>Tools & languages I frequent:</h4>
-      <ul>
-        <li>TypeScript</li>
-        <li>JavaScript</li>
-        <li>Vue</li>
-        <li>Nuxt</li>
-        <li>Sass/Less</li>
-        <li>UnoCSS</li>
-      </ul>
-    </div>
+    <div class="sub-sub-sect">
+      <div>
+        <h4>Tools & languages I frequent:</h4>
+        <ul>
+          <li v-for="t in currentStack" :key="t" v-text="t" />
+        </ul>
+      </div>
 
-    <hr class="hr my-4">
+      <hr>
 
-    <div>
-      <h4>Learning and exploring:</h4>
-      <ul>
-        <li>Java</li>
-        <li>Astro</li>
-        <li>GSAP</li>
-      </ul>
+      <div>
+        <h4>Learning and exploring:</h4>
+        <ul>
+          <li v-for="t in learning" :key="t" v-text="t" />
+        </ul>
+      </div>
     </div>
   </div>
 </template>

@@ -124,8 +124,12 @@ definePageMeta({
   .skills-card {
     @apply gap-0 text-3.8/[1.5] bg-gradient-shape-tl;
 
-    > p {
-      @apply mb-6;
+    .sub-sub-sect {
+      @apply grid gap-4 mt-6;
+    }
+
+    hr {
+      @apply op-10 ml--1 w-75%;
     }
 
     h4 {
