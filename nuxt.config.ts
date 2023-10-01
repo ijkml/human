@@ -48,6 +48,7 @@ export default defineNuxtConfig({
     'nuxt-beastcss',
     '@nuxt/content',
     'nuxt-simple-sitemap',
+    '@nuxthq/studio',
   ],
   extends: ['nuxt-umami'],
   content: {
