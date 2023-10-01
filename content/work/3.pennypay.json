@@ -1,0 +1,12 @@
+{
+  "id": "pennypay",
+  "name": "PennyPay",
+  "details":
+    "Designed and developed a pseudo-minimalist landing page for a fictional global payments and commerce company, incorporating a sleek dark mode for a modern and engaging user experience.",
+  "kind": "Personal",
+  "period": "Jan - Feb 2023",
+  "link": "https://pennypay.netlify.app/",
+  "roles": ["Designer", "Developer"],
+  "tools": ["Vue/TS", "Nuxt", "Uno/Sass", "Headless UI", "Iconify"],
+  "git": "https://github.com/ijkml/PennyPay"
+}
