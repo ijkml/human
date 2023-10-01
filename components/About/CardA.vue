@@ -23,7 +23,7 @@
       </p>
     </SubSect>
 
-    <SubSect title="Work">
+    <SubSect title="Experience">
       <p>
         As a freelance developer, I've collaborated with brands and individuals,
         including an immigration agency, to create innovative and user-friendly
