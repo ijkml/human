@@ -3,10 +3,10 @@ import type { FeaturedCardProps } from '@data/work';
 
 const props = defineProps<FeaturedCardProps>();
 
-const { live, id, name } = toRefs(props);
+const { wip, id, name } = toRefs(props);
 
-const link = live.value ? `/work/${id.value}` : undefined;
-const src = `/img/projects/${live.value ? `${id.value}.webp` : 'soon.svg'}`;
+const link = !wip.value ? `/work/${id.value}` : undefined;
+const src = `/img/projects/${!wip.value ? `${id.value}.webp` : 'soon.svg'}`;
 
 function viewProject() {
   if (link)
@@ -31,6 +31,22 @@ function viewProject() {
 </template>
 
 <style scoped lang="scss">
+.project-info {
+  @apply text-ml-2/75 z-1 w-full h-full
+    grid px-6 py-3 content-end;
+}
+
+.project-img {
+  @apply w-full h-full object-(cover center);
+
+  mask-image: linear-gradient(
+    to bottom,
+    hsl(0deg 0% 0%),
+    hsl(0deg 0% 0% / 9%) 75%,
+    hsl(0deg 0% 0% / 2%)
+  );
+}
+
 .project-card {
   @apply h-60 bg-ml-9/100 of-hidden gap-0 grid rd-lg
     outline-none transition-300 ss500:(aspect-2 h-auto);
@@ -53,22 +69,6 @@ function viewProject() {
       @apply saturate-0;
     }
   }
-}
-
-.project-img {
-  @apply w-full h-full object-(cover center);
-
-  mask-image: linear-gradient(
-    to bottom,
-    hsl(0, 0%, 0%),
-    hsla(0, 0%, 0%, 0.09) 75%,
-    hsla(0, 0%, 0%, 0.02)
-  );
-}
-
-.project-info {
-  @apply text-ml-2/75 z-1 w-full h-full
-    grid px-6 py-3 content-end;
 }
 
 .project-head {

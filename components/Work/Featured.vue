@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { featuredCards } from '@data/work';
+import type { FeaturedCardProps } from '@data/work';
+import { wip } from '@data/work';
+
+const { data } = await useAsyncData('home', () => {
+  return queryContent('work').only(['id', 'name']).find();
+});
+
+const featuredCards = [...((data.value ?? []) as unknown as FeaturedCardProps[]), ...wip];
 </script>
 
 <template>
