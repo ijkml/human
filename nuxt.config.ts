@@ -40,9 +40,7 @@ export default defineNuxtConfig({
   routeRules: {
     // Add link shortcuts/redirects
     ...redirects,
-    '/posts': { isr: true },
     '/posts/**': { isr: true },
-    '/work': { isr: true },
     '/work/**': { isr: true },
   },
   alias: {
