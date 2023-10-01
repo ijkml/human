@@ -8,6 +8,10 @@ export default defineNuxtConfig({
     host: '',
     port: 3221,
   },
+  site: {
+    url: 'https://ijkml.vercel.app',
+    name: 'Moses Laurence',
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
@@ -55,6 +59,9 @@ export default defineNuxtConfig({
     '@nuxthq/studio',
   ],
   extends: ['nuxt-umami'],
+  sitemap: {
+    strictNuxtContentPaths: true,
+  },
   content: {
     documentDriven: false,
     highlight: {
