@@ -103,8 +103,8 @@ const btnText = computed(() => {
             rel="noopener"
             target="_blank"
           >
-            TweeX
-          </a> <small>(pls tweet @me if I don't reply within 6 months)</small>.
+            Twitter/X
+          </a>.
         </p>
 
         <div class="intro-actions">
