@@ -9,8 +9,9 @@ const link = !wip.value ? `/work/${id.value}` : undefined;
 const src = `/img/projects/${!wip.value ? `${id.value}.webp` : 'soon.svg'}`;
 
 function viewProject() {
-  if (link)
+  if (link) {
     navigateTo(link);
+  }
 }
 </script>
 
@@ -48,8 +49,8 @@ function viewProject() {
 }
 
 .project-card {
-  @apply h-60 bg-ml-9/100 of-hidden gap-0 grid rd-lg
-    outline-none transition-300 ss500:(aspect-2 h-auto);
+  @apply bg-ml-9/100 of-hidden gap-0 grid
+    rd-lg outline-none transition-300;
 
   > * {
     grid-area: 1 / 1;
