@@ -8,19 +8,17 @@ const { data, pending } = await useAsyncData('work-projects', () => {
   lazy: true,
 });
 
-const featuredCards = [
-// const featuredCards = computed(() => [
+const featuredCards = computed(() => [
   ...((data.value ?? []) as unknown as FeaturedCardProps[]),
   ...wip,
-// ]);
-];
+]);
 </script>
 
 <template>
   <section role="region" aria-labelledby="head-featured-work">
     <div class="sect-head">
       <h2 id="head-featured-work" class="screamer-h2">
-        Featured Work
+        Featured Projects
       </h2>
       <div>
         <Balancer as="p">
