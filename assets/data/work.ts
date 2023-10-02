@@ -30,18 +30,6 @@ const wip: WIP[] = [
     wip: true,
     name: 'MOI Montessori',
   },
-  {
-    id: 'human-v0',
-    wip: true,
-    name: 'Human v0',
-    // details: '',
-    // kind: 'Full-time',
-    // link: 'https://ijkml.vercel.app',
-    // period: '2015 - Present',
-    // roles: ['Designer', 'Developer'],
-    // tools: ['Vue/TS', 'Nuxt', 'Uno/Sass', 'Nuxt Studio'],
-    // git: 'https://github.com/ijkml/human',
-  },
 ];
 
 export { oss, wip };
