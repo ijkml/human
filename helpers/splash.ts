@@ -1,6 +1,7 @@
 const html = computed(() => {
-  if (typeof window === 'undefined')
+  if (typeof window === 'undefined') {
     return null;
+  }
 
   return document.documentElement;
 });
@@ -16,8 +17,9 @@ const rootScrollLock = useScrollLock(html, false);
 const scrollGap = ref<`${number}px`>('0px');
 
 function splashLock(lock = true) {
-  if (typeof window === 'undefined' || status.playedHero)
+  if (typeof window === 'undefined' || status.playedHero) {
     return;
+  }
 
   scrollGap.value = `${
     window.innerWidth - document.documentElement.clientWidth
@@ -26,10 +28,12 @@ function splashLock(lock = true) {
   rootScrollLock.value = lock;
   document.body.style.paddingRight = lock ? scrollGap.value : '0px';
 
-  if (lock)
+  if (lock) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  else
+  }
+  else {
     status.playedHero = true;
+  }
 }
 
 function endSplash() {
