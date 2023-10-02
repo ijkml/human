@@ -32,13 +32,15 @@ const msgId = ref(0);
 function coax() {
   interacted.value = true;
 
-  if (convinced.value)
+  if (convinced.value) {
     return sayThanks();
+  }
 
   const id = msgId.value;
 
-  if (id === coaxTexts.length - 2)
+  if (id === coaxTexts.length - 2) {
     convinced.value = true;
+  }
 
   const typingDuration = Math.floor(Math.random() * (2000 - 800 + 1)) + 800;
   // random, 800 - 2000

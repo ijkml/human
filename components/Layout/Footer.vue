@@ -37,6 +37,7 @@ const { copy, copied } = useClipboard({ legacy: true });
             :key="ln.title"
             :to="ln.link"
             :target="ln.external ? '_blank' : '_self'"
+            rel="noopener"
             class="link-xiii"
           >
             <div>
