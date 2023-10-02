@@ -62,13 +62,13 @@ const featuredCards = computed(() => [
 
 :deep() {
   .project-card {
-    @apply h-60 ss500:(aspect-2 h-auto);
+    @apply h-60 rd-lg bg-ml-9/100 of-hidden
+      gap-0 ss500:(aspect-2 h-auto);
   }
 }
 
 .skeleton {
-  @apply flex items-center justify-center rd-lg
-    bg-ml-9/100;
+  @apply flex items-center justify-center;
 
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 

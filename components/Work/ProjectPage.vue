@@ -181,7 +181,7 @@ const pager = [
   // width = 1400px; height = auto
   > img {
     @apply object-(contain center) rd-lg select-none
-      h-auto w-full outline-(1 solid ml-5/40);
+      h-auto w-full min-h-100 outline-(1 solid ml-5/40);
   }
 }
 

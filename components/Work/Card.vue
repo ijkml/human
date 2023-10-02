@@ -49,8 +49,7 @@ function viewProject() {
 }
 
 .project-card {
-  @apply bg-ml-9/100 of-hidden gap-0 grid
-    rd-lg outline-none transition-300;
+  @apply grid outline-none transition-300;
 
   > * {
     grid-area: 1 / 1;
