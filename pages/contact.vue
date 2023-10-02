@@ -42,7 +42,7 @@ function coax() {
     convinced.value = true;
   }
 
-  const typingDuration = Math.floor(Math.random() * (2000 - 800 + 1)) + 800;
+  const typingDuration = Math.floor(Math.random() * (1500 - 800 + 1)) + 500;
   // random, 800 - 2000
   msgId.value = -1;
 
