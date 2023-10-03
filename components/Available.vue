@@ -6,11 +6,19 @@ withDefaults(defineProps<{
   link: '/contact',
   text: 'Open to work',
 });
+
+function monitor() {
+  umTrackEvent('available-beacon', { page: useRoute().path });
+}
 </script>
 
 <template>
   <div>
-    <NuxtLink :to="link" class="available">
+    <NuxtLink
+      :to="link"
+      class="available"
+      @click="monitor"
+    >
       <Chip>
         <span class="availa-bull i-carbon-dot-mark" />
         {{ text }}

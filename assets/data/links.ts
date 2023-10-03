@@ -1,4 +1,3 @@
-import type { RouteLocationRaw } from '#vue-router';
 import { email } from '@/content/data/contact.json';
 
 import IconHome from '@/components/Icons/Home.server.vue';
@@ -20,7 +19,7 @@ type LinkIcon = keyof typeof linkIcons;
 
 interface LinkFormat {
   title: string
-  link: RouteLocationRaw
+  link: string
   external?: boolean
   icon: LinkIcon
   children?: string

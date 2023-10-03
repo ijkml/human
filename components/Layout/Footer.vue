@@ -2,6 +2,14 @@
 import { contactEmail, footerLinks } from '@data/links';
 
 const { copy, copied } = useClipboard({ legacy: true });
+
+function monitor(isExternal = false, link: string) {
+  if (!isExternal) {
+    return;
+  }
+
+  umTrackView(link);
+}
 </script>
 
 <template>
@@ -15,7 +23,11 @@ const { copy, copied } = useClipboard({ legacy: true });
           </NuxtLink>
         </p>
         <div class="email-link">
-          <a :href="contactEmail.link" class="link-xi text-current">
+          <a
+            :href="contactEmail.link"
+            class="link-xi text-current"
+            @click="umTrackEvent('send-mail');"
+          >
             {{ contactEmail.title }}
           </a>
 
@@ -39,6 +51,7 @@ const { copy, copied } = useClipboard({ legacy: true });
             :target="ln.external ? '_blank' : '_self'"
             rel="noopener"
             class="link-xiii"
+            @click="monitor(ln.external, ln.link)"
           >
             <div>
               {{ ln.title }}

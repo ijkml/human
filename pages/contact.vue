@@ -61,6 +61,15 @@ function sayThanks() {
 const btnText = computed(() => {
   return msgId.value < 0 ? '...' : convinced.value ? 'Fine' : 'No';
 });
+
+function monitor(link: string) {
+  if (link === 'email') {
+    umTrackEvent('send-mail');
+  }
+  else {
+    umTrackView(link);
+  }
+}
 </script>
 
 <template>
@@ -89,21 +98,29 @@ const btnText = computed(() => {
             class="link-xi"
             rel="noopener"
             target="_blank"
+            @click="monitor('/telegram')"
           >Telegram</a> is the fastest way to reach me. If it's official
           <small>(or you might need the paper trail)</small>,
-          <a class="link-xi" rel="noopener" :href="contactEmail.link">
+          <a
+            class="link-xi"
+            rel="noopener"
+            :href="contactEmail.link"
+            @click="monitor('email')"
+          >
             here's my email</a> or better,
           <a
             class="link-xi"
             href="/resume"
             rel="noopener"
             target="_blank"
+            @click="monitor('/resume')"
           >grab my resume</a>. You can also catch me stalking folks on
           <a
             href="/twitter"
             class="link-xi"
             rel="noopener"
             target="_blank"
+            @click="monitor('/twitter')"
           >
             Twitter/X
           </a>.
@@ -118,8 +135,14 @@ const btnText = computed(() => {
             :delay="80"
             icon="i-carbon-send-alt w-4"
             suffix
+            @click="monitor('/telegram')"
           />
-          <ZeButton text="Email" :link="contactEmail.link" :delay="80" />
+          <ZeButton
+            text="Email"
+            :link="contactEmail.link"
+            :delay="80"
+            @click="monitor('email')"
+          />
         </div>
       </div>
 
@@ -136,6 +159,7 @@ const btnText = computed(() => {
             rel="noopener"
             target="_blank"
             class="link-xiii"
+            @click="monitor(ln.link)"
           >
             <div>
               {{ ln.title }}
