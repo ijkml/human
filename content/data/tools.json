@@ -1,0 +1,18 @@
+{
+  "current": [
+    "Javascript",
+    "Vue",
+    "Typescript",
+    "Nuxt",
+    "Sass/Less",
+    "UnoCSS",
+    "Pinia",
+    "GraphQL"
+  ],
+  "explore": [
+    "Java",
+    "Astro",
+    "Builder.io",
+    "GSAP"
+  ]
+}

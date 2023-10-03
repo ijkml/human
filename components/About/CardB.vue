@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { currentStack, learning } from '@data/tools';
+import { current, explore } from '@/content/data/tools.json';
 </script>
 
 <template>
@@ -16,7 +16,7 @@ import { currentStack, learning } from '@data/tools';
       <div>
         <h4>Tools & languages I frequent:</h4>
         <ul>
-          <li v-for="t in currentStack" :key="t" v-text="t" />
+          <li v-for="t in current" :key="t" v-text="t" />
         </ul>
       </div>
 
@@ -25,7 +25,7 @@ import { currentStack, learning } from '@data/tools';
       <div>
         <h4>Learning and exploring:</h4>
         <ul>
-          <li v-for="t in learning" :key="t" v-text="t" />
+          <li v-for="t in explore" :key="t" v-text="t" />
         </ul>
       </div>
     </div>
