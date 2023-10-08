@@ -82,9 +82,6 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
   > div {
     @apply mx-auto w-full max-w-screen-lg grid
       items-start gap-8 mt-24 lg:(grid-cols-5);
-
-    // @apply outline-(1px solid yellow/75);
-
   }
 
   @media (height >= 800px) {
