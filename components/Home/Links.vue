@@ -21,7 +21,7 @@ const links = [
 
 <style scoped lang="scss">
 .links-container {
-  @apply w-full max-w-100 grid gap-4 lg:(col-span-2);
+  @apply w-full max-w-100 mt-auto grid gap-4 lg:(col-span-2);
 }
 
 .link-arrow {

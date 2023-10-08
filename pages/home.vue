@@ -19,7 +19,7 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
 
 <template>
   <section class="home-hero" role="region" aria-labelledby="hero-head-h1">
-    <div :class="{ splash: !status.playedHero }">
+    <div>
       <div class="text-cont">
         <h1 id="hero-head-h1" class="screamer-h1">
           <HomeTypeWriter />
@@ -61,7 +61,7 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
 
 <style lang="scss" scoped>
 .home-hero {
-  @apply flex transition-all-250 px-4 ss:(px-6)
+  @apply transition-all-250 px-4 ss:(px-6)
     sm:(px-12) md:(px-16) lg:(bg-fixed);
 
   background: theme('colors.ml.9') url('@img/svg/bg-1.svg') center / cover no-repeat;
@@ -81,10 +81,18 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
 
   > div {
     @apply mx-auto w-full max-w-screen-lg grid
-      items-end gap-8 lg:(grid-cols-5);
+      items-start gap-8 mt-24 lg:(grid-cols-5);
 
-    &.splash {
-      @apply items-center;
+    // @apply outline-(1px solid yellow/75);
+
+  }
+
+  @media (height >= 800px) {
+    min-height: auto;
+    height: auto;
+
+    > div {
+      @apply mt-50;
     }
   }
 }
@@ -94,11 +102,10 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
 }
 
 .text-cont {
-  @apply w-full mx-auto md:(mx-0) lg:(col-span-3);
+  @apply w-full mx-auto transition-all-500 md:(mx-0) lg:(col-span-3);
 
-  &,
   > * {
-    @apply transition-all-500;
+    @apply transition-inherit;
   }
 }
 
