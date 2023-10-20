@@ -12,7 +12,12 @@
       </Balancer>
       <div class="action">
         <ZeButton primary link="/contact" text="Get in touch" />
-        <ZeButton link="/resume" text="Get my CV" external />
+        <ZeButton
+          link="/resume"
+          text="Get my CV"
+          external
+          @click="umTrackView('/resume')"
+        />
       </div>
     </div>
   </section>
