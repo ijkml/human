@@ -2,10 +2,15 @@
 import type { FeaturedCardProps } from '@data/work';
 import { wip } from '@data/work';
 
+const nuxtApp = useNuxtApp();
+
 const { data, pending } = await useAsyncData('work-projects', () => {
   return queryContent('work').only(['id', 'name']).find();
 }, {
   lazy: true,
+  getCachedData: (key) => {
+    return ((nuxtApp.payload.static ?? nuxtApp.payload.data) as any)[key];
+  },
 });
 
 const featuredCards = computed(() => [
