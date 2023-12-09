@@ -25,11 +25,6 @@ const oss = [
 ];
 
 const wip: WIP[] = [
-  {
-    id: 'moi-montessori',
-    wip: true,
-    name: 'MOI Montessori',
-  },
 ];
 
 export { oss, wip };

@@ -39,7 +39,7 @@ const featuredCards = computed(() => [
       <template v-if="pending">
         <div v-for="i in 6" :key="i" role="status" class="project-card skeleton">
           <UnoIcon class="i-carbon-image icon" />
-          <span class="sr-only" aria-hidden="true">Loading...</span>
+          <span class="sr-only">Loading...</span>
         </div>
       </template>
       <template v-else>
