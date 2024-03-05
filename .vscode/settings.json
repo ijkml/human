@@ -4,7 +4,7 @@
   "editor.formatOnSave": false,
   "vue.codeActions.enabled": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.eslint": "explicit"
   },
   "stylelint.validate": [
     "css",
@@ -19,7 +19,7 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    ".nuxt": true,
+    ".nuxt": true
   },
   "json.schemas": [
     {

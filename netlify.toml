@@ -1,6 +1,0 @@
-[build.environment]
-  NODE_VERSION = "20.5.1"
-
-[build]
-  publish = "dist"
-  command = "pnpm run build"

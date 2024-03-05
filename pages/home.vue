@@ -64,7 +64,8 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
   @apply transition-all-250 px-4 ss:(px-6)
     sm:(px-12) md:(px-16) lg:(bg-fixed);
 
-  background: theme('colors.ml.9') url('@img/svg/bg-1.svg') center / cover no-repeat;
+  background: theme('colors.ml.9') url('@img/svg/bg-1.svg') center / cover
+    no-repeat;
   height: auto;
   min-height: 100vh;
   min-height: 100dvh;

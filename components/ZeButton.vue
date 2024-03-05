@@ -3,20 +3,20 @@ import type { RouteLocationRaw } from '@/.nuxt/vue-router';
 
 const props = withDefaults(
   defineProps<{
-    text: string
-    primary?: boolean
-    small?: boolean
-    icon?: string
-    suffix?: boolean
+    text: string;
+    primary?: boolean;
+    small?: boolean;
+    icon?: string;
+    suffix?: boolean;
     /**
      * base animation delay (keep between 1 and 100)
      */
-    delay?: number
-    link?: RouteLocationRaw
-    external?: boolean
-    class?: string
-    regular?: boolean
-    disabled?: boolean
+    delay?: number;
+    link?: RouteLocationRaw;
+    external?: boolean;
+    class?: string;
+    regular?: boolean;
+    disabled?: boolean;
     // type?: 'button' | 'submit'
   }>(),
   {
@@ -34,7 +34,7 @@ const props = withDefaults(
 );
 
 const emit = defineEmits<{
-  click: [event: any]
+  click: [event: any];
 }>();
 
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate();

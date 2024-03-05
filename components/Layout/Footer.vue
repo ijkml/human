@@ -4,9 +4,8 @@ import { contactEmail, footerLinks } from '@data/links';
 const { copy, copied } = useClipboard({ legacy: true });
 
 function monitor(isExternal = false, link: string) {
-  if (!isExternal) {
+  if (!isExternal)
     return;
-  }
 
   umTrackView(link);
 }

@@ -9,9 +9,8 @@ const link = !wip.value ? `/work/${id.value}` : undefined;
 const src = `/img/projects/${!wip.value ? `${id.value}.webp` : 'soon.svg'}`;
 
 function viewProject() {
-  if (link) {
+  if (link)
     navigateTo(link);
-  }
 }
 </script>
 

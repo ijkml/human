@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(defineProps<{
-  link?: string
-  text?: string
+  link?: string;
+  text?: string;
 }>(), {
   link: '/contact',
   text: 'Open to work',

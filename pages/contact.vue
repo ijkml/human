@@ -32,15 +32,13 @@ const msgId = ref(0);
 function coax() {
   interacted.value = true;
 
-  if (convinced.value) {
+  if (convinced.value)
     return sayThanks();
-  }
 
   const id = msgId.value;
 
-  if (id === coaxTexts.length - 2) {
+  if (id === coaxTexts.length - 2)
     convinced.value = true;
-  }
 
   const typingDuration = Math.floor(Math.random() * (1500 - 800 + 1)) + 500;
   // random, 800 - 2000
@@ -63,12 +61,11 @@ const btnText = computed(() => {
 });
 
 function monitor(link: string) {
-  if (link === 'email') {
+  if (link === 'email')
     umTrackEvent('send-mail');
-  }
-  else {
+
+  else
     umTrackView(link);
-  }
 }
 </script>
 

@@ -47,7 +47,7 @@ A paragraph with a line<br>break inside. and here, [an external link (nuxt.com)]
 
 > Typography is pretty important if you don't want your stuff to look like trash. Make it good then it won't be bad.
 > > Always use a nested blockquote, yay!
-> 
+>
 > <figcaption>Tonya (Author of That Design Book)</figcaption>
 
 ### Heading h3

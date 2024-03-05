@@ -1,22 +1,22 @@
 interface Project {
   // !! sync with schema
-  id: string
-  name: string
-  details: string
-  link: string
-  kind: 'Personal' | 'Contract' | 'Full-time'
-  period: string
-  roles: string[]
-  tools: string[]
-  wip?: boolean
-  git?: string
-  credits?: { name: string; link: string }[]
+  id: string;
+  name: string;
+  details: string;
+  link: string;
+  kind: 'Personal' | 'Contract' | 'Full-time';
+  period: string;
+  roles: string[];
+  tools: string[];
+  wip?: boolean;
+  git?: string;
+  credits?: { name: string; link: string }[];
 }
 
 type FeaturedCardProps = Pick<Project, 'id' | 'name' | 'wip'>;
 
 type WIP = FeaturedCardProps & {
-  wip: true
+  wip: true;
 };
 
 const oss = [

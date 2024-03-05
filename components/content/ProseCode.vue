@@ -3,10 +3,10 @@ import type { Lang } from 'shiki-es';
 
 const props = withDefaults(
   defineProps<{
-    code: string
-    language: Lang | null
-    filename: string | null
-    highlights: number[]
+    code: string;
+    language: Lang | null;
+    filename: string | null;
+    highlights: number[];
   }>(),
   {
     code: '',

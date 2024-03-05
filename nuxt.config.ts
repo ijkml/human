@@ -1,6 +1,5 @@
 import { fileURLToPath } from 'node:url';
 import svgLoader from 'vite-svg-loader';
-import { resolve } from 'pathe';
 import { redirects } from './redirects';
 
 export default defineNuxtConfig({

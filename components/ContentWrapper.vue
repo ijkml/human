@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps<{
-  title?: string
-  date?: string
+  title?: string;
+  date?: string;
 }>();
 
 const { y: scrolledHeight } = useWindowScroll();
