@@ -1,6 +1,6 @@
 ---
 cover: /articles/write-articles.webp
-date: 2023-1-1
+date: 2023-01-01
 title: Test Test 2
 tags: personal, short
 description: The art and struggles of styling markdown content.
