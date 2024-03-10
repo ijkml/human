@@ -23,6 +23,7 @@
     "@vueuse/nuxt": "^10.9.0",
     "eslint": "^8.57.0",
     "eslint-plugin-format": "^0.1.0",
+    "nitropack": "^2.9.3",
     "nuxt": "^3.10.3",
     "nuxt-beastcss": "^1.0.3",
     "nuxt-umami": "^2.6.0",
