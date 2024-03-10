@@ -1,9 +1,12 @@
 import { redirects as links } from './content/data/contact.json';
 
-// '/github': { redirect: { to: 'https://github.com/ijkml/' } },
-const redirects = Object.fromEntries(
+function toObject<T extends { [key: string]: any }>(entries: [string, T][]) {
+  return Object.fromEntries(entries) as { [key: string]: T };
+}
+
+const redirects = toObject(
   Object.entries(links).map(([path, link]) => {
-    return [[`/${path}`], { redirect: { to: link } }];
+    return [`/${path}`, { redirect: { to: link } }];
   }),
 );
 
