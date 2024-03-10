@@ -23,7 +23,7 @@ const query: QueryBuilderParams = {
   <section aria-labelledby="blog-heading" class="sect-space-top" role="region">
     <div class="heading-wrap">
       <h1 id="blog-heading" class="screamer-h1">
-        Blog
+        Posts
       </h1>
       <div class="reverb">
         <Balancer as="p">
