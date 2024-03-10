@@ -36,7 +36,7 @@ import { contactEmail } from '@data/links';
   background: linear-gradient(to right, currentColor, currentColor) no-repeat
     center bottom / 0% 1px;
 
-  &:where(:hover, :focus-visible) {
+  &:is(:hover, :focus-visible) {
     @apply saturate-100;
 
     background-size: 100% 1px;

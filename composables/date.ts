@@ -6,4 +6,8 @@ function formatDate(date: string) {
   });
 }
 
-export { formatDate };
+function getTimeAgo(date: string) {
+  return useTimeAgo(new Date(date)).value;
+}
+
+export { formatDate, getTimeAgo };

@@ -1,8 +1,8 @@
 ---
 cover: /articles/write-articles.webp
-date: 2023-09-30
-title: The Kitchen Sink
-tags: article
+date: 2023-1-1
+title: Test Test 2
+tags: personal, short
 description: The art and struggles of styling markdown content.
 ---
 
