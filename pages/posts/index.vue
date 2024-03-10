@@ -82,8 +82,17 @@ const query: QueryBuilderParams = {
 }
 
 .blog-head {
-  @apply tracking-tight text-(ml-1/100 5/1.1em)
-    my-3 ss:(text-6) sm:(text-7) md:(text-8);
+  @apply tracking-tight transition-300 my-4
+    text-(ml-1/100 5/1.1em) ss:(text-6)
+    sm:(text-7) md:(text-8) lg:(text-9);
+
+  a {
+    @apply transition-inherit;
+
+    &:where(:hover, :focus-visible) {
+      @apply text-ml-0/90;
+    }
+  }
 }
 
 .time-ago {
