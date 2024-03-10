@@ -103,8 +103,8 @@ function monitor(isExternal = false, link: string) {
 .ze-contact {
   @apply grid items-start max-w-380px mb-4;
 
-  a:where(:hover, :focus-visible) {
-    @apply text-ml-0;
+  a:is(:hover, :focus-visible) {
+    @apply text-ml-0/100;
   }
 }
 
@@ -157,6 +157,10 @@ function monitor(isExternal = false, link: string) {
 
   a {
     @apply p-2px mx-2px text-ml-3/100;
+
+    &:is(:hover, :focus-visible) {
+      @apply text-inherit;
+    }
   }
 }
 </style>

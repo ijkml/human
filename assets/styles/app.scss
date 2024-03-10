@@ -7,7 +7,7 @@
   transition-duration: 350ms;
   transition-property: background-size, color, text-transform;
 
-  &:where(:hover, :focus-visible) {
+  &:is(:hover, :focus-visible) {
     background-size: 100% 1px;
     background-position-x: left;
     color: theme('colors.ml.0');
