@@ -28,7 +28,9 @@ const { data } = await useAsyncData('post-list', () => {
           </NuxtLink>
         </h2>
 
-        <p v-text="article.description" />
+        <p>
+          <Balancer>{{ article.description }}</Balancer>
+        </p>
 
         <div class="time-ago" v-text="getTimeAgo(article.date)" />
       </div>
