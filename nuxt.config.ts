@@ -22,12 +22,6 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Moses Laurence' },
         { name: 'referrer', content: 'strict-origin-when-cross-origin' },
       ],
-      // style: [
-      //   {
-      //     textContent:
-      //       'html{color:hsl(240, 1%, 43%);background-color:hsl(240, 4%, 11%)}',
-      //   },
-      // ],
       noscript: [
         {
           innerHTML: `<link rel='stylesheet' type='text/css' href='/no-script.css'>`,

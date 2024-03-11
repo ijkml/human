@@ -8,7 +8,10 @@ definePageMeta({
 
 useHead({
   title: 'Home',
-  // meta: [{ name: 'description', content: '' }],
+  meta: [
+    // { name: 'description', content: '' }
+    { name: 'theme-color', content: '#0a090b' },
+  ],
 });
 
 startSplash();
