@@ -26,6 +26,6 @@ const tagList = computed(() => {
 }
 
 .chip {
-  @apply text-2.5 h-5;
+  @apply text-2.5 h-5 bg-ml-8/100 b-ml-7/100;
 }
 </style>

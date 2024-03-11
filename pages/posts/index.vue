@@ -7,9 +7,6 @@ useHead({
 definePageMeta({
   alias: ['/blog'],
 });
-
-// TODO
-// pagination
 </script>
 
 <template>
@@ -19,6 +16,8 @@ definePageMeta({
         Posts
       </h1>
       <div class="reverb">
+        <p>Hello, friend...</p>
+
         <Balancer as="p">
           It's coming soon... I'm not sure what I'm going to write about yet,
           but I promise it will be lighthearted, engaging, and informative.
@@ -32,10 +31,6 @@ definePageMeta({
 </template>
 
 <style scoped lang="scss">
-.heading-wrap {
-  @apply text-center mx-auto;
-}
-
 .reverb {
   @apply grid gap-2;
 }

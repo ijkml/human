@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getTimeAgo } from '~/composables/date';
+import { formatDate } from '~/composables/date';
 
 const keys = ['_path', 'tags', 'date', 'title', 'description'] as const;
 
@@ -7,6 +7,9 @@ type QueryResult = Promise<Array<
   // Record<string, string> & // uncomment for looser types
   Record<(typeof keys)[number], string>
 >>;
+
+// TODO
+// pagination
 
 const { data } = await useAsyncData('post-list', () => {
   return queryContent('posts')
@@ -18,60 +21,71 @@ const { data } = await useAsyncData('post-list', () => {
 
 <template>
   <div class="content-list">
-    <template v-for="article in data" :key="article._path">
-      <div class="list-item">
-        <PostTags :tags="article.tags" />
+    <NuxtLink
+      v-for="article in data"
+      :key="article._path"
+      :to="article._path"
+      class="black-red article"
+    >
+      <h2 class="blog-head">
+        {{ article.title }}
+      </h2>
 
-        <h2 class="blog-head">
-          <NuxtLink :to="article._path">
-            {{ article.title }}
-          </NuxtLink>
-        </h2>
+      <Balancer as="p">
+        {{ article.description }}
+      </Balancer>
 
-        <p>
-          <Balancer>{{ article.description }}</Balancer>
-        </p>
+      <PostTags :tags="article.tags" />
 
-        <div class="time-ago" v-text="getTimeAgo(article.date)" />
+      <div class="date">
+        {{ formatDate(article.date, 'short') }}
       </div>
-
-      <hr class="hr">
-    </template>
+    </NuxtLink>
   </div>
 </template>
 
 <style scoped lang="scss">
-.hr {
-  @apply w-80% mx-auto b-ml-3/20 md:(w-full);
-}
-
 .content-list {
-  @apply text-center mx-auto mb-8 mt-16 max-w-130 grid gap-10;
-
-  hr:last-of-type {
-    @apply hidden;
-  }
-}
-
-.list-item {
-  @apply grid gap-1;
+  @apply mb-8 mt-16 grid gap-8 md:(grid-cols-3);
 }
 
 .blog-head {
-  @apply tracking-tight transition-300 my-4
-    text-(ml-1/100 5/1.1em) ss:(text-6)
-    sm:(text-7) md:(text-8) lg:(text-9);
+  @apply tracking-tight text-(ml-3/100 5/1.1em)
+    ss:(text-6) sm:(text-7) md:(text-8) lg:(text-9);
+}
 
-  a {
-    @apply transition-inherit;
+.article {
+  @apply grid gap-3 transition-300 relative;
 
-    &:where(:hover, :focus-visible) {
-      @apply text-ml-0/90;
+  @apply rd-2 p-(l-4 r-8 b-8 t-16) text-(3.8/[1.5] ml-3/100)
+    justify-items-start content-end of-hidden ss:(px-6)
+    sm:(min-h-80) md:(px-8) at-lg:(px-6);
+
+  &::after {
+    @apply content-[''] size-110% absolute top--5% left--5%
+      bg-gradient-to-br from-(ml-0/0 35%) to-(ml-0/50 200%)
+      transition-1000 transform-gpu z-0 translate-100% blur-5;
+  }
+
+  > * {
+    @apply relative z-1 transition-inherit;
+  }
+
+  &:hover {
+    &::after {
+      @apply translate-0 transition-500;
+    }
+
+    .blog-head {
+      @apply text-ml-1/100;
     }
   }
 }
 
-.time-ago {
-  @apply text-(3 ml-3/100) capitalize mt-1 font-mono;
+.date {
+  @apply text-(4 ml-3/50) absolute bottom-10% right-2
+    font-mono rotate-180 tracking-wider;
+
+  writing-mode: vertical-lr;
 }
 </style>

@@ -38,7 +38,7 @@ function backToTop() {
           </Balancer>
         </h1>
         <time v-if="date" :datetime="date">
-          {{ formatDate(date) }}
+          {{ formatDate(date, 'readable') }}
         </time>
       </div>
       <div class="body">
