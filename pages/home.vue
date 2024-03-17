@@ -3,16 +3,18 @@ import { startSplash, status } from '@/helpers/splash';
 
 definePageMeta({
   path: '/',
-  alias: ['/home'],
+  alias: ['/home', '/ml'],
 });
 
 useHead({
-  title: 'Home',
+  title: 'Front-end Developer',
   meta: [
     // { name: 'description', content: '' }
     { name: 'theme-color', content: '#0a090b' },
   ],
 });
+
+defineOgImageComponent('PageOg');
 
 startSplash();
 
@@ -132,5 +134,17 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
 .slide-fade-enter-from,
 .slide-fade-leave-to {
   @apply op-0 translate-y-25%;
+}
+
+.test {
+  color: #ff2e2e; // ml-0
+  color: #f0f0f0; // ml-1
+  color: #e6e6e6; // ml-2
+  color: #939395; // ml-3
+  color: #6d6d6f; // ml-4
+  color: #3b3b3f; // ml-5
+  color: #232325; // ml-6
+  color: #161618; // ml-8
+  color: #0a0a0b; // ml-9
 }
 </style>

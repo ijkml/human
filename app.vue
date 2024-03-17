@@ -7,6 +7,10 @@ useHead({
     { name: 'theme-color', content: '#161618' }, // bg-ml-7
   ],
 });
+
+defineOgImageComponent('PageOg', {
+  link: '/ml',
+});
 </script>
 
 <template>

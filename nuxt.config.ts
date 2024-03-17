@@ -50,10 +50,20 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/sitemap',
     '@nuxthq/studio',
+    'nuxt-og-image',
   ],
   extends: ['nuxt-umami'],
   sitemap: {
     strictNuxtContentPaths: true,
+  },
+  ogImage: {
+    fonts: [
+      {
+        name: 'alliance',
+        weight: 400,
+        path: '/fonts/Alliance-2-Regular.woff',
+      },
+    ],
   },
   content: {
     documentDriven: false,
@@ -107,7 +117,5 @@ export default defineNuxtConfig({
       },
     },
   },
-  devtools: {
-    enabled: false,
-  },
+  devtools: { enabled: true },
 });

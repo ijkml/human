@@ -7,6 +7,10 @@ useHead({
 definePageMeta({
   alias: ['/about-me'],
 });
+
+defineOgImageComponent('PageOg', {
+  link: '/about',
+});
 </script>
 
 <template>

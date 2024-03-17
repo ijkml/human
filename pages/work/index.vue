@@ -3,6 +3,10 @@ useHead({
   title: 'Work',
   // meta: [{ name: 'description', content: '' }],
 });
+
+defineOgImageComponent('PageOg', {
+  link: '/work',
+});
 </script>
 
 <template>

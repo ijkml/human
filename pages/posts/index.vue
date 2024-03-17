@@ -1,11 +1,15 @@
 <script setup lang="ts">
 useHead({
-  title: 'Blog',
+  title: 'Posts',
   // meta: [{ name: 'description', content: '' }],
 });
 
 definePageMeta({
-  alias: ['/blog'],
+  alias: ['/blog', '/post', '/blogs'],
+});
+
+defineOgImageComponent('PageOg', {
+  link: '/posts',
 });
 </script>
 

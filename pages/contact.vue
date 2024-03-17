@@ -10,6 +10,10 @@ definePageMeta({
   alias: ['/contact-me'],
 });
 
+defineOgImageComponent('PageOg', {
+  link: '/work',
+});
+
 const coaxTexts = [
   'Thank you!',
   'Not impressed? Sponsor me so I can level up & do better :)',
