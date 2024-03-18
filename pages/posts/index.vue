@@ -22,11 +22,11 @@ defineOgImageComponent('PageOg', {
       <div class="reverb">
         <p>Hello, friend...</p>
 
-        <Balancer as="p">
+        <p class="text-balance">
           It's coming soon... I'm not sure what I'm going to write about yet,
           but I promise it will be lighthearted, engaging, and informative.
           Or at least one of those things.
-        </Balancer>
+        </p>
       </div>
     </div>
 

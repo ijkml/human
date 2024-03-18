@@ -72,9 +72,9 @@ const pager = [
               </Chip>
             </div>
 
-            <Balancer as="p">
+            <p class="text-balance">
               {{ details }}
-            </Balancer>
+            </p>
 
             <div class="project-links">
               <ZeButton

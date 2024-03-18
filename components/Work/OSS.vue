@@ -21,10 +21,10 @@ function getSrc(repo: string) {
         Open Source
       </h2>
       <div>
-        <Balancer as="p">
+        <p class="text-balance">
           I believe open source makes the web more accessible, I try to
           contribute whenever I can.
-        </Balancer>
+        </p>
         <p role="note">
           <Chip class="gh-commit">
             chore(docs):

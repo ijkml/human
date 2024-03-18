@@ -11,7 +11,7 @@ definePageMeta({
 });
 
 defineOgImageComponent('PageOg', {
-  link: '/work',
+  link: '/contact',
 });
 
 const coaxTexts = [
@@ -79,10 +79,10 @@ function monitor(link: string) {
       <h1 id="get-in-touch" class="screamer-h1">
         Contact
       </h1>
-      <Balancer as="p">
+      <p class="text-balance">
         I'm always open to new opportunities and connections. Reach out anytime
         to discuss a project or just chat.
-      </Balancer>
+      </p>
 
       <Available class="mt-4" :link="contactEmail.link" />
     </div>

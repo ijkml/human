@@ -5,7 +5,9 @@ import { wip } from '@data/work';
 const nuxtApp = useNuxtApp();
 
 const { data, pending } = await useAsyncData('work-projects', () => {
-  return queryContent('work').only(['id', 'name']).find();
+  return queryContent('work')
+    .only(['id', 'name'])
+    .find();
 }, {
   lazy: true,
   getCachedData: (key) => {
@@ -26,9 +28,9 @@ const featuredCards = computed(() => [
         Featured Projects
       </h2>
       <div>
-        <Balancer as="p">
+        <p class="text-balance">
           Some of my <em>best</em> work.
-        </Balancer>
+        </p>
         <p role="note" class="block-small">
           don't be mean :)
         </p>
@@ -57,7 +59,7 @@ const featuredCards = computed(() => [
   }
 
   50% {
-    opacity: 0.4;
+    opacity: 0.5;
   }
 }
 

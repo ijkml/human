@@ -2,21 +2,15 @@
 definePageMeta({
   documentDriven: true,
 });
-
-// if (page.value && page.value.cover) {
-//   useHead({
-//     meta: [{ property: 'og:image', content: page.value.cover }],
-//   });
-// }
 </script>
 
 <template>
   <div>
     <ContentDoc>
       <template #default="{ doc }">
-        <ContentWrapper v-bind="{ title: doc.title, date: doc.date }">
+        <PostContentWrapper v-bind="{ title: doc.title, date: doc.date }">
           <ContentRenderer :value="doc" />
-        </ContentWrapper>
+        </PostContentWrapper>
       </template>
 
       <template #empty>

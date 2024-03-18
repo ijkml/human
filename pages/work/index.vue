@@ -16,10 +16,10 @@ defineOgImageComponent('PageOg', {
         Work
       </h1>
 
-      <Balancer as="p">
+      <p class="text-balance">
         My work experiences, including select creative projects and
         contributions to open source.
-      </Balancer>
+      </p>
 
       <Available class="mt-4" link="#open-to-work" />
     </div>

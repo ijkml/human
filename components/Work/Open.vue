@@ -7,9 +7,11 @@
       <h2 id="head-otw" class="screamer-h2">
         Open To Work
       </h2>
-      <Balancer as="p">
-        I am actively seeking full-time work, but I am also open to freelance opportunities. Hit me up if you have any new projects, creative ideas, or collaborations in the works.
-      </Balancer>
+      <p class="text-balance">
+        I am actively seeking full-time work, but I am also open to
+        freelance opportunities. Hit me up if you have any new projects,
+        creative ideas, or collaborations in the works.
+      </p>
       <div class="action">
         <ZeButton primary link="/contact" text="Get in touch" />
         <ZeButton
