@@ -10,7 +10,7 @@ $scrollbar-track: theme('colors.ml.7');
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @apply text-16px font-sans;
+  @apply text-16px font-sans tracking-tight;
 
   --nav-height: #{$nav-height};
 }

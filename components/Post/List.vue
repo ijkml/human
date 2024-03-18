@@ -79,7 +79,7 @@ const { data, pending } = await useAsyncData('post-list', () => {
 .blog-head {
   @apply tracking-tight text-(ml-3/100 5/[1.25] balance)
     mr-4 max-w-500px ss:(text-6) md:(text-7) lg:(text-8.5)
-    xl:(text-8);
+    xl:(text-7.5);
 }
 
 .article {

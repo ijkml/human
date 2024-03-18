@@ -105,7 +105,8 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
 }
 
 .text-cont {
-  @apply w-full mx-auto transition-all-500 md:(mx-0) lg:(col-span-3);
+  @apply w-full mx-auto transition-all-500
+    md:(mx-0) lg:(col-span-3);
 
   > * {
     @apply transition-inherit;

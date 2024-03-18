@@ -266,7 +266,7 @@ function monitor(link: string) {
   a {
     @apply text-ml-1/100 px-1px;
 
-    &:where(:hover, :focus-visible) {
+    &:is(:hover, :focus-visible) {
       @apply text-ml-0/100;
     }
   }

@@ -36,7 +36,7 @@ defineOgImageComponent('PageOg', {
 
 <style scoped lang="scss">
 .subsect-offset {
-  @apply mt-24 grid gap-24 ss500:px-1 sm:px-6;
+  @apply mt-24 grid gap-24 ss500:(px-1) sm:(px-6);
 
   > * {
     @apply w-full mx-auto grid-cols-2 ss500:(max-w-screen-ss500)
