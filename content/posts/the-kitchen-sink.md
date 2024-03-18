@@ -1,9 +1,8 @@
 ---
-cover: /articles/write-articles.webp
 date: 2023-09-30
-title: The Kitchen Sink
+title: The Art and Struggles of Styling Markdown Content.
 tags: article
-description: The art and struggles of styling markdown content.
+# description: The art and struggles of styling markdown content.
 ---
 
 Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.

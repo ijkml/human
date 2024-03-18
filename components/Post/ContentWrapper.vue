@@ -1,8 +1,12 @@
 <script setup lang="ts">
-defineProps<{
-  title?: string;
-  date?: string;
+const props = defineProps<{
+  title: string;
+  date: string;
 }>();
+
+defineOgImageComponent('PostOg', {
+  title: props.title,
+});
 
 const { y: scrolledHeight } = useWindowScroll();
 const { height: screenHeight } = useWindowSize();
@@ -33,9 +37,7 @@ function backToTop() {
     <article ref="article">
       <div class="heading">
         <h1 class="title">
-          <Balancer :ratio="0.5">
-            {{ title }}
-          </Balancer>
+          {{ title }}
         </h1>
         <time v-if="date" :datetime="date">
           {{ formatDate(date, 'readable') }}
@@ -44,7 +46,12 @@ function backToTop() {
       <div class="body">
         <slot />
       </div>
-      <button class="to-top" :class="{ shown: showJump }" title="Scroll to top" @click="backToTop">
+      <button
+        class="to-top"
+        :class="{ shown: showJump }"
+        title="Scroll to top"
+        @click="backToTop"
+      >
         <UnoIcon class="i-carbon-arrow-up" />
       </button>
     </article>
@@ -57,13 +64,11 @@ function backToTop() {
 }
 
 article {
-  // @apply outline-(1 dashed yellow/50);
-
   @apply mx-auto mt-16 max-w-55ch sm:(py-12) md:(max-w-65ch);
 }
 
 .title {
-  @apply mx-0 mb-4 font-semibold text-(ml-2/100 8/[1.2]) sm:(text-10);
+  @apply mx-0 mb-4 font-semibold text-(ml-2/100 8/[1.2] balance) sm:(text-10);
 }
 
 time {
