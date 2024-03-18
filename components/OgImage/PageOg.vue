@@ -10,23 +10,19 @@ withDefaults(defineProps<{
 
 <template>
   <div
-    class="size-full bg-#0a0a0b text-#e6e6e6 px-20 py-10"
+    class="size-full bg-#0a0a0b text-#e6e6e6 px-20 py-10 tracking-tight"
     style="
-      font-family: alliance;
-      background-image: linear-gradient(
-        to top right,
-        #ff2e2e00 80%,
-        #ff2e2e41 125%);
+      background-image: linear-gradient(45deg, #ff2e2e00 80%, #ff2e2e41 125%);
     "
   >
     <div class="size-full justify-end">
-      <h1 class="text-100px/tight tracking-tight w-500px">
+      <h1 class="text-100px/[1] w-500px font-600 tracking-tighter">
         Moses Laurence
       </h1>
 
       <div class="block b-(t-1 #939395/50) my-4" />
 
-      <div class="flex text-8/[1] justify-between">
+      <div class="flex text-8/[1] justify-between items-center">
         <p class="uppercase">
           Front-end Developer
         </p>
