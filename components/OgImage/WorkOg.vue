@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<{
 </script>
 
 <template>
-  <div class="size-full bg-#0a0a0b px-16 py-12" style="font-family: alliance">
+  <div class="size-full bg-#0a0a0b px-16 py-12">
     <div class="bg-zinc-8 size-full flex items-end">
       <h1 class="w-[600px] m-0 text-[75px] font-semibold mb-4 text-white flex items-center">
         <span>{{ title }}</span>
