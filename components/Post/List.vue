@@ -8,56 +8,84 @@ type QueryResult = Promise<Array<
   Record<(typeof keys)[number], string>
 >>;
 
+const nuxtApp = useNuxtApp();
+
 // TODO
 // pagination
 
-const { data } = await useAsyncData('post-list', () => {
+const { data, pending } = await useAsyncData('post-list', () => {
   return queryContent('posts')
-    .only(['_path', 'tags', 'date', 'title', 'description'])
+    .only(keys.slice())
     .sort({ date: -1 })
     .find() as QueryResult;
+}, {
+  lazy: true,
+  getCachedData: (key) => {
+    return ((nuxtApp.payload.static ?? nuxtApp.payload.data) as any)[key];
+  },
 });
 </script>
 
 <template>
   <div class="content-list">
-    <NuxtLink
-      v-for="article in data"
-      :key="article._path"
-      :to="article._path"
-      class="black-red article"
-    >
-      <h2 class="blog-head">
-        {{ article.title }}
-      </h2>
-
-      <Balancer as="p">
-        {{ article.description }}
-      </Balancer>
-
-      <PostTags :tags="article.tags" />
-
-      <div class="date">
-        {{ formatDate(article.date, 'short') }}
+    <template v-if="pending">
+      <div v-for="a in 3" :key="a" class="black-red article skeleton">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32" height="32" viewBox="0 0 24 24"
+          class="icon"
+        >
+          <g fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M2.906 17.505L5.337 3.718a2 2 0 0 1 2.317-1.623L19.472
+              4.18a2 2 0 0 1 1.622 2.317l-2.431 13.787a2 2 0 0 1-2.317
+              1.623L4.528 19.822a2 2 0 0 1-1.622-2.317Z"
+            />
+            <path
+              stroke-linecap="round"
+              d="m8.929 6.382l7.879 1.389m-8.574 2.55l7.879 1.39M7.54 14.26l4.924.869"
+            />
+          </g>
+        </svg>
+        <span class="sr-only">Loading...</span>
       </div>
-    </NuxtLink>
+    </template>
+    <template v-else>
+      <NuxtLink
+        v-for="article in data"
+        :key="article._path"
+        :to="article._path"
+        class="black-red article"
+      >
+        <h2 class="blog-head">
+          {{ article.title }}
+        </h2>
+
+        <PostTags :tags="article.tags" />
+
+        <div class="date">
+          {{ formatDate(article.date, 'short') }}
+        </div>
+      </NuxtLink>
+    </template>
   </div>
 </template>
 
 <style scoped lang="scss">
 .content-list {
-  @apply mb-8 mt-16 grid gap-8 md:(grid-cols-3);
+  @apply mb-8 mt-16 grid gap-8 sm:(grid-cols-2) xl:(grid-cols-3);
 }
 
 .blog-head {
-  @apply tracking-tight text-(ml-3/100 5/1.1em)
-    ss:(text-6) sm:(text-7) md:(text-8) lg:(text-9);
+  @apply tracking-tight text-(ml-3/100 5/[1.25] balance)
+    mr-4 max-w-500px ss:(text-6) md:(text-7) lg:(text-8.5)
+    xl:(text-8);
 }
 
 .article {
   @apply grid gap-3 transition-300 relative;
 
-  @apply rd-2 p-(l-4 r-8 b-8 t-16) text-(3.8/[1.5] ml-3/100)
+  @apply rd-2 p-(x-4 b-8 t-16) text-(3.8/[1.5] ml-3/100)
     justify-items-start content-end of-hidden ss:(px-6)
     sm:(min-h-80) md:(px-8) at-lg:(px-6);
 
@@ -83,9 +111,30 @@ const { data } = await useAsyncData('post-list', () => {
 }
 
 .date {
-  @apply text-(4 ml-3/50) absolute bottom-10% right-2
-    font-mono rotate-180 tracking-wider;
+  @apply text-(3 ml-3/50) absolute bottom-10% right-2
+    font-mono rotate-180 tracking-wider ss:(text-4);
 
   writing-mode: vertical-lr;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton {
+  @apply flex items-center justify-center pointer-events-none;
+
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  .icon {
+    @apply w-10 h-10 text-ml-4/75;
+  }
 }
 </style>
