@@ -58,11 +58,8 @@ export default defineNuxtConfig({
   },
   ogImage: {
     fonts: [
-      {
-        name: 'alliance',
-        weight: 400,
-        path: '/fonts/Alliance-2-Regular.woff',
-      },
+      'Space+Grotesk:400',
+      'Space+Grotesk:600',
     ],
   },
   content: {

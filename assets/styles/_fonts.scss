@@ -1,31 +1,15 @@
 @font-face {
-  font-family: Alliance;
+  font-family: 'Space Grotesk';
   font-display: swap;
-  font-weight: 300;
+  font-weight: 300 - 700;
   font-style: normal;
-  src: url('../fonts/Alliance-2-Light.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: Alliance;
-  font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-  src: url('../fonts/Alliance-2-Regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: Alliance;
-  font-display: swap;
-  font-weight: 600;
-  font-style: normal;
-  src: url('../fonts/Alliance-2-SemiBold.woff2') format('woff2');
+  src: url('/fonts/Space-Grotesk-Var.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Mono Code';
   font-display: swap;
-  font-weight: 100 - 900;
+  font-weight: 100 - 700;
   font-style: normal;
-  src: url('../fonts/RobotoMono-VariableFont.woff2');
+  src: url('/fonts/RobotoMono-VariableFont.woff2') format('woff2');
 }
