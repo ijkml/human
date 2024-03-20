@@ -31,7 +31,7 @@ function monitor() {
 .available {
   @apply outline-none;
 
-  &:where(:hover, :focus-visible) {
+  &:is(:hover, :focus-visible) {
     @apply text-green-6/100 transition-300;
   }
 }

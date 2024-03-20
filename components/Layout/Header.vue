@@ -89,7 +89,7 @@ const activeClass = 'link-active';
     @apply h-8 transition-inherit pointer-events-none;
   }
 
-  &:where(:hover, :focus-visible) {
+  &:is(:hover, :focus-visible) {
     @apply text-ml-0;
   }
 }
@@ -102,7 +102,7 @@ const activeClass = 'link-active';
 .link-text {
   @apply text-ml-2/100;
 
-  &:where(:hover, :focus-visible) {
+  &:is(:hover, :focus-visible) {
     @apply text-ml-0/100;
   }
 

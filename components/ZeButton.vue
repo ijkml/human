@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { RouteLocationRaw } from '@/.nuxt/vue-router';
+import type { RouteLocationRaw } from '#vue-router';
 
 const props = withDefaults(
   defineProps<{
@@ -150,7 +150,7 @@ const bindProps = computed<object>(() => {
     outline-none items-center justify-center align-middle
     of-hidden h-9.5 rd border-(1 solid ml-5/100);
 
-  &:where(.primary) {
+  &:is(.primary) {
     @apply text-amber-5/90;
   }
 
@@ -167,11 +167,11 @@ const bindProps = computed<object>(() => {
   @apply relative transition-inherit block;
 }
 
-:where(.char, .full-text) {
+:is(.char, .full-text) {
   @apply will-change-transform transform-gpu;
 }
 
-:where(.char, .full-text, .icon-fix) {
+:is(.char, .full-text, .icon-fix) {
   @apply transition-inherit text-inherit;
 }
 
@@ -199,7 +199,7 @@ const bindProps = computed<object>(() => {
   @apply text-120%;
 }
 
-.ze-button:not(:disabled, .disabled):where(:hover, :focus-visible) {
+.ze-button:not(:disabled, .disabled):is(:hover, :focus-visible) {
   @apply text-ml-0/100 border-current;
 
   .full-text {

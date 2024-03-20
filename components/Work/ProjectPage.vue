@@ -39,6 +39,8 @@ useHead({
   meta: [{ name: 'description', content: details }],
 });
 
+defineOgImageComponent('WorkOg', { name, roles });
+
 const pager = [
   { title: 'Contact Me', desc: 'Get in touch', link: '/contact' },
   { title: 'All Works', desc: 'View all projects', link: '/work' },
@@ -241,7 +243,7 @@ ul {
 .credits-link {
   @apply px-0;
 
-  &:not(:where(:hover, :focus-visible)) {
+  &:not(:is(:hover, :focus-visible)) {
     @apply text-inherit;
   }
 }
@@ -265,7 +267,7 @@ ul {
     cursor-pointer rd-lg text-ml-2/75 border-(1 ml-5/60)
     p-(x-5 y-3) outline-none sm:(text-lg);
 
-  &:where(:hover, :focus-visible) {
+  &:is(:hover, :focus-visible) {
     @apply text-ml-0/90 border-ml-0/50;
 
     .link-arrow {

@@ -16,7 +16,7 @@ code {
     @apply text-0.95em;
   }
 
-  :where(h1, h2, h3, h4, h5, h6) & {
+  :is(h1, h2, h3, h4, h5, h6) & {
     @apply text-75%;
   }
 

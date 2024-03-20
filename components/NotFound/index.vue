@@ -68,7 +68,7 @@ defineProps<{
 .img-cont {
   @apply relative w-full;
 
-  > :where(svg, img) {
+  > :is(svg, img) {
     @apply w-full object-contain max-h-80 md:(max-h-96) lg:(max-h-128);
   }
 }

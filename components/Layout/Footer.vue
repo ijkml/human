@@ -95,7 +95,7 @@ function monitor(isExternal = false, link: string) {
 .copy-btn {
   @apply op-40 transition-200 w-4 h-4;
 
-  &:where(:focus-visible, :hover) {
+  &:is(:hover, :focus-visible) {
     @apply op-100 text-ml-0/100;
   }
 }

@@ -1,11 +1,13 @@
 <script setup lang="ts">
 const props = defineProps<{
   title: string;
+  subtitle?: string;
   date: string;
 }>();
 
 defineOgImageComponent('PostOg', {
   title: props.title,
+  subtitle: props.subtitle,
 });
 
 const { y: scrolledHeight } = useWindowScroll();
@@ -39,6 +41,9 @@ function backToTop() {
         <h1 class="title">
           {{ title }}
         </h1>
+        <p class="sub-title">
+          {{ subtitle }}
+        </p>
         <time v-if="date" :datetime="date">
           {{ formatDate(date, 'readable') }}
         </time>
@@ -67,8 +72,17 @@ article {
   @apply mx-auto mt-16 max-w-55ch sm:(py-12) md:(max-w-65ch);
 }
 
+.heading {
+  @apply grid gap-4;
+}
+
 .title {
-  @apply mx-0 mb-4 font-semibold text-(ml-2/100 8/[1.2] balance) sm:(text-10);
+  @apply mx-0 font-semibold text-(ml-2/100 8/[1.2] balance)
+    sm:(text-10);
+}
+
+.sub-title {
+  @apply text-xl;
 }
 
 time {
@@ -84,7 +98,7 @@ time {
     @apply op-0 pointer-events-none;
   }
 
-  &.shown:where(:hover, :focus-visible) {
+  &.shown:is(:hover, :focus-visible) {
     @apply bg-ml-9/100 text-ml-0/100;
   }
 }

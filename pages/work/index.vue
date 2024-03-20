@@ -4,6 +4,10 @@ useHead({
   // meta: [{ name: 'description', content: '' }],
 });
 
+definePageMeta({
+  alias: ['/projects', '/works'],
+});
+
 defineOgImageComponent('PageOg', {
   link: '/work',
 });

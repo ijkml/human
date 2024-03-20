@@ -82,7 +82,7 @@ function getSrc(repo: string) {
 
   img {
     @apply object-contain rd-md filter
-      brightness-50 transition-inherit grayscale-90;
+      brightness-70 transition-inherit grayscale-90;
   }
 
   &::after {
@@ -90,13 +90,13 @@ function getSrc(repo: string) {
       z-1 inset-0 bg-(ml-0 op-0) transition-inherit;
   }
 
-  &:where(:hover, :focus-visible) {
+  &:is(:hover, :focus-visible) {
     &::after {
       @apply bg-op-25;
     }
 
     img {
-      @apply grayscale-0 brightness-75;
+      @apply grayscale-0 brightness-100;
     }
   }
 }

@@ -40,7 +40,7 @@ const activeClass = 'active-link';
     @apply h-auto w-5.5 max-h-full transition-inherit;
   }
 
-  &:where(:hover, :focus-visible, .active-link) {
+  &:is(:hover, :focus-visible, .active-link) {
     @apply text-ml-0/100;
   }
 }

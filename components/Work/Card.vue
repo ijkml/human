@@ -59,7 +59,7 @@ function viewProject() {
     @apply cursor-wait;
   }
 
-  &:not(.coming-soon):where(:hover, :focus-visible) {
+  &:not(.coming-soon):is(:hover, :focus-visible) {
     .project-info {
       @apply bg-ml-0/10;
     }

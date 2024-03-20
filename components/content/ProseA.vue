@@ -41,7 +41,7 @@ a {
   @apply outline-none transition-200 text-ml-1/100
     decoration-(1 current underline offset-4 dashed);
 
-  &:where(:hover, :focus-visible) {
+  &:is(:hover, :focus-visible) {
     @apply text-ml-0/100 decoration-(offset-2);
   }
 }

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { formatDate } from '~/composables/date';
 
-const keys = ['_path', 'tags', 'date', 'title', 'description'] as const;
+const keys = ['_path', 'tags', 'date', 'title', 'subtitle'] as const;
 
-type QueryResult = Promise<Array<
+type QueryResult = Array<
   // Record<string, string> & // uncomment for looser types
   Record<(typeof keys)[number], string>
->>;
+>;
 
 const nuxtApp = useNuxtApp();
 
@@ -17,7 +17,7 @@ const { data, pending } = await useAsyncData('post-list', () => {
   return queryContent('posts')
     .only(keys.slice())
     .sort({ date: -1 })
-    .find() as QueryResult;
+    .find() as Promise<QueryResult>;
 }, {
   lazy: true,
   getCachedData: (key) => {
@@ -52,14 +52,13 @@ const { data, pending } = await useAsyncData('post-list', () => {
     </template>
     <template v-else>
       <NuxtLink
-        v-for="article in data"
+        v-for="article in (data as QueryResult)"
         :key="article._path"
         :to="article._path"
         class="black-red article"
       >
-        <h2 class="blog-head">
-          {{ article.title }}
-        </h2>
+        <h2 class="blog-head" v-text="article.title" />
+        <p class="sub-head" v-text="article.subtitle" />
 
         <PostTags :tags="article.tags" />
 
@@ -77,9 +76,14 @@ const { data, pending } = await useAsyncData('post-list', () => {
 }
 
 .blog-head {
-  @apply tracking-tight text-(ml-3/100 5/[1.25] balance)
-    mr-4 max-w-500px ss:(text-6) md:(text-7) lg:(text-8.5)
-    xl:(text-7.5);
+  @apply text-(ml-3/100 6/[1.25] balance)
+    max-w-125 mr-5 tracking-tight ss:(text-7)
+    md:(text-8) lg:(text-9) xl:(text-8);
+}
+
+.sub-head {
+  @apply text-(4/[1.35] balance) m-(r-5 t--1 b-1)
+    max-w-100 ss:(text-4.5) at-sm:(text-4);
 }
 
 .article {

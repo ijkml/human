@@ -35,7 +35,7 @@ const links = [
     select-none outline-none bg-ml-8/100 text-4/none
     transform-gpu md:(py-5 text-4.5);
 
-  &:where(:hover, :focus-visible) {
+  &:is(:hover, :focus-visible) {
     @apply bg-ml-7/100 border-ml-0/50 text-ml-2/90 scale-103;
 
     .link-arrow {

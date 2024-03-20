@@ -57,7 +57,7 @@ defineOgImageComponent('PageOg', {
   }
 }
 
-:where(.text-cont, .img-cont) {
+:is(.text-cont, .img-cont) {
   @apply rd-2 grid content-end;
 }
 
@@ -87,14 +87,14 @@ defineOgImageComponent('PageOg', {
     }
   }
 
-  :where(dt, li) {
+  :is(dt, li) {
     @apply text-ml-2/80;
   }
 
   .sub-sect {
     @apply p-1 text-3.8/[1.5] max-w-50ch space-y-3;
 
-    :where(dl, ul) {
+    :is(dl, ul) {
       @apply space-y-2;
     }
 

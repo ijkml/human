@@ -126,7 +126,7 @@ onClickOutside(copyButtonRef, () => {
   @apply absolute right-1 bottom-3 op-0 p-1 m-1 rd-3px
     transition-all-200 transform-gpu scale-80 outline-none;
 
-  &:where(:hover, :focus-visible) {
+  &:is(:hover, :focus-visible) {
     @apply op-100 ring-(0.1rem emerald-5/50);
   }
 
