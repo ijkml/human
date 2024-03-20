@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 withDefaults(defineProps<{
-  title?: string;
+  title: string;
+  subtitle?: string;
 }>(), {
   title: 'Posts',
 });
@@ -17,6 +18,10 @@ withDefaults(defineProps<{
       <h1 class="text-52px/[1.15] w-600px text-balance font-600">
         {{ title }}
       </h1>
+
+      <p class="text-balance text-10/[1.15] w-600px">
+        {{ subtitle }}
+      </p>
 
       <div class="block b-(t-1 #939395/50) my-4" />
 

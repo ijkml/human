@@ -23,9 +23,7 @@ withDefaults(defineProps<{
       <div class="block b-(t-1 #939395/50) my-4" />
 
       <div class="flex text-8/[1] justify-between items-center">
-        <p class="uppercase">
-          Front-end Developer
-        </p>
+        <p>Front-end Developer</p>
         <p>{{ link }}</p>
       </div>
     </div>
