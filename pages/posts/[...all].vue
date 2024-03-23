@@ -8,15 +8,7 @@ definePageMeta({
   <div>
     <ContentDoc>
       <template #default="{ doc }">
-        <PostContentWrapper
-          v-bind="{
-            title: doc.title,
-            date: doc.date,
-            subtitle: doc.subtitle,
-          }"
-        >
-          <ContentRenderer :value="doc" />
-        </PostContentWrapper>
+        <PostContentWrapper :doc="doc" />
       </template>
 
       <template #empty>

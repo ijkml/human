@@ -1,13 +1,28 @@
 <script setup lang="ts">
-const props = defineProps<{
-  title: string;
-  subtitle?: string;
-  date: string;
+import type { PostContent } from '~/types/content';
+
+const prop = defineProps<{
+  doc: PostContent;
 }>();
 
 defineOgImageComponent('PostOg', {
-  title: props.title,
-  subtitle: props.subtitle,
+  title: prop.doc.title,
+  subtitle: prop.doc.subtitle,
+});
+
+function describe(title: string, subtitle: string) {
+  const t = title.trim();
+  const p = ['.', '!', '?'].includes(t.charAt(t.length - 1)) ? ' ' : ': ';
+
+  return {
+    title: t,
+    description: t + p + subtitle.trim(),
+  };
+}
+
+useContentHead({
+  ...prop.doc,
+  ...describe(prop.doc.title, prop.doc.subtitle),
 });
 
 const { y: scrolledHeight } = useWindowScroll();
@@ -39,17 +54,17 @@ function backToTop() {
     <article ref="article">
       <div class="heading">
         <h1 class="title">
-          {{ title }}
+          {{ doc.title }}
         </h1>
         <p class="sub-title">
-          {{ subtitle }}
+          {{ doc.subtitle }}
         </p>
-        <time v-if="date" :datetime="date">
-          {{ formatDate(date, 'readable') }}
+        <time v-if="doc.date" :datetime="doc.date">
+          {{ formatDate(doc.date, 'readable') }}
         </time>
       </div>
       <div class="body">
-        <slot />
+        <ContentRenderer :value="doc" />
       </div>
       <button
         class="to-top"

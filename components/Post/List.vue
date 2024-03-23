@@ -1,29 +1,17 @@
 <script setup lang="ts">
 import { formatDate } from '~/composables/date';
-
-const keys = ['_path', 'tags', 'date', 'title', 'subtitle'] as const;
-
-type QueryResult = Array<
-  // Record<string, string> & // uncomment for looser types
-  Record<(typeof keys)[number], string>
->;
-
-const nuxtApp = useNuxtApp();
+import type { PostContent } from '~/types/content';
 
 // TODO
-// pagination
+// * pagination
+// * draft / empty / coming soon
 
 const { data, pending } = await useAsyncData('post-list', () => {
-  return queryContent('posts')
-    .only(keys.slice())
+  return queryContent<PostContent>('posts')
+    .only(['_path', 'tags', 'date', 'title', 'subtitle'])
     .sort({ date: -1 })
-    .find() as Promise<QueryResult>;
-}, {
-  lazy: true,
-  getCachedData: (key) => {
-    return ((nuxtApp.payload.static ?? nuxtApp.payload.data) as any)[key];
-  },
-});
+    .find();
+}, { lazy: true });
 </script>
 
 <template>
@@ -52,7 +40,7 @@ const { data, pending } = await useAsyncData('post-list', () => {
     </template>
     <template v-else>
       <NuxtLink
-        v-for="article in (data as QueryResult)"
+        v-for="article in data"
         :key="article._path"
         :to="article._path"
         class="black-red article"
