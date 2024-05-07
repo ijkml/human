@@ -61,9 +61,7 @@ function getSrc(repo: string) {
   // @apply text-3/[1] font-mono bg-zinc-8/100 rd-1
   //   py-0.3em px-0.5em mt-1 inline-block transition-200;
 
-  text-transform: none;
-
-  @apply leading-[1.1] mt-2 gap-1 of-clip;
+  @apply leading-[1.1] mt-2 gap-1 of-clip lowercase;
 
   &:hover {
     .fix-typos:not(:focus) {
