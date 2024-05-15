@@ -92,6 +92,11 @@ export default defineNuxtConfig({
     componentIslands: true,
     headNext: true,
   },
+  nitro: {
+    prerender: {
+      autoSubfolderIndex: false
+    }
+  }
   vite: {
     css: {
       preprocessorOptions: {
