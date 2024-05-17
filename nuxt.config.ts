@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     port: 3221,
   },
   site: {
-    url: 'https://ijkml.vercel.app',
+    url: 'https://ijkml.dev',
     name: 'Moses Laurence',
   },
   app: {

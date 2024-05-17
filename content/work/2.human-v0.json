@@ -4,7 +4,7 @@
   "name": "Human v0",
   "details": "The first public version of my website/portfolio. A minimalist dark-mode design inspired by bold grotesque grids, and towering skyscrapers.",
   "kind": "Full-time",
-  "link": "https://ijkml.vercel.app",
+  "link": "https://ijkml.dev",
   "period": "2015 - Present",
   "roles": ["Designer", "Developer"],
   "tools": ["Vue/TS", "Nuxt", "Uno/Sass", "Nuxt Studio"],
