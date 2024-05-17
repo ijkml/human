@@ -67,22 +67,7 @@ export default defineNuxtConfig({
     highlight: {
       // Theme used in all color schemes.
       theme: 'monokai',
-      preload: [
-        'ts',
-        'vue',
-        'js',
-        'json',
-        'html',
-        'css',
-        'diff',
-        'scss',
-        'less',
-        'shell',
-        'markdown',
-        'mdx',
-        'yaml',
-        'toml',
-        'tsx',
+      preload: ['ts', 'vue', 'js', 'json', 'html', 'css', 'diff', 'scss', 'less', 'shell', 'markdown', 'mdx', 'yaml', 'toml', 'tsx',
       ],
     },
   },
@@ -91,11 +76,6 @@ export default defineNuxtConfig({
     typedPages: true,
     componentIslands: true,
     headNext: true,
-  },
-  nitro: {
-    prerender: {
-      autoSubfolderIndex: false
-    },
   },
   vite: {
     css: {
