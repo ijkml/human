@@ -20,8 +20,12 @@
             (This website does not represent my design skills)
           </small>
         </dd>
+
         <dt>Digital Marketing:</dt>
         <dd>Certified. I can sell ice to polar bears, believe me!</dd>
+
+        <dt>Brand Evangelism:</dt>
+        <dd>Get me excited enough, I'd do it for free!</dd>
       </dl>
     </SubSect>
   </div>
