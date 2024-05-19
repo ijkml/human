@@ -1,10 +1,8 @@
 <script lang="ts" setup>
-const props = defineProps<{
+defineProps<{
   name: string;
   roles: Array<string>;
 }>();
-
-const projectRoles = computed(() => props.roles.toReversed().slice(0, 2));
 </script>
 
 <template>
@@ -27,7 +25,7 @@ const projectRoles = computed(() => props.roles.toReversed().slice(0, 2));
 
       <div class="flex text-8/[1] justify-between items-center">
         <div class="flex items-center">
-          <template v-for="(role, idx) in projectRoles" :key="role">
+          <template v-for="(role, idx) in roles" :key="role">
             <i v-if="idx > 0" class="mx-6 op-35">|</i>
             <span>{{ role }}</span>
           </template>
