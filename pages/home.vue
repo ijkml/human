@@ -18,8 +18,9 @@ defineOgImageComponent('PageOg');
 
 startSplash();
 
-const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
-  and open-source enthusiast. I like to build simple and usable websites.`;
+const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
+  open-source enthusiast with a focus on frontend development.
+  I love creating fast and intuitive user-centric websites.`;
 </script>
 
 <template>
@@ -33,9 +34,7 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
         <ClientOnly>
           <Transition name="slide-fade">
             <div v-if="status.showText" class="reverb">
-              <p class="text-balance">
-                <span v-html="reverb" />
-              </p>
+              <p><span v-html="reverb" /></p>
 
               <Available class="mt-3" />
             </div>
@@ -114,8 +113,8 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated front-end developer
 }
 
 .reverb {
-  @apply mt-6 text-(4/[1.6] ml-2/80) max-w-50ch
-    lg:(text-4.5 max-w-120);
+  @apply mt-6 text-(4/[1.6] ml-2/80 balance)
+    max-w-55ch lg:(text-4.5 max-w-45ch);
 
   :deep() {
     b {

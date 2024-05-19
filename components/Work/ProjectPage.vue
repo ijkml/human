@@ -10,6 +10,11 @@ const props = withDefaults(defineProps<Project>(), {
   git: undefined,
 });
 
+defineOgImageComponent('WorkOg', {
+  name: props.name,
+  roles: props.roles,
+});
+
 const {
   id,
   details,
@@ -38,8 +43,6 @@ useHead({
   title: name,
   meta: [{ name: 'description', content: details }],
 });
-
-defineOgImageComponent('WorkOg', { name, roles });
 
 const pager = [
   { title: 'Contact Me', desc: 'Get in touch', link: '/contact' },

@@ -93,11 +93,11 @@ s {
     width: var(--len);
 
     @apply transition-inherit absolute left-0
-      content-[''] h-0.3 bg-current;
+      content-[''] h-0.3 bg-current align-mid;
   }
 
   .arrow {
-    @apply op-60 text-amber-1/100;
+    @apply text-0.8em op-60 text-amber-1/100;
   }
 
   &:is(:hover, :focus-visible) {

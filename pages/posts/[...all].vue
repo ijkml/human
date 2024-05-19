@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import type { PostContent } from '@/types/content';
+import { typeCastAs } from '@/types/utils';
+
 definePageMeta({
   documentDriven: true,
 });
@@ -8,7 +11,7 @@ definePageMeta({
   <div>
     <ContentDoc>
       <template #default="{ doc }">
-        <PostContentWrapper :doc="doc" />
+        <PostContentWrapper :doc="typeCastAs<PostContent>(doc)" />
       </template>
 
       <template #empty>

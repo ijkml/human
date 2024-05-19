@@ -17,7 +17,7 @@
           My 'computer journey' started in 2012 with Corel Draw.
           That's more than a decade of experience!
           <small class="block-code">
-            (This website does not represent my design skills)
+            (This website does not represent my design skills.)
           </small>
         </dd>
 

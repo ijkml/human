@@ -14,9 +14,9 @@ import { contactEmail } from '@data/links';
       class="cta-head"
       tabindex="0"
     >
-      <h2 id="bottom-action-head">
+      <h3 id="bottom-action-head">
         Let's work together
-      </h2>
+      </h3>
     </NuxtLink>
   </section>
 </template>
@@ -28,10 +28,10 @@ import { contactEmail } from '@data/links';
 }
 
 .cta-head {
-  @apply relative inline-block text-(9/[1.1] ml-0/100) p-1
+  @apply relative inline-block text-(7.5/[1.1] ml-0/100) p-1
     select-none outline-none decoration-none tracking-tighter
-      mx-auto my-0 transition-all-500 saturate-50 font-light
-        ss:(text-10) sm:(text-15) lg:(text-16 tracking--1);
+    mx-auto my-0 transition-all-500 saturate-50 font-light
+    ss:(text-9) sm:(text-15) lg:(text-16 tracking--1);
 
   background: linear-gradient(to right, currentColor, currentColor) no-repeat
     center bottom / 0% 1px;
