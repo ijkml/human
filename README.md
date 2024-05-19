@@ -1,4 +1,6 @@
-# Human
+# Human v0
+
+First iteration of my portfolio website.
 
 Code is licensed under [MIT](./LICENSE)
 
