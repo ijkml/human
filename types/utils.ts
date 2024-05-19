@@ -1,5 +1,5 @@
-function typeCastAs<T>(x: unknown) {
+function typecastAs<T>(x: unknown) {
   return x as T;
 }
 
-export { typeCastAs };
+export { typecastAs };

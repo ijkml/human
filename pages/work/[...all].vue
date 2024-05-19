@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Project } from '@data/work';
-import { typeCastAs } from '@/types/utils';
+import { typecastAs } from '@/types/utils';
 
 definePageMeta({
   documentDriven: true,
@@ -11,7 +11,7 @@ definePageMeta({
   <div>
     <ContentDoc :head="false">
       <template #default="{ doc }">
-        <WorkProjectPage v-bind="typeCastAs<Project>(doc)" />
+        <WorkProjectPage v-bind="typecastAs<Project>(doc)" />
       </template>
 
       <template #empty>
