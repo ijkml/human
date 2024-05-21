@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.1.1",
+  "packageManager": "pnpm@9.1.2",
   "author": "ML (ijkml)",
   "scripts": {
     "build": "nuxt build",
@@ -13,22 +13,22 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.18.0",
+    "@antfu/eslint-config": "^2.18.1",
     "@iconify-json/carbon": "^1.1.33",
     "@nuxt/content": "^2.12.1",
-    "@nuxthq/studio": "^1.0.15",
+    "@nuxthq/studio": "^1.1.0",
     "@nuxtjs/sitemap": "^5.1.5",
     "@types/node": "^20.12.12",
-    "@unocss/nuxt": "^0.60.2",
+    "@unocss/nuxt": "^0.60.3",
     "@vueuse/nuxt": "^10.9.0",
-    "eslint": "^9.2.0",
+    "eslint": "^9.3.0",
     "eslint-plugin-format": "^0.1.1",
     "nitropack": "^2.9.6",
     "nuxt": "^3.11.2",
     "nuxt-beastcss": "^1.0.3",
     "nuxt-og-image": "3.0.0-rc.43",
-    "nuxt-umami": "^2.6.1",
-    "sass": "^1.77.0",
+    "nuxt-umami": "^2.6.2",
+    "sass": "^1.77.2",
     "typescript": "^5.4.5",
     "vite-svg-loader": "^5.1.0",
     "vue-typical": "^2.1.0"
