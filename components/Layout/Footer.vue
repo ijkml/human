@@ -73,7 +73,8 @@ function monitor(isExternal = false, link: string) {
 
 <style lang="scss" scoped>
 .ze-footer {
-  @apply bg-ml-9/100 text-ml-3/100 z-2 border-(b-5 ml-0/25);
+  @apply bg-ml-9/100 text-ml-3/100 z-2 border-(b-5 ml-0/25)
+    max-w-screen-2xl w-full mx-auto;
 }
 
 .ze-footer-inner {
