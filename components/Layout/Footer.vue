@@ -66,7 +66,7 @@ function monitor(isExternal = false, link: string) {
         target="_blank"
         class="link-xi"
         href="https://github.com/ijkml/human/"
-      >&copy;{{ new Date().getFullYear() }} ML</a>
+      >&copy;ML, with 🖤, Pluto.</a>
     </div>
   </footer>
 </template>
