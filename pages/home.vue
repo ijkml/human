@@ -69,14 +69,14 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
 
 <style lang="scss" scoped>
 .home-hero {
-  @apply transition-all-250 px-4 max-w-screen-2xl mx-auto
+  @apply transition-all-250 px-4
     ss:(px-6) sm:(px-12) md:(px-16);
 
-  $overlay: hsla(0, 0%, 0%, 0.75);
+  $overlay: hsla(0, 0%, 0%, 0.8);
 
   background:
-    linear-gradient(to bottom, $overlay, $overlay),
-    theme('colors.ml.9') url('@img/bg-2.webp') bottom center / cover no-repeat;
+    linear-gradient(to bottom right, $overlay, $overlay),
+    theme('colors.ml.9') url('@img/bg-2.webp') center bottom / cover no-repeat;
   height: auto;
   min-height: 100vh;
   min-height: 100dvh;

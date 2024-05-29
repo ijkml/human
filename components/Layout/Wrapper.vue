@@ -14,6 +14,7 @@
 
 <style scoped lang="scss">
 .page-layout {
-  @apply flex flex-col justify-start min-h-(100vh 100dvh);
+  @apply flex flex-col justify-start min-h-(100vh 100dvh)
+    max-w-screen-2xl mx-auto;
 }
 </style>
