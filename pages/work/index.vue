@@ -1,7 +1,13 @@
 <script setup lang="ts">
 useHead({
   title: 'Work',
-  // meta: [{ name: 'description', content: '' }],
+  meta: [
+    {
+      name: 'description',
+      content: `Software developer & open-source enthusiast building
+        beautiful, functional web experiences. Get in touch.`,
+    },
+  ],
 });
 
 definePageMeta({

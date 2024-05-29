@@ -1,9 +1,8 @@
 <script setup lang="ts">
 const links = [
-  { text: 'Introducing me', to: '/about' },
-  { text: 'My work', to: '/work' },
-  // { text: 'Thoughts & scribbles', to: '/blog' },
   { text: 'Get in touch', to: '/contact' },
+  { text: 'My work', to: '/work' },
+  { text: 'Introducing me', to: '/about' },
 ];
 </script>
 

@@ -5,7 +5,7 @@ import { redirects } from './redirects';
 export default defineNuxtConfig({
   devServer: {
     host: '',
-    port: 3221,
+    port: 4444,
   },
   site: {
     url: 'https://ijkml.dev',
@@ -19,7 +19,10 @@ export default defineNuxtConfig({
         lang: 'en-US',
       },
       meta: [
-        { name: 'description', content: 'Moses Laurence' },
+        {
+          name: 'description',
+          content: 'Frontend developer & open-source enthusiast building beautiful, functional web experiences. Let\'s work together!',
+        },
         { name: 'referrer', content: 'strict-origin-when-cross-origin' },
       ],
       noscript: [

@@ -3,7 +3,13 @@ import { contactEmail, socials } from '@data/links';
 
 useHead({
   title: 'Contact',
-  // meta: [{ name: 'description', content: 'Get in touch' }],
+  meta: [
+    {
+      name: 'description',
+      content: `Software developer & open-source enthusiast building
+        beautiful, functional web experiences. Get in touch.`,
+    },
+  ],
 });
 
 definePageMeta({

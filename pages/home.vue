@@ -7,9 +7,13 @@ definePageMeta({
 });
 
 useHead({
-  title: 'Front-end Developer',
+  title: 'Software Developer',
   meta: [
-    // { name: 'description', content: '' }
+    {
+      name: 'description',
+      content: `Software developer & open-source enthusiast building
+        beautiful, functional web experiences. Let's work together!`,
+    },
     { name: 'theme-color', content: '#0a090b' },
   ],
 });
