@@ -31,8 +31,8 @@ interface SocialLinkFormat extends LinkFormat {
 
 const headerLinks: LinkFormat[] = [
   { title: 'Home', link: '/', icon: 'home' },
-  { title: 'About', link: '/about', icon: 'about' },
   { title: 'Work', link: '/work', icon: 'work', children: 'work-all' },
+  { title: 'About', link: '/about', icon: 'about' },
   { title: 'Posts', link: '/posts', icon: 'blog', children: 'posts-all' },
   { title: 'Contact', link: '/contact', icon: 'contact' },
 ];
@@ -64,7 +64,7 @@ const contactEmail = {
 } as const;
 
 const footerLinks: LinkFormat[][] = [
-  headerLinks.slice(1, headerLinks.length - 1),
+  headerLinks,
   socials,
 ];
 
