@@ -8,6 +8,7 @@ import type { PostContent } from '~/types/content';
 
 const { data, pending } = await useAsyncData('post-list', () => {
   return queryContent<PostContent>('posts')
+    .where({ _draft: false })
     .only(['_path', 'tags', 'date', 'title', 'subtitle'])
     .sort({ date: -1 })
     .find();
