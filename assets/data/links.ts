@@ -29,12 +29,18 @@ interface SocialLinkFormat extends LinkFormat {
   external: true;
 }
 
+const ln_Home: LinkFormat = { title: 'Home', link: '/', icon: 'home' };
+const ln_Contact: LinkFormat = { title: 'Contact', link: '/contact', icon: 'contact' };
+const ln_About: LinkFormat = { title: 'About', link: '/about', icon: 'about' };
+const ln_Work: LinkFormat = { title: 'Work', link: '/work', icon: 'work', children: 'work-all' };
+const ln_Posts: LinkFormat = { title: 'Posts', link: '/posts', icon: 'blog', children: 'posts-all' };
+
 const headerLinks: LinkFormat[] = [
-  { title: 'Home', link: '/', icon: 'home' },
-  { title: 'Work', link: '/work', icon: 'work', children: 'work-all' },
-  { title: 'About', link: '/about', icon: 'about' },
-  { title: 'Posts', link: '/posts', icon: 'blog', children: 'posts-all' },
-  { title: 'Contact', link: '/contact', icon: 'contact' },
+  ln_Home,
+  ln_Work,
+  ln_About,
+  ln_Posts,
+  ln_Contact,
 ];
 
 const socials: SocialLinkFormat[] = [
@@ -64,7 +70,7 @@ const contactEmail = {
 } as const;
 
 const footerLinks: LinkFormat[][] = [
-  headerLinks,
+  [ln_Work, ln_About, ln_Contact],
   socials,
 ];
 

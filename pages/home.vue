@@ -65,7 +65,7 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
   @apply transition-all-250 px-4
     ss:(px-6) sm:(px-12) md:(px-16);
 
-  $overlay: hsla(0, 0%, 0%, 0.8);
+  $overlay: hsla(0, 0%, 0%, 0.58);
 
   background:
     linear-gradient(to bottom right, $overlay, $overlay),
@@ -114,7 +114,7 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
 
 .reverb {
   @apply mt-6 text-(4/[1.6] ml-2/80 balance)
-    max-w-55ch lg:(text-4.5 max-w-45ch);
+    backdrop-blur-2 max-w-55ch lg:(text-4.5 max-w-45ch);
 
   :deep() {
     b {
