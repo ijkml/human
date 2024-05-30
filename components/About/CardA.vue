@@ -13,17 +13,21 @@
 
       <p>
         I've been fascinated by computers ever since I could spell the word.
-        I love to build and experiment; I'm self-taught and eager to improve myself and
-        the quality of my work.
+        I love to build and experiment.
       </p>
 
       <p>
-        In my free time, I watch movies, listen to music, and read blogs and
-        interactive fiction.
+        In my free time, I watch movies, listen to music, and read blogs.
       </p>
     </SubSect>
 
     <SubSect title="Experience">
+      <p>
+        Being self-taught has made me resourceful, eager to improve,
+        and equipped me with a practical hands-on perspective
+        on problem solving.
+      </p>
+
       <p>
         As a freelance developer, I've collaborated with brands and individuals,
         including an immigration agency, to create innovative and user-friendly
