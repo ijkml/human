@@ -35,29 +35,22 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
           <HomeTypeWriter />
         </h1>
 
-        <ClientOnly>
-          <Transition name="slide-fade">
-            <div v-if="status.showText" class="reverb">
-              <p><span v-html="reverb" /></p>
+        <div
+          class="reverb trans-init"
+          :class="{ 'trans-end': status.showText }"
+          data-fallback
+        >
+          <p v-html="reverb" />
 
-              <Available class="mt-3" />
-            </div>
-          </Transition>
-
-          <template #fallback>
-            <div class="reverb" data-fallback>
-              <p v-html="reverb" />
-
-              <Available class="mt-3" />
-            </div>
-          </template>
-        </ClientOnly>
+          <Available class="mt-3" />
+        </div>
       </div>
 
       <ClientOnly>
-        <Transition name="slide-fade">
-          <HomeLinks v-if="status.showLinks" />
-        </Transition>
+        <HomeLinks
+          class="trans-init"
+          :class="{ 'trans-end': status.showLinks }"
+        />
 
         <template #fallback>
           <HomeLinks data-fallback />
@@ -130,16 +123,13 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
   }
 }
 
-.slide-fade-enter-active {
-  transition: all 500ms ease-out;
-}
+.trans-init {
+  @apply transition-all-500 op-0 translate-y-25%
+    pointer-events-none invisible;
 
-.slide-fade-leave-active {
-  transition: all 500ms cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  @apply op-0 translate-y-25%;
+  &.trans-end {
+    @apply op-100 translate-y-0 visible
+      pointer-events-unset;
+  }
 }
 </style>
