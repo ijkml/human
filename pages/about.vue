@@ -33,15 +33,15 @@ defineOgImageComponent('PageOg', {
 
     <div class="details-deck">
       <AboutCardA />
-      
+
       <div class="img-cont">
         <Avatar />
       </div>
 
       <div class="bottom-cont">
         <AboutCardB />
-        <AboutCardC />
         <AboutCardD />
+        <AboutCardC />
       </div>
     </div>
   </section>
@@ -53,10 +53,10 @@ defineOgImageComponent('PageOg', {
 }
 
 .img-cont {
-  @apply p-8 bg-ml-9/100 of-hidden;
+  @apply p-8 bg-gradient-to-br from-(ml-9/100 25%) to-ml-7/100 of-hidden;
 
   .avatar {
-    --body: #111;
+    --body: theme('colors.ml.9');
 
     @apply h-auto w-full mx-auto mt-40 max-h-50
       sm:(max-h-60) md:(max-h-80);
