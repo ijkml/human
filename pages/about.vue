@@ -32,11 +32,11 @@ defineOgImageComponent('PageOg', {
     </div>
 
     <div class="details-deck">
+      <AboutCardA />
+      
       <div class="img-cont">
         <Avatar />
       </div>
-
-      <AboutCardA />
 
       <div class="bottom-cont">
         <AboutCardB />
@@ -56,7 +56,7 @@ defineOgImageComponent('PageOg', {
   @apply p-8 bg-ml-9/100 of-hidden;
 
   .avatar {
-    --body: #000;
+    --body: #111;
 
     @apply h-auto w-full mx-auto mt-40 max-h-50
       sm:(max-h-60) md:(max-h-80);
