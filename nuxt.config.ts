@@ -9,7 +9,24 @@ export default defineNuxtConfig({
   },
   site: {
     url: 'https://ijkml.dev',
-    name: 'Moses Laurence',
+    name: 'Moses Laurence (ijkml)',
+    description: 'Software developer & open-source enthusiast building beautiful, functional web experiences. Let\'s work together!',
+    defaultLocale: 'en',
+  },
+  // @ts-expect-error `seo` does exist
+  seo: {
+    redirectToCanonicalSiteUrl: true,
+  },
+  schemaOrg: {
+    identity: {
+      type: 'Person',
+      name: 'Moses Laurence',
+      alternateName: 'ijkml',
+      image: '/avatar.png',
+      sameAs: [
+        'https://github.com/harlan-zw',
+      ],
+    },
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -21,7 +38,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: 'description',
-          content: 'Frontend developer & open-source enthusiast building beautiful, functional web experiences. Let\'s work together!',
+          content: 'Software developer & open-source enthusiast building beautiful, functional web experiences. Let\'s work together!',
         },
         { name: 'referrer', content: 'strict-origin-when-cross-origin' },
       ],
@@ -43,7 +60,6 @@ export default defineNuxtConfig({
   },
   alias: {
     '@img': fileURLToPath(new URL('./assets/images', import.meta.url)),
-    // '@icons': fileURLToPath(new URL('./assets/icons', import.meta.url)),
     '@data': fileURLToPath(new URL('./assets/data', import.meta.url)),
   },
   modules: [
@@ -74,11 +90,14 @@ export default defineNuxtConfig({
       ],
     },
   },
+  features: {
+    inlineStyles: true,
+  },
   experimental: {
-    // inlineSSRStyles: false,
     typedPages: true,
     componentIslands: true,
     headNext: true,
+
   },
   vite: {
     css: {
