@@ -11,8 +11,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: `Software developer & open-source enthusiast building
-        beautiful, functional web experiences. Let's work together!`,
+      content: 'Software developer & open-source enthusiast building beautiful, functional web experiences. Let\'s work together!',
     },
     { name: 'theme-color', content: '#0a090b' },
   ],

@@ -4,8 +4,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: `Software developer & open-source enthusiast building
-        beautiful, functional web experiences. Learn more about me.`,
+      content: 'Software developer & open-source enthusiast building beautiful, functional web experiences. Learn more about me.',
     },
   ],
 });
