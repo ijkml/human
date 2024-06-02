@@ -73,6 +73,8 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
   @apply transition-all-250 pointer-events-none
     px-4 ss:(px-6) sm:(px-12) md:(px-16);
 
+  $overlay: hsla(0, 0%, 0%, 0.58);
+
   background:
     linear-gradient(to bottom right, $overlay, $overlay),
     theme('colors.ml.9') var(--bg) center bottom / cover no-repeat;
