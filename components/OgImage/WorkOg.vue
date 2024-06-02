@@ -23,8 +23,8 @@ defineProps<{
 
       <div class="block b-(t-1 #939395/50) my-4" />
 
-      <div class="flex text-8/[1] justify-between items-center">
-        <div class="flex items-center">
+      <div class="flex flex-nowrap text-8/[1] justify-between items-center">
+        <div class="flex flex-nowrap items-center">
           <template v-for="(role, idx) in roles" :key="role">
             <i v-if="idx > 0" class="mx-6 op-35">|</i>
             <span>{{ role }}</span>

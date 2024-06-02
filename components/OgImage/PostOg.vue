@@ -25,7 +25,7 @@ withDefaults(defineProps<{
 
       <div class="block b-(t-1 #939395/50) my-4" />
 
-      <div class="flex text-8/[1] justify-between items-center">
+      <div class="flex flex-nowrap text-8/[1] justify-between items-center">
         <p>Moses Laurence</p>
         <p>/posts</p>
       </div>
