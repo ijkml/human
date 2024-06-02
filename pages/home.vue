@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import bg from '@img/bg-2.webp';
 import { startSplash, status } from '@/helpers/splash';
 
 definePageMeta({
@@ -15,6 +16,9 @@ useHead({
     },
     { name: 'theme-color', content: '#0a090b' },
   ],
+  link: [
+    { rel: 'preload', as: 'image', href: bg, tagPriority: 9 },
+  ],
 });
 
 defineOgImageComponent('PageOg');
@@ -27,7 +31,12 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
 </script>
 
 <template>
-  <section class="home-hero" role="region" aria-labelledby="hero-head-h1">
+  <section
+    class="home-hero"
+    role="region"
+    aria-labelledby="hero-head-h1"
+    :style="{ '--bg': `url(${bg})` }"
+  >
     <div>
       <div class="text-cont">
         <h1 id="hero-head-h1" class="screamer-h1">
@@ -61,14 +70,12 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
 
 <style lang="scss" scoped>
 .home-hero {
-  @apply transition-all-250 px-4
-    ss:(px-6) sm:(px-12) md:(px-16);
-
-  $overlay: hsla(0, 0%, 0%, 0.58);
+  @apply transition-all-250 pointer-events-none
+    px-4 ss:(px-6) sm:(px-12) md:(px-16);
 
   background:
     linear-gradient(to bottom right, $overlay, $overlay),
-    theme('colors.ml.9') url('@img/bg-2.webp') center bottom / cover no-repeat;
+    theme('colors.ml.9') var(--bg) center bottom / cover no-repeat;
   height: auto;
   min-height: 100vh;
   min-height: 100dvh;
@@ -84,8 +91,8 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
   margin-top: calc(-1 * var(--nav-height));
 
   > div {
-    @apply mx-auto w-full max-w-screen-lg grid
-      items-start gap-8 mt-24 lg:(grid-cols-5);
+    @apply mx-auto w-full max-w-screen-lg grid items-start
+      gap-8 mt-24 pointer-events-auto lg:(grid-cols-5);
   }
 
   @media (height >= 800px) {
