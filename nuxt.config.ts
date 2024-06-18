@@ -24,7 +24,7 @@ export default defineNuxtConfig({
       alternateName: 'ijkml',
       image: '/avatar.png',
       sameAs: [
-        'https://github.com/harlan-zw',
+        'https://github.com/ijkml',
       ],
     },
   },
