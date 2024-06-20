@@ -3,6 +3,14 @@ import svgLoader from 'vite-svg-loader';
 import { redirects } from './redirects';
 
 export default defineNuxtConfig({
+  modules: [
+    '@vueuse/nuxt',
+    '@unocss/nuxt',
+    '@nuxt/content',
+    '@nuxthq/studio',
+    '@nuxtjs/seo',
+  ],
+  extends: ['nuxt-umami'],
   devServer: {
     host: '',
     port: 4444,
@@ -13,7 +21,6 @@ export default defineNuxtConfig({
     description: 'Software developer & open-source enthusiast building beautiful, functional web experiences. Let\'s work together!',
     defaultLocale: 'en',
   },
-  // @ts-expect-error `seo` does exist
   seo: {
     redirectToCanonicalSiteUrl: true,
   },
@@ -62,16 +69,6 @@ export default defineNuxtConfig({
     '@img': fileURLToPath(new URL('./assets/images', import.meta.url)),
     '@data': fileURLToPath(new URL('./assets/data', import.meta.url)),
   },
-  modules: [
-    '@vueuse/nuxt',
-    '@unocss/nuxt',
-    'nuxt-beastcss',
-    '@nuxt/content',
-    '@nuxtjs/sitemap',
-    '@nuxthq/studio',
-    'nuxt-og-image',
-  ],
-  extends: ['nuxt-umami'],
   sitemap: {
     strictNuxtContentPaths: true,
   },
@@ -86,8 +83,7 @@ export default defineNuxtConfig({
     highlight: {
       // Theme used in all color schemes.
       theme: 'monokai',
-      preload: ['ts', 'vue', 'js', 'json', 'html', 'css', 'diff', 'scss', 'less', 'shell', 'markdown', 'mdx', 'yaml', 'toml', 'tsx',
-      ],
+      preload: ['ts', 'vue', 'js', 'json', 'html', 'css', 'diff', 'scss', 'less', 'shell', 'markdown', 'mdx', 'yaml', 'toml', 'tsx'],
     },
   },
   features: {
