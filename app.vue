@@ -15,6 +15,7 @@ defineOgImageComponent('PageOg', {
 
 <template>
   <LayoutWrapper>
+    <NuxtRouteAnnouncer />
     <NuxtLoadingIndicator />
     <NuxtPage />
   </LayoutWrapper>
