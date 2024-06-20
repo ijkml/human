@@ -116,39 +116,39 @@ function monitor(isExternal = false, link: string) {
   @apply grid gap-3 justify-items-start;
 }
 
-@screen sm {
+@media (min-width: 640px) {
   .ze-footer-inner {
-    --uno: grid-cols-2;
+    @apply grid-cols-2;
   }
 
   .ze-links-inner {
-    --uno: justify-items-end;
+    @apply justify-items-end;
   }
 
   .ze-contact {
-    --uno: mb-0;
+    @apply mb-0;
   }
 
   .ze-contact-head {
-    --uno: text-7;
+    @apply text-7;
   }
 }
 
-@screen md {
+@media (min-width: 768px) {
   .ze-footer-inner {
-    --uno: grid grid-cols-5;
+    @apply grid grid-cols-5;
   }
 
   .ze-contact {
-    --uno: col-span-3;
+    @apply col-span-3;
   }
 
   .ze-contact-head {
-    --uno: text-8;
+    @apply text-8;
   }
 
   .ze-links-outer {
-    --uno: col-span-2;
+    @apply col-span-2;
   }
 }
 
