@@ -118,37 +118,37 @@ function monitor(isExternal = false, link: string) {
 
 @screen sm {
   .ze-footer-inner {
-    --at-apply: grid-cols-2;
+    --uno: grid-cols-2;
   }
 
   .ze-links-inner {
-    --at-apply: justify-items-end;
+    --uno: justify-items-end;
   }
 
   .ze-contact {
-    --at-apply: mb-0;
+    --uno: mb-0;
   }
 
   .ze-contact-head {
-    --at-apply: text-7;
+    --uno: text-7;
   }
 }
 
 @screen md {
   .ze-footer-inner {
-    --at-apply: grid grid-cols-5;
+    --uno: grid grid-cols-5;
   }
 
   .ze-contact {
-    --at-apply: col-span-3;
+    --uno: col-span-3;
   }
 
   .ze-contact-head {
-    --at-apply: text-8;
+    --uno: text-8;
   }
 
   .ze-links-outer {
-    --at-apply: col-span-2;
+    --uno: col-span-2;
   }
 }
 
