@@ -48,6 +48,7 @@ export default defineNuxtConfig({
           content: 'Software developer & open-source enthusiast building beautiful, functional web experiences. Let\'s work together!',
         },
         { name: 'referrer', content: 'strict-origin-when-cross-origin' },
+        { name: 'msvalidate.01', content: '91CC11ED2B60F80CC99F5646E01CD0A2' },
       ],
       noscript: [
         {
