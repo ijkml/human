@@ -21,7 +21,7 @@ function getSrc(repo: string) {
         Open Source
       </h2>
       <div>
-        <p class="text-balance">
+        <p>
           I believe open source makes the web more accessible, I try to
           contribute whenever I can.
         </p>

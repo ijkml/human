@@ -77,9 +77,7 @@ const pager = [
               </Chip>
             </div>
 
-            <p class="text-balance">
-              {{ details }}
-            </p>
+            <p>{{ details }}</p>
 
             <div class="project-links">
               <ZeButton

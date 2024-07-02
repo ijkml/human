@@ -118,7 +118,7 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
 }
 
 .reverb {
-  @apply mt-6 text-(4/[1.6] ml-2/80 balance)
+  @apply mt-6 text-(4/[1.6] ml-2/80)
     backdrop-blur-2 max-w-55ch lg:(text-4.5 max-w-45ch);
 
   :deep() {

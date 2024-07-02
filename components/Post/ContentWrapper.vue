@@ -92,8 +92,7 @@ article {
 }
 
 .title {
-  @apply mx-0 font-semibold text-(ml-2/100 8/[1.2] balance)
-    sm:(text-10);
+  @apply mx-0 font-semibold text-(ml-2/100 8/[1.2]) sm:(text-10);
 }
 
 .sub-title {

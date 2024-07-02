@@ -7,7 +7,7 @@
       <h2 id="head-otw" class="screamer-h2">
         Open To Work
       </h2>
-      <p class="text-balance">
+      <p>
         I am actively seeking full-time work, but I am also open to
         freelance opportunities. Hit me up if you have any new projects,
         creative ideas, or collaborations in the works.

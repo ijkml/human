@@ -13,9 +13,7 @@ defineProps<{
     <div class="sect-wrap">
       <div class="text-cont">
         <h1 class="screamer-h1" v-html="title" />
-        <p class="text-balance">
-          <span v-html="paragraph" />
-        </p>
+        <p><span v-html="paragraph" /></p>
         <div class="actions">
           <ZeButton
             v-for="(ln, id) in links"

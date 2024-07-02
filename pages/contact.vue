@@ -84,7 +84,7 @@ function monitor(link: string) {
       <h1 id="get-in-touch" class="screamer-h1">
         Contact
       </h1>
-      <p class="text-balance">
+      <p>
         I'm always open to new opportunities and connections. Reach out anytime
         to discuss a project or just chat.
       </p>

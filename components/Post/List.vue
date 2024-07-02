@@ -65,13 +65,12 @@ const { data, pending } = await useAsyncData('post-list', () => {
 }
 
 .blog-head {
-  @apply text-(ml-3/100 6/[1.25] balance)
-    max-w-125 mr-5 tracking-tight ss:(text-7)
-    md:(text-8) lg:(text-9) xl:(text-8);
+  @apply text-(ml-3/100 6/[1.25]) max-w-125 tracking-tight
+    mr-5 ss:(text-7) md:(text-8) lg:(text-9) xl:(text-8);
 }
 
 .sub-head {
-  @apply text-(4/[1.35] balance) m-(r-5 t--1 b-1)
+  @apply text-4/[1.35] m-(r-5 t--1 b-1)
     max-w-100 ss:(text-4.5) at-sm:(text-4);
 }
 

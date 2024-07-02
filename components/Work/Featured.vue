@@ -28,9 +28,7 @@ const featuredCards = computed(() => [
         Featured Projects
       </h2>
       <div>
-        <p class="text-balance">
-          Some of my <em>best</em> work.
-        </p>
+        <p>Some of my <em>best</em> work.</p>
         <p role="note" class="block-small">
           don't be mean :)
         </p>
