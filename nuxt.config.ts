@@ -11,10 +11,6 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
   ],
   extends: ['nuxt-umami'],
-  devServer: {
-    host: '',
-    port: 4444,
-  },
   site: {
     url: 'https://ijkml.dev',
     name: 'Moses Laurence (ijkml)',
@@ -63,8 +59,8 @@ export default defineNuxtConfig({
     ...redirects,
     '/posts': { isr: true },
     '/posts/**': { isr: true },
-    '/work': { isr: true },
-    '/work/**': { isr: true },
+    '/work': { prerender: true },
+    '/work/**': { prerender: true },
   },
   alias: {
     '@img': fileURLToPath(new URL('./assets/images', import.meta.url)),
@@ -74,10 +70,7 @@ export default defineNuxtConfig({
     strictNuxtContentPaths: true,
   },
   ogImage: {
-    fonts: [
-      'Space+Grotesk:400',
-      'Space+Grotesk:600',
-    ],
+    fonts: ['Space+Grotesk:400', 'Space+Grotesk:600'],
   },
   content: {
     documentDriven: false,
@@ -94,7 +87,6 @@ export default defineNuxtConfig({
     typedPages: true,
     componentIslands: true,
     headNext: true,
-
   },
   vite: {
     css: {
@@ -119,4 +111,8 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
+  devServer: {
+    host: '',
+    port: 4444,
+  },
 });

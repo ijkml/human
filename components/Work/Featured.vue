@@ -4,7 +4,7 @@ import { wip } from '@data/work';
 
 const nuxtApp = useNuxtApp();
 
-const { data, pending } = await useAsyncData('work-projects', () => {
+const { data, status } = await useAsyncData('work-projects', () => {
   return queryContent('work')
     .only(['id', 'name'])
     .find();
@@ -36,14 +36,14 @@ const featuredCards = computed(() => [
     </div>
 
     <div class="project-grid">
-      <template v-if="pending">
+      <template v-if="status === 'success'">
+        <WorkCard v-for="pr in featuredCards" :key="pr.id" v-bind="pr" />
+      </template>
+      <template v-else>
         <div v-for="i in 6" :key="i" role="status" class="project-card skeleton">
           <UnoIcon class="i-carbon-image icon" />
           <span class="sr-only">Loading...</span>
         </div>
-      </template>
-      <template v-else>
-        <WorkCard v-for="pr in featuredCards" :key="pr.id" v-bind="pr" />
       </template>
     </div>
   </section>
