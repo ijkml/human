@@ -10,7 +10,7 @@ $scrollbar-track: theme('colors.ml.7');
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @apply text-16px font-sans tracking-tight;
+  @apply text-(16px balance pretty) font-sans tracking-tight;
 
   --nav-height: #{$nav-height};
 }
@@ -24,6 +24,10 @@ html {
 
 * {
   scrollbar-color: $scrollbar-thumb $scrollbar-track;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  @apply text-balance;
 }
 
 ::-webkit-scrollbar {

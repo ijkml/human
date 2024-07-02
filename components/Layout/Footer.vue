@@ -16,7 +16,7 @@ function monitor(isExternal = false, link: string) {
     <div class="ze-footer-inner">
       <div class="ze-contact">
         <p class="ze-contact-head">
-          I'm always up for a chat,
+          I'm always up for a chat, <wbr>
           <NuxtLink class="link-xi" to="/contact">
             get in touch &rarr;
           </NuxtLink>
@@ -81,7 +81,7 @@ function monitor(isExternal = false, link: string) {
 }
 
 .ze-contact-head {
-  @apply text-6.6/1.35em tracking--0.02em font-light;
+  @apply text-6.6/1.35em tracking--0.02em font-light text-wrap;
 
   a {
     @apply px-1px inline-block text-ml-1/100;
