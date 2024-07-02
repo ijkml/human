@@ -6,12 +6,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "stylelint.validate": [
-    "css",
-    "scss",
-    "sass",
-    "vue"
-  ],
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -19,7 +13,11 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    ".nuxt": true
+    ".nuxt": true,
+    "node_modules": true,
+    ".unlighthouse": true,
+    ".output": true,
+    "dist": true,
   },
   "json.schemas": [
     {
