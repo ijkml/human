@@ -65,7 +65,7 @@ defineOgImageComponent('PageOg', {
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link-xi" to="/work/voey">
+            <NuxtLink class="link-xi" to="/work/voe">
               Voe Air
             </NuxtLink>
           </li>

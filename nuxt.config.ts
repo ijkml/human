@@ -68,6 +68,9 @@ export default defineNuxtConfig({
   },
   sitemap: {
     strictNuxtContentPaths: true,
+    sources: [
+      '/api/__sitemap__/work-urls',
+    ],
   },
   ogImage: {
     fonts: ['Space+Grotesk:400', 'Space+Grotesk:600'],
