@@ -1,4 +1,4 @@
-import type { MarkdownParsedContent } from '@nuxt/content/dist/runtime/types';
+import type { MarkdownParsedContent } from '@nuxt/content';
 
 interface PostContent extends MarkdownParsedContent {
   title: string;
