@@ -113,23 +113,17 @@ function monitor(link: string) {
             :href="contactEmail.link"
             @click="monitor('email')"
           >
-            here's my email</a> or better,
-          <a
-            class="link-xi"
-            href="/resume"
-            rel="noopener"
-            target="_blank"
-            @click="monitor('/resume')"
-          >grab my resume</a>. You can also catch me stalking folks on
-          <a
-            href="/twitter"
-            class="link-xi"
-            rel="noopener"
-            target="_blank"
-            @click="monitor('/twitter')"
-          >
-            Twitter/X
-          </a>.
+            here's my email. You can also catch me stalking folks on
+            <a
+              href="/twitter"
+              class="link-xi"
+              rel="noopener"
+              target="_blank"
+              @click="monitor('/twitter')"
+            >
+              Twitter/X
+            </a>.
+          </a>
         </p>
 
         <div class="intro-actions">

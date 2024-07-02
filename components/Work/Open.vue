@@ -9,16 +9,16 @@
       </h2>
       <p>
         I am actively seeking full-time work, but I am also open to
-        freelance opportunities. Hit me up if you have any new projects,
-        creative ideas, or collaborations in the works.
+        freelance opportunities. Hit me up if you want to discuss a
+        project or creative idea.
       </p>
       <div class="action">
         <ZeButton primary link="/contact" text="Get in touch" />
         <ZeButton
-          link="/resume"
-          text="Get my CV"
+          link="/github"
+          text="View GitHub"
           external
-          @click="umTrackView('/resume')"
+          @click="umTrackView('/github')"
         />
       </div>
     </div>
