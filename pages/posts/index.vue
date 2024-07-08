@@ -30,7 +30,7 @@ defineOgImageComponent('PageOg', {
       </div>
     </div>
 
-    <PostList />
+    <PostList v-if="false" />
   </section>
 </template>
 
