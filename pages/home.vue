@@ -105,7 +105,7 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
 }
 
 .screamer-h1 {
-  @apply mx-0;
+  @apply mx-0 text-wrap;
 }
 
 .text-cont {
