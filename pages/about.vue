@@ -39,7 +39,7 @@ defineOgImageComponent('PageOg', {
 
       <div class="bottom-cont">
         <AboutCardB />
-        <AboutCardD />
+        <AboutCardD class="dual-child" />
         <AboutCardC />
       </div>
     </div>
@@ -163,5 +163,9 @@ defineOgImageComponent('PageOg', {
       @apply mt-4;
     }
   }
+}
+
+.dual-child {
+  @apply sm:(grid-row-start-2) lg:(grid-row-start-auto);
 }
 </style>
