@@ -3,6 +3,10 @@ import svgLoader from 'vite-svg-loader';
 import { redirects } from './redirects';
 
 export default defineNuxtConfig({
+  compatibilityDate: '2024-07-30',
+  future: {
+    compatibilityVersion: 4,
+  },
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
@@ -60,8 +64,8 @@ export default defineNuxtConfig({
     '/work/**': { prerender: true },
   },
   alias: {
-    '@img': fileURLToPath(new URL('./assets/images', import.meta.url)),
-    '@data': fileURLToPath(new URL('./assets/data', import.meta.url)),
+    '@img': fileURLToPath(new URL('./app/assets/images', import.meta.url)),
+    '@data': fileURLToPath(new URL('./app/assets/data', import.meta.url)),
   },
   sitemap: {
     strictNuxtContentPaths: true,
@@ -103,13 +107,6 @@ export default defineNuxtConfig({
     ],
   },
   css: ['@unocss/reset/tailwind.css', '@/assets/styles/root.scss'],
-  typescript: {
-    tsConfig: {
-      compilerOptions: {
-        moduleResolution: 'bundler',
-      },
-    },
-  },
   devtools: { enabled: true },
   devServer: {
     host: '',
