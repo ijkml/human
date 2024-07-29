@@ -34,7 +34,10 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'preload', href: '/fonts/Space-Grotesk-Var.woff2', as: 'font', type: 'font/woff2', crossorigin: true },
+      ],
       htmlAttrs: {
         lang: 'en-US',
       },
@@ -45,12 +48,6 @@ export default defineNuxtConfig({
         },
         { name: 'referrer', content: 'strict-origin-when-cross-origin' },
         { name: 'msvalidate.01', content: '91CC11ED2B60F80CC99F5646E01CD0A2' },
-      ],
-      noscript: [
-        {
-          innerHTML: `<link rel='stylesheet' type='text/css' href='/no-script.css'>`,
-          tagPosition: 'bodyOpen',
-        },
       ],
     },
   },
