@@ -97,13 +97,13 @@ const bindProps = computed<object>(() => {
 
 <template>
   <DefineTemplate>
-    <span v-if="icon && !suffix" class="icon-fix prefix" aria-hidden="true">
+    <div v-if="icon && !suffix" class="icon-fix prefix" aria-hidden="true">
       <slot name="icon">
         <UnoIcon class="icon" :class="icon" />
       </slot>
-    </span>
+    </div>
 
-    <span class="text-body">
+    <div class="text-body">
       <span
         v-for="c in chunks"
         :key="c.delay"
@@ -113,13 +113,13 @@ const bindProps = computed<object>(() => {
         v-text="c.char"
       />
       <span class="full-text" v-text="text" />
-    </span>
+    </div>
 
-    <span v-if="icon && suffix" class="icon-fix suffix" aria-hidden="true">
+    <div v-if="icon && suffix" class="icon-fix suffix" aria-hidden="true">
       <slot name="icon">
         <UnoIcon class="icon" :class="icon" />
       </slot>
-    </span>
+    </div>
   </DefineTemplate>
 
   <NuxtLink v-if="element === 'nuxt'" v-bind="bindProps" @click="bubble">

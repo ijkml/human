@@ -8,13 +8,24 @@ useHead({
   ],
 });
 
+const isWindowFocused = useWindowFocus();
+const wrapperClass = ref('');
+
+onMounted(() => {
+  nextTick().then(() => {
+    watch(isWindowFocused, (hasFocus) => {
+      wrapperClass.value = hasFocus ? '' : 'await';
+    });
+  });
+});
+
 defineOgImageComponent('PageOg', {
   link: '/ml',
 });
 </script>
 
 <template>
-  <LayoutWrapper>
+  <LayoutWrapper :class="wrapperClass">
     <NuxtRouteAnnouncer />
     <NuxtLoadingIndicator />
     <NuxtPage />
