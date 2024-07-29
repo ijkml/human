@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import bg from '@img/bg-2.webp';
-import { startSplash, status } from '@/helpers/splash';
+import { split } from '~/helpers/split-text';
 
 definePageMeta({
   path: '/',
@@ -20,53 +20,69 @@ useHead({
 
 defineOgImageComponent('PageOg');
 
-startSplash();
+const screamer = ref('I craft performant and accessible web experiences.');
+const links = [
+  { text: 'Get in touch', to: '/contact' },
+  { text: 'My work', to: '/work' },
+  { text: 'Introducing me', to: '/about' },
+];
+const [h1Chunks, h1ChunkCount] = split(screamer);
 
-const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
-  open-source enthusiast with a focus on frontend development.
-  I love creating fast and intuitive user-centric websites.`;
+function endSplash() {
+  document.documentElement.classList.add('splashed');
+}
+
+onBeforeUnmount(endSplash);
 </script>
 
 <template>
   <section
-    class="home-hero"
+    class="hero"
     role="region"
-    aria-labelledby="hero-head-h1"
+    aria-labelledby="hero-head"
     :style="{ '--bg': `url(${bg})` }"
   >
     <div>
-      <div class="text-cont">
-        <h1 id="hero-head-h1" class="screamer-h1">
-          <HomeTypeWriter />
+      <div class="heading-wrap">
+        <h1 id="hero-head">
+          <span v-for="(word, index) in h1Chunks" :key="index" class="word">
+            <span
+              v-for="{ char, pos } in word"
+              :key="pos"
+              :style="{ '--pos': pos }"
+              class="blur-fade-in char"
+              v-text="char"
+            />
+          </span>
+          <div class="sr-only" v-text="screamer" />
         </h1>
 
-        <div
-          class="reverb trans-init"
-          :class="{ 'trans-end': status.showText }"
-          data-fallback
-        >
-          <p v-html="reverb" />
+        <div class="blur-fade-in reverb">
+          <p>
+            Hi, I'm <em>Moses Laurence</em> (ijkML), a dedicated
+            software developer and open-source enthusiast. I enjoy and
+            excel at creating fast, intuitive, and user-centric websites.
+          </p>
 
           <Available class="mt-3" />
         </div>
       </div>
 
-      <ClientOnly>
-        <HomeLinks
-          class="trans-init"
-          :class="{ 'trans-end': status.showLinks }"
-        />
+      <div class="blur-fade-in links-container" @animationend="endSplash">
+        <NuxtLink v-for="ln in links" :key="ln.to" :to="ln.to" class="hero-link">
+          <div class="link-text" v-text="ln.text" />
 
-        <template #fallback>
-          <HomeLinks data-fallback />
-        </template>
-      </ClientOnly>
+          <div class="link-arrow">
+            <UnoIcon class="i-carbon-arrow-right h-6 w-6" />
+          </div>
+        </NuxtLink>
+      </div>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
-.home-hero {
+.hero {
   @apply transition-all-250 pointer-events-none
     px-4 ss:(px-6) sm:(px-12) md:(px-16);
 
@@ -86,7 +102,7 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
   }
 
   padding-top: calc(7.5rem + var(--nav-height));
-  padding-bottom: 7.5rem;
+  padding-bottom: 10rem;
   margin-top: calc(-1 * var(--nav-height));
 
   > div {
@@ -102,39 +118,136 @@ const reverb = `Hey, I'm <b>ML</b>, a dedicated software developer and
       @apply mt-50;
     }
   }
-}
 
-.screamer-h1 {
-  @apply mx-0 text-wrap;
-}
-
-.text-cont {
-  @apply w-full mx-auto transition-all-500
-    md:(mx-0) lg:(col-span-3);
-
-  > * {
-    @apply transition-inherit;
+  & {
+    --char-count: v-bind('h1ChunkCount');
+    --char-delay: 50ms;
+    --anime-gap: 300ms;
+    --h1-duration: 3000ms;
+    --text-duration: 500ms;
+    --char-duration: calc(
+      var(--h1-duration) - ((var(--char-count) - 1) * var(--char-delay))
+    );
+    --text-delay: calc(var(--h1-duration) + var(--anime-gap));
+    --links-delay: calc(
+      var(--text-delay) + var(--text-duration) + var(--anime-gap)
+    );
   }
 }
 
-.reverb {
-  @apply mt-6 text-(4/[1.6] ml-2/80)
-    backdrop-blur-2 max-w-55ch lg:(text-4.5 max-w-45ch);
+.blur-fade-in {
+  @keyframes blurFadeIn {
+    25% {
+      // we may have stumbled 'pon cool thingie here
+      // try adding color, whee!
+      @apply op-50;
+    }
 
-  :deep() {
-    b {
-      @apply font-normal text-ml-0/100;
+    100% {
+      @apply op-100 blur-0 transform-none;
+    }
+  }
+
+  animation-name: blurFadeIn;
+  animation-timing-function: cubic-bezier(0.57, 0.4, 0.55, 1.35);
+  animation-fill-mode: forwards;
+
+  .await & {
+    @apply animate-paused;
+  }
+
+  .splashed & {
+    @apply op-100 blur-0 transform-none;
+
+    &:not(.char) {
+      @apply animate-none;
     }
   }
 }
 
-.trans-init {
-  @apply transition-all-500 op-0 translate-y-25%
-    pointer-events-none invisible;
+.heading-wrap {
+  @apply w-full mx-auto transition-all-500
+    md:(mx-0) lg:(col-span-3);
+}
 
-  &.trans-end {
-    @apply op-100 translate-y-0 visible
-      pointer-events-unset;
+h1 {
+  @apply text-(9/1.1em ml-0/85) tracking-tighter font-light
+    mx-0 max-w-75 ss:(text-9.8 max-w-80) sm:(text-12 max-w-95)
+    md:(text-15 max-w-120) lg:(text-16 max-w-125);
+
+  .word {
+    &:where(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5)) {
+      @apply text-ml-2/85;
+    }
+  }
+}
+
+:is(.word, .char) {
+  @apply inline-block whitespace-pre;
+}
+
+.char {
+  @apply blur-10 op-0 mx--0.01em;
+  // ALT: typing style, remove transform, use ease
+
+  --delay: calc(var(--pos, 0) * var(--char-delay));
+
+  transform: translate3d(0, 1em, 0);
+  animation-duration: var(--char-duration);
+  animation-delay: var(--delay);
+
+  // animation-timing-function: linear(0, -0.1, 0.75 80%, 1.1, 1);
+  // linear(0, -0.1, 0.75, 1)
+  // linear(0, 0.25, -0.25, 1) // wavy, whee!
+
+  .splashed & {
+    @apply animate-running;
+  }
+}
+
+.reverb {
+  @apply mt-6 text-(4/[1.6] ml-2/80) blur-10 op-0
+    backdrop-blur-1 max-w-55ch lg:(text-4.5 max-w-45ch);
+
+  transform: translate3d(0, 20%, 0);
+  animation-duration: var(--text-duration);
+  animation-delay: var(--text-delay);
+
+  em {
+    @apply not-italic font-normal text-ml-0/100;
+  }
+}
+
+.links-container {
+  @apply w-full max-w-100 mt-auto grid gap-4
+    blur-10 op-0 lg:(col-span-2);
+  --border-size: 8px;
+
+  width: calc(100% + var(--border-size));
+  margin-left: calc(-1 * var(--border-size));
+  transform: translate3d(0, 25%, 0);
+
+  animation-duration: 500ms;
+  animation-delay: var(--links-delay);
+}
+
+.link-arrow {
+  @apply transition-inherit transform
+    preserve-3d backface-hidden;
+}
+
+.hero-link {
+  @apply flex items-center justify-between px-4 py-3.5 rd-lg
+    border-ml-5/50 cursor-pointer transition-300 select-none
+    outline-none bg-ml-8/100 text-4/none transform-gpu
+    b-0 b-l-width-[var(--border-size)] md:(py-5 text-4.5);
+
+  &:is(:hover, :focus-visible) {
+    @apply bg-ml-7/100 border-ml-0/50 text-ml-2/90 scale-103;
+
+    .link-arrow {
+      @apply text-ml-0/90 rotate--45;
+    }
   }
 }
 </style>
