@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Project } from '@data/work';
-import { typecastAs } from '@/types/utils';
+import { typecastAs } from '~/types/utils';
 
 definePageMeta({
   documentDriven: true,

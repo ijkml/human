@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { PostContent } from '@/types/content';
-import { typecastAs } from '@/types/utils';
+import type { PostContent } from '~/types/content';
+import { typecastAs } from '~/types/utils';
 
 definePageMeta({
   documentDriven: true,
@@ -27,5 +27,5 @@ definePageMeta({
 </template>
 
 <style lang="scss">
-@import '@/assets/styles/novel';
+@import '~/assets/styles/novel';
 </style>

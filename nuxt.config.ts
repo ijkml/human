@@ -96,7 +96,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "@/assets/styles/global.scss" as *;',
+          additionalData: '@use "~/assets/styles/global.scss" as *;',
         },
       },
     },
@@ -106,7 +106,7 @@ export default defineNuxtConfig({
       }),
     ],
   },
-  css: ['@unocss/reset/tailwind.css', '@/assets/styles/root.scss'],
+  css: ['@unocss/reset/tailwind.css', '~/assets/styles/root.scss'],
   devtools: { enabled: true },
   devServer: {
     host: '',

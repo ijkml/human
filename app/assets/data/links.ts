@@ -1,10 +1,10 @@
-import { email } from '@/content/data/contact.json';
+import { email } from '~/content/data/contact.json';
 
-import IconHome from '@/components/Icons/Home.server.vue';
-import IconAbout from '@/components/Icons/About.server.vue';
-import IconWork from '@/components/Icons/Work.server.vue';
-import IconBlog from '@/components/Icons/Blog.server.vue';
-import IconContact from '@/components/Icons/Contact.server.vue';
+import IconHome from '~/components/Icons/Home.server.vue';
+import IconAbout from '~/components/Icons/About.server.vue';
+import IconWork from '~/components/Icons/Work.server.vue';
+import IconBlog from '~/components/Icons/Blog.server.vue';
+import IconContact from '~/components/Icons/Contact.server.vue';
 
 const linkIcons = {
   about: IconAbout,

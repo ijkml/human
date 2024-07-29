@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { current, explore } from '@/content/data/tools.json';
+import { current, explore } from '~/content/data/tools.json';
 </script>
 
 <template>
