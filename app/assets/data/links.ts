@@ -1,5 +1,4 @@
-import { email } from '~/content/data/contact.json';
-
+import { email } from '~~/content/data/contact.json';
 import IconHome from '~/components/Icons/Home.server.vue';
 import IconAbout from '~/components/Icons/About.server.vue';
 import IconWork from '~/components/Icons/Work.server.vue';

@@ -22,9 +22,9 @@
   "json.schemas": [
     {
       "fileMatch": [
-        "/content/work/*.json"
+        "app/content/work/*.json"
       ],
-      "url": "/types/work-schema.json"
+      "url": "app/types/work-schema.json"
     }
   ]
 }
