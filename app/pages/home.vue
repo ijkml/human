@@ -83,8 +83,21 @@ onBeforeUnmount(endSplash);
 
 <style lang="scss" scoped>
 .hero {
-  @apply transition-all-250 pointer-events-none
-    px-4 ss:(px-6) sm:(px-12) md:(px-16);
+  --char-count: v-bind('h1ChunkCount');
+  --char-delay: 50ms;
+  --anime-gap: 300ms;
+  --h1-duration: 3000ms;
+  --text-duration: 500ms;
+  --char-duration: calc(
+    var(--h1-duration) - ((var(--char-count) - 1) * var(--char-delay))
+  );
+  --text-delay: calc(var(--h1-duration) + var(--anime-gap));
+  --links-delay: calc(
+    var(--text-delay) + var(--text-duration) + var(--anime-gap)
+  );
+
+  @apply transition-all-250 pointer-events-none px-4
+    min-h-(100vh 100dvh) ss:(px-6) sm:(px-12) md:(px-16);
 
   $overlay: hsla(0, 0%, 0%, 0.58);
 
@@ -92,22 +105,18 @@ onBeforeUnmount(endSplash);
     linear-gradient(to bottom right, $overlay, $overlay),
     theme('colors.ml.9') var(--bg) center bottom / cover no-repeat;
   height: auto;
-  min-height: 100vh;
-  min-height: 100dvh;
+  padding-top: calc(7.5rem + var(--nav-height));
+  padding-bottom: 10rem;
+  margin-top: calc(-1 * var(--nav-height));
+  > div {
+    @apply mx-auto w-full max-w-screen-lg grid items-start
+        gap-8 mt-24 pointer-events-auto lg:(grid-cols-5);
+  }
 
   @media (width >= 1024px) {
     min-height: auto;
     height: clamp(700px, 100vh, 900px);
     height: clamp(700px, 100dvh, 900px);
-  }
-
-  padding-top: calc(7.5rem + var(--nav-height));
-  padding-bottom: 10rem;
-  margin-top: calc(-1 * var(--nav-height));
-
-  > div {
-    @apply mx-auto w-full max-w-screen-lg grid items-start
-      gap-8 mt-24 pointer-events-auto lg:(grid-cols-5);
   }
 
   @media (height >= 800px) {
@@ -118,36 +127,21 @@ onBeforeUnmount(endSplash);
       @apply mt-50;
     }
   }
+}
 
-  & {
-    --char-count: v-bind('h1ChunkCount');
-    --char-delay: 50ms;
-    --anime-gap: 300ms;
-    --h1-duration: 3000ms;
-    --text-duration: 500ms;
-    --char-duration: calc(
-      var(--h1-duration) - ((var(--char-count) - 1) * var(--char-delay))
-    );
-    --text-delay: calc(var(--h1-duration) + var(--anime-gap));
-    --links-delay: calc(
-      var(--text-delay) + var(--text-duration) + var(--anime-gap)
-    );
+@keyframes blurFadeIn {
+  25% {
+    // we may have stumbled 'pon cool thingie here
+    // try adding color, whee!
+    @apply op-50;
+  }
+
+  100% {
+    @apply op-100 blur-0 transform-none;
   }
 }
 
 .blur-fade-in {
-  @keyframes blurFadeIn {
-    25% {
-      // we may have stumbled 'pon cool thingie here
-      // try adding color, whee!
-      @apply op-50;
-    }
-
-    100% {
-      @apply op-100 blur-0 transform-none;
-    }
-  }
-
   animation-name: blurFadeIn;
   animation-timing-function: cubic-bezier(0.57, 0.4, 0.55, 1.35);
   animation-fill-mode: forwards;
