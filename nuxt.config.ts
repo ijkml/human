@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxthq/studio',
     '@nuxtjs/seo',
+    'nuxt-og-image',
   ],
   extends: ['nuxt-umami'],
   site: {

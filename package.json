@@ -24,6 +24,7 @@
     "eslint": "^9.8.0",
     "eslint-plugin-format": "^0.1.2",
     "nuxt": "^3.12.4",
+    "nuxt-og-image": "3.0.0-rc.64",
     "nuxt-umami": "^2.6.4",
     "sass": "^1.77.8",
     "typescript": "^5.5.4",
