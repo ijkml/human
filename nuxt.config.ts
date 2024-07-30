@@ -7,13 +7,14 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+  // TODO: TEMP FIX
+  build: { transpile: ['shiki'] },
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@nuxt/content',
     '@nuxthq/studio',
     '@nuxtjs/seo',
-    'nuxt-og-image',
   ],
   extends: ['nuxt-umami'],
   site: {
