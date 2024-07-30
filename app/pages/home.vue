@@ -189,6 +189,7 @@ h1 {
   transform: translate3d(0, 1em, 0);
   animation-duration: var(--char-duration);
   animation-delay: var(--delay);
+  animation-timing-function: ease;
 
   // animation-timing-function: linear(0, -0.1, 0.75 80%, 1.1, 1);
   // linear(0, -0.1, 0.75, 1)

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   // TODO: TEMP FIX
+  // https://github.com/nuxt/nuxt/issues/28127
   build: { transpile: ['shiki'] },
   modules: [
     '@vueuse/nuxt',
