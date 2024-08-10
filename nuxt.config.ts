@@ -16,8 +16,12 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxthq/studio',
     '@nuxtjs/seo',
+    'nuxt-umami',
   ],
-  extends: ['nuxt-umami'],
+  umami: {
+    domains: ['ijkml.dev', 'localhost'],
+    proxy: 'cloak',
+  },
   site: {
     url: 'https://ijkml.dev',
     name: 'Moses Laurence (ijkml)',
