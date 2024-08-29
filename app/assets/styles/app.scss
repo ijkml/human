@@ -1,3 +1,22 @@
+.page {
+  &-enter-active,
+  &-leave-active {
+    @apply transition-400;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    @apply op-0 translate-y-16;
+  }
+}
+
+.hr {
+  border-width: thin 0 0;
+
+  @apply flex-1 h-0 max-h-0 max-w-full block
+    border-(solid zinc-5/30.5);
+}
+
 .link-xi {
   @apply decoration-none relative text-ml-4/100
     items-center inline-flex outline-none px-1 select-none;

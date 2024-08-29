@@ -71,10 +71,9 @@ const { data, status } = await useAsyncData('post-list', () => {
 }
 
 .article {
-  @apply grid gap-3 transition-300 relative;
-
-  @apply rd-2 p-(x-4 b-8 t-16) min-h-70 text-ml-3/100
-    leading-[1.25] justify-items-start content-end of-hidden
+  @apply grid gap-3 rd-2 transition-300 relative
+    p-(x-4 b-8 t-16) min-h-70 text-ml-3/100 of-hidden
+    leading-tight justify-items-start content-end
     ss:(px-6) sm:(min-h-80) md:(px-8) at-lg:(px-6);
 
   &::after {
