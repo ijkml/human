@@ -28,7 +28,7 @@ useContentHead({
   ...describe(title, prop.doc.subtitle),
 });
 
-const tweet = `${title} by @ijk_ml\n\n${origin + pathname}`;
+const tweet = `${title} by @ijk_ml\n\n${origin + pathname}/\n`;
 const shareTwix = encodeURI(`https://twitter.com/intent/tweet?text=${tweet}`);
 
 const { y: scrolledHeight } = useWindowScroll();
