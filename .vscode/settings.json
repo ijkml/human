@@ -1,5 +1,4 @@
 {
-  "eslint.experimental.useFlatConfig": true,
   "prettier.enable": false,
   "editor.formatOnSave": false,
   "vue.codeActions.enabled": false,
@@ -13,7 +12,7 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    ".nuxt": true,
+    // ".nuxt": true,
     "node_modules": true,
     ".unlighthouse": true,
     ".output": true,
