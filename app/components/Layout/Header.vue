@@ -61,15 +61,15 @@ const activeClass = 'link-active';
   @apply max-w-screen-xl flex items-center select-none
     justify-between transition-inherit mx-auto mt-1 px-4
     w-92% rd-md relative outline-(1 solid transparent)
-    sm:(mt-8px w-90%);
+    sm:(mt-2 w-90%);
 
   height: $nav-height-inner;
   max-height: $nav-height-inner;
 
   &::before {
-    @apply content-[''] inset-0 w-full h-full rd-inherit op-0
-      z--2 bg-(gradient-to-r ml-8/100) from-(ml-8/100 75%)
-      to-(ml-0/25 150%) transition-inherit absolute;
+    @apply content-[''] absolute inset-0 op-0 z--2
+      bg-(gradient-to-r ml-8/100) from-(ml-8/100 75%)
+      to-(ml-0/25 150%) transition-inherit rd-inherit;
   }
 
   .contrast & {
@@ -90,12 +90,12 @@ const activeClass = 'link-active';
   }
 
   &:is(:hover, :focus-visible) {
-    @apply text-ml-0;
+    @apply text-ml-0/100;
   }
 }
 
 .ze-nav {
-  @apply text-3.5/normal tracking-wide mb--1 hidden
+  @apply text-3.5/snug tracking-wide hidden
     items-center ss500:(flex gap-4) sm:(gap-6);
 }
 

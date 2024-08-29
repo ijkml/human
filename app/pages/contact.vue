@@ -63,6 +63,7 @@ function sayThanks() {
   msgId.value = 0;
   accepted.value = true;
   interacted.value = true;
+  umTrackEvent('buy-coffee');
 }
 
 const btnText = computed(() => {
@@ -72,7 +73,6 @@ const btnText = computed(() => {
 function monitor(link: string) {
   if (link === 'email')
     umTrackEvent('send-mail');
-
   else
     umTrackView(link);
 }
