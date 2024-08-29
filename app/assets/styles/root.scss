@@ -25,6 +25,10 @@ $scrollbar-track: theme('colors.ml.7');
   @apply text-balance;
 }
 
+:is(kbd, code, samp, pre) {
+  @apply font-mono;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 
@@ -47,25 +51,6 @@ $scrollbar-track: theme('colors.ml.7');
 
 ::selection {
   @apply bg-ml-9/100 text-ml-0/100;
-}
-
-.page {
-  &-enter-active,
-  &-leave-active {
-    @apply transition-400;
-  }
-
-  &-enter-from,
-  &-leave-to {
-    @apply op-0 translate-y-16;
-  }
-}
-
-.hr {
-  border-width: thin 0 0;
-
-  @apply flex-1 h-0 max-h-0 max-w-full block
-    border-(solid zinc-5/30.5);
 }
 
 :where(img, a) {

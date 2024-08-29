@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { Lang } from 'shiki-es';
+import type { BundledLanguage } from 'shiki';
 
 const props = withDefaults(
   defineProps<{
     code: string;
-    language: Lang | null;
+    language: BundledLanguage | null;
     filename: string | null;
     highlights: number[];
   }>(),
