@@ -38,8 +38,7 @@ export default defineConfig({
         'sans-serif',
       ],
       mono: [
-        'Roboto Mono',
-        'Mono Code',
+        'Geist Mono',
         'ui-monospace',
         'Ubuntu Mono',
         'SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',

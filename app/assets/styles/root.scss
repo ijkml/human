@@ -10,16 +10,11 @@ $scrollbar-track: theme('colors.ml.7');
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @apply text-(16px balance pretty) font-sans tracking-tight;
+  @apply text-(16px/tight balance pretty ml-2/80) font-sans
+    scroll-(smooth py-10) of-y-scroll bg-ml-8/100;
+    // set bg inline in nuxt.config
 
   --nav-height: #{$nav-height};
-}
-
-html {
-  // also set inline in nuxt.config
-
-  @apply text-ml-2/70 bg-ml-8/100
-    scroll-(smooth py-10) of-y-scroll;
 }
 
 * {
