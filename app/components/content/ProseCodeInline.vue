@@ -1,23 +1,29 @@
 <template>
-  <code>
-    <slot />
-  </code>
+  <code><slot /></code>
 </template>
 
 <style lang="scss" scoped>
 code {
-  @apply font-mono mx-1px rd-1.5 py-0.2em px-0.5em inline
-    text-(85% ml-2/100) leading-[1] bg-zinc-8/100;
+  @apply text-(0.9em amber-2/80) font-mono select-all rd-1.5 mx-1px;
 
   white-space: break-spaces;
   word-wrap: break-word;
+
+  &::before,
+  &::after {
+    content: '`';
+  }
+
+  > span {
+    @apply select-all;
+  }
 
   tbody & {
     @apply text-0.95em;
   }
 
   :is(h1, h2, h3, h4, h5, h6) & {
-    @apply text-75%;
+    @apply text-0.75em;
   }
 
   .novel-heading > & {

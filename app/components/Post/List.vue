@@ -6,7 +6,7 @@ import type { PostContent } from '~/types/content';
 // * pagination
 // * draft / empty / coming soon
 
-const { data, pending } = await useAsyncData('post-list', () => {
+const { data, status } = await useAsyncData('post-list', () => {
   return queryContent<PostContent>('posts')
     .where({ _draft: false })
     .only(['_path', 'tags', 'date', 'title', 'subtitle'])
@@ -17,7 +17,7 @@ const { data, pending } = await useAsyncData('post-list', () => {
 
 <template>
   <div class="content-list">
-    <template v-if="pending">
+    <template v-if="status === 'pending'">
       <div v-for="a in 3" :key="a" class="black-red article skeleton">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -37,6 +37,12 @@ const { data, pending } = await useAsyncData('post-list', () => {
           </g>
         </svg>
         <span class="sr-only">Loading...</span>
+      </div>
+    </template>
+    <template v-else-if="status === 'error'">
+      <div class="mx-4 text-amber-7/100">
+        Oops... could not fetch posts.<br>
+        Please try refreshing the page.
       </div>
     </template>
     <template v-else>
@@ -64,22 +70,12 @@ const { data, pending } = await useAsyncData('post-list', () => {
   @apply mb-8 mt-16 grid gap-8 sm:(grid-cols-2) xl:(grid-cols-3);
 }
 
-.blog-head {
-  @apply text-(ml-3/100 6/[1.25]) max-w-125 tracking-tight
-    mr-5 ss:(text-7) md:(text-8) lg:(text-9) xl:(text-8);
-}
-
-.sub-head {
-  @apply text-4/[1.35] m-(r-5 t--1 b-1)
-    max-w-100 ss:(text-4.5) at-sm:(text-4);
-}
-
 .article {
   @apply grid gap-3 transition-300 relative;
 
-  @apply rd-2 p-(x-4 b-8 t-16) text-(3.8/[1.5] ml-3/100)
-    justify-items-start content-end of-hidden ss:(px-6)
-    sm:(min-h-80) md:(px-8) at-lg:(px-6);
+  @apply rd-2 p-(x-4 b-8 t-16) min-h-70 text-ml-3/100
+    leading-[1.25] justify-items-start content-end of-hidden
+    ss:(px-6) sm:(min-h-80) md:(px-8) at-lg:(px-6);
 
   &::after {
     @apply content-[''] size-110% absolute top--5% left--5%
@@ -100,6 +96,15 @@ const { data, pending } = await useAsyncData('post-list', () => {
       @apply text-ml-1/100;
     }
   }
+}
+
+.blog-head {
+  @apply text-(ml-3/100 6) max-w-125 tracking-tight
+    mr-5 ss:(text-7) md:(text-8) lg:(text-9) xl:(text-8);
+}
+
+.sub-head {
+  @apply text-4 m-(r-5 t--1 b-1) max-w-100;
 }
 
 .date {

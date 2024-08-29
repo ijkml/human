@@ -87,7 +87,7 @@ export default defineNuxtConfig({
     documentDriven: false,
     highlight: {
       // Theme used in all color schemes.
-      theme: 'monokai',
+      theme: 'houston',
       preload: ['ts', 'vue', 'js', 'json', 'html', 'css', 'diff', 'scss', 'less', 'shell', 'markdown', 'mdx', 'yaml', 'toml', 'tsx'],
     },
   },

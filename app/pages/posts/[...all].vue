@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import type { PostContent } from '~/types/content';
 import { typecastAs } from '~/types/utils';
-
-definePageMeta({
-  documentDriven: true,
-});
 </script>
 
 <template>
