@@ -3,7 +3,7 @@ import svgLoader from 'vite-svg-loader';
 import { redirects } from './redirects';
 
 export default defineNuxtConfig({
-  compatibilityDate: '2024-07-30',
+  compatibilityDate: '2024-08-30',
   future: {
     compatibilityVersion: 4,
   },

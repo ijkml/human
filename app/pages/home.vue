@@ -88,13 +88,9 @@ onBeforeUnmount(endSplash);
   --anime-gap: 300ms;
   --h1-duration: 3000ms;
   --text-duration: 500ms;
-  --char-duration: calc(
-    var(--h1-duration) - ((var(--char-count) - 1) * var(--char-delay))
-  );
+  --char-duration: calc(var(--h1-duration) - ((var(--char-count) - 1) * var(--char-delay)));
   --text-delay: calc(var(--h1-duration) + var(--anime-gap));
-  --links-delay: calc(
-    var(--text-delay) + var(--text-duration) + var(--anime-gap)
-  );
+  --links-delay: calc(var(--text-delay) + var(--text-duration) + var(--anime-gap));
 
   @apply transition-all-250 pointer-events-none px-4
     min-h-(100vh 100dvh) ss:(px-6) sm:(px-12) md:(px-16);
