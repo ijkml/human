@@ -49,7 +49,7 @@ There are currently 3 proxy options:
 - **direct**: Simple proxy using route rules.
 - **cloak**: Proxy with "sensitive" data kept out of your client bundle.
 
-Learn more about `proxy` in the docs.
+Learn more about `proxy` [in the docs](https://umami.nuxt.dev/api/configuration#proxy-mode).
 
 <br>
 
@@ -59,6 +59,7 @@ Learn more about `proxy` in the docs.
 - 🆕 New config option: `enabled`.
 - 🆕 New config option: `excludeQueryParams`.
 - ⚠️ `debug` option has been renamed to `logErrors`.
+- 📗 New documentation website, [umami.nuxt.dev](https://umami.nuxt.dev/) powered by [NuxtHub](https://hub.nuxt.com/) and [shadcn-docs](https://shadcn-docs.nuxt.dev/).
 
 <br>
 
@@ -118,6 +119,8 @@ export default defineNuxtConfig({
 #### 🍸 Et voilà.
 
 You're now using the latest version of Nuxt Umami. _Félicitations!_
+
+Remember to [read the docs](https://umami.nuxt.dev/).
 
 <br>
 
