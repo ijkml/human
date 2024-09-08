@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   ],
   umami: {
     domains: ['ijkml.dev', 'localhost'],
-    proxy: 'direct',
+    proxy: 'cloak',
   },
   site: {
     url: 'https://ijkml.dev',
