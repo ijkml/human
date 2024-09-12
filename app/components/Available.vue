@@ -36,7 +36,7 @@ function monitor() {
   }
 }
 
-.chip {
+:is(.chip) {
   @apply tracking-0.1em;
 }
 
