@@ -14,8 +14,8 @@ withDefaults(defineProps<{
 
 <style lang="scss" scoped>
 .tag {
-  @apply my-4 py-2 b-l-(4 solid current) text-ml-3/100
-    grid gap-3 max-w-50ch pl-4 ml--5;
+  @apply b-l-(4 solid current) text-ml-3/100
+    max-w-55ch pl-4 py-2 ml--5 my-4;
 
   &.zinc {
     @apply b-ml-5/60;

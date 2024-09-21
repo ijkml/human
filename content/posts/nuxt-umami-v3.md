@@ -83,11 +83,16 @@ pnpm install -D nuxt-umami@module
 
 ...then add to `nuxt.config.ts`.
 
+::tag{type='red'}
+**IMPORTANT**: Don't forget to remove `nuxt-umami` from `extends`.
+::
+
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   modules: ['nuxt-umami'],
 
-  // ...other configs
+  // remove ↓
+  // extends: ['nuxt-umami'],
 });
 ```
 
