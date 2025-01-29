@@ -5,7 +5,7 @@
     "I collaborated with MOI Immigration Solutions, a Canadian Immigration Consulting firm with offices in Edmonton, Canada, and Ibadan, Nigeria. Together with their in-house team, we transitioned their website from WordPress to a modern, responsive, and user-friendly design.",
   "kind": "Contract",
   "period": "Nov 2022",
-  "link": "https://www.moiimmigrationsolutions.com/",
+  "link": "https://moiis.netlify.app/",
   "roles": ["Developer"],
   "tools": ["Vue/TS", "Nuxt", "Windi/Less", "Umami"]
 }
