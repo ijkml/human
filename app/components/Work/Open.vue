@@ -13,7 +13,13 @@
         project or creative idea.
       </p>
       <div class="action">
-        <ZeButton primary link="/contact" text="Get in touch" />
+        <ZeButton
+          text="View Resume"
+          link="/resume"
+          primary
+          external
+          @click="umTrackView('/resume')"
+        />
         <ZeButton
           link="/github"
           text="View GitHub"

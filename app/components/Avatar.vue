@@ -10,8 +10,10 @@ import Avatar from '@img/svg/avatar.svg?component';
 :where(.avatar) {
   @apply transition-all-350;
 
-  --stare: #ff0;
-  --eyes: theme('colors.ml.0');
+  // --stare: #ff0;
+  // --eyes: theme('colors.ml.0');
+  --stare: theme('colors.ml.0');
+  --eyes: #ff0;
   --body: theme('colors.ml.6');
 
   fill: var(--body);

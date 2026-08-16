@@ -35,42 +35,9 @@ defineOgImageComponent('PageOg', {
     </div>
 
     <div class="subsect-offset">
-      <!-- <WorkFeatured /> -->
-      <!-- <WorkOSS /> -->
+      <WorkFeatured />
 
-      <section aria-labelledby="wip-h2" class="project-list">
-        <div class="sect-head">
-          <h2 id="wip-h2" class="screamer-h2">
-            Featured Projects
-          </h2>
-          <p>
-            Here are some things I've built: <br>
-            (This page is a WIP)
-          </p>
-        </div>
-        <ul class="wip-list">
-          <li>
-            <NuxtLink class="link-xi" to="/work/human-v0">
-              Human v0
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink class="link-xi" to="/work/moi-immigration">
-              MOI Immigration
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink class="link-xi" to="/work/pennypay">
-              PennyPay
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink class="link-xi" to="/work/voe">
-              Voe Air
-            </NuxtLink>
-          </li>
-        </ul>
-      </section>
+      <WorkOSS />
 
       <WorkOpen />
     </div>

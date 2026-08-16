@@ -13,8 +13,8 @@
 
       <SubSect title="Awards">
         <p>
-          "It's nice to win an award, I would assume. I've never won one, but I
-          would imagine it's great. I have no idea what I'll do."
+          &ldquo;It's nice to win an award, I would assume. I've never won one, but I
+          would imagine it's great. I have no idea what I'll do.&rdquo;
         </p>
       </SubSect>
     </div>

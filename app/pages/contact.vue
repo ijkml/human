@@ -84,12 +84,20 @@ function monitor(link: string) {
       <h1 id="get-in-touch" class="screamer-h1">
         Contact
       </h1>
-      <p>
-        I'm always open to new opportunities and connections. Reach out anytime
-        to discuss a project or just chat.
-      </p>
 
-      <Available class="mt-4" :link="contactEmail.link" />
+      <div class="grid justify-items-start gap-6">
+        <Available class="mt-4" :link="contactEmail.link" />
+
+        <p>
+          I am open to new opportunities and connections. Reach out anytime
+          to discuss a project or just chat.
+        </p>
+
+        <ZeButton
+          primary link="/resume" external text="View Resume"
+          @click="umTrackView('/resume')"
+        />
+      </div>
     </div>
 
     <div class="options-deck">
@@ -106,7 +114,7 @@ function monitor(link: string) {
             target="_blank"
             @click="monitor('/telegram')"
           >Telegram</a> is the fastest way to reach me. If it's official
-          <small>(or you might need the paper trail)</small>,
+          <small>(or you need the paper trail)</small>,
           <a
             class="link-xi"
             rel="noopener"
