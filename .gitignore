@@ -7,3 +7,7 @@ dist
 .local
 .local*
 .unlighthouse*
+
+# misc
+.DS_Store
+*.pem
