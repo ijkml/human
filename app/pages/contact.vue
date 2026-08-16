@@ -123,16 +123,6 @@ function monitor(link: string) {
           >
             here's my email.
           </a>
-          You can also catch me stalking folks on
-          <a
-            href="/twitter"
-            class="link-xi"
-            rel="noopener"
-            target="_blank"
-            @click="monitor('/twitter')"
-          >
-            Twitter/X
-          </a>.
         </p>
 
         <div class="intro-actions">

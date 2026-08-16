@@ -55,12 +55,6 @@ const socials: SocialLinkFormat[] = [
     external: true,
     icon: 'none',
   },
-  {
-    title: 'X (Twitter)',
-    link: '/twitter',
-    external: true,
-    icon: 'none',
-  },
 ];
 
 const contactEmail = {
