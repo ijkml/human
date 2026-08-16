@@ -1,0 +1,11 @@
+{
+  "id": "moi-montessori",
+  "name": "MOI Montessori",
+  "details":
+    "Researched, designed and led the development of MOI Montessori's brand website.",
+  "kind": "Contract",
+  "period": "Sept 2023",
+  "link": "https://moi-montessori.com/",
+  "roles": ["Designer", "Developer"],
+  "tools": ["TypeScript", "Vue", "Nuxt", "UnoCSS/SCSS", "Umami"]
+}

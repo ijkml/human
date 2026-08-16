@@ -1,18 +1,20 @@
 {
   "current": [
     "Javascript",
-    "Vue",
     "Typescript",
+    "React",
+    "Vue",
+    "Next.js",
     "Nuxt",
-    "Sass/Less",
-    "UnoCSS",
-    "Pinia",
-    "GraphQL"
+    "Tailwind",
+    "SCSS",
+    "Tanstack",
+    "Pinia"
   ],
   "explore": [
     "Java",
-    "Astro",
-    "Builder.io",
-    "GSAP"
+    "Go Lang",
+    "C++",
+    "API Design"
   ]
 }
